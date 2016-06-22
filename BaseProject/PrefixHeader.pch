@@ -1,0 +1,71 @@
+//
+//  PrefixHeader.pch
+//  PublicCoursera
+//
+//  Created by yongche_w on 16/4/9.
+//  Copyright © 2016年 wuxiaofang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "WXFCategoryCommonHeader.h"
+#import "WXFHttpCommonHeader.h"
+#import "YYKitMacro.h"
+#import "AFNetworking.h"
+#import "ReactiveCocoa.h"
+#import "SDWebImageManager.h"
+#import "SDWebImageCompat.h"
+#import "UIImageView+WebCache.h"
+#import "WXFBaseViewController.h"
+#import "WXFBaseNavigationViewController.h"
+#import "WXFBaseWebViewController.h"
+#import "WXFBaseTableViewController.h"
+#import "UIColor+WXFColor.h"
+#import "WXFUser.h"
+#import "WXFHttpClient.h"
+#import "WXFParser.h"
+
+#import "WXApi.h"
+#import "WechatAuthSDK.h"
+#import "WXApiObject.h"
+#import "UIDevice+FCUUID.h"
+
+#import "UIView+HUD.h"
+
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/TencentApiInterface.h>
+#import <TencentOpenAPI/QQApiInterfaceObject.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WeiboSDK.h"
+
+#import "WXFShareCenter.h"
+#import "WXFWeChatShareHelper.h"
+#import "WXFWeiboShareHelper.h"
+#import "WXFQQShareHelper.h"
+
+#define kWechatKey    @"wxe28df2055ea70290"
+
+
+#define kWeiBoKey     @"2055961935"
+#define kWeiBoSecret  @"abe30d18ecd832e710b2c14a1a03d13c"
+#define kWeiboRedirectURL    @"http://www.yongche.com/favicon.ico"   //新浪回调地址
+#define kWeiboAccessTokenKey @"kSinaAccessTokenKey"                  //新浪本地Token存储的key
+#define kWeiboExpireDateKey  @"kSinaExpireDateKey"                   //新浪授权过期时间
+
+#define getValueForKeyFromUserDefault(key)           [[NSUserDefaults standardUserDefaults] objectForKey:key];
+
+#define setValueAndKeyToUserDefault(value,key)     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];\
+[[NSUserDefaults standardUserDefaults] synchronize];
+
+
+#define kQQOpenID   @"1105338939"
+#define kQQOpenKey   @"aqzzVVWI8WXBwcsh"
+
+
+
+#import "AppDelegate.h"
+
+#endif /* PrefixHeader_pch */
