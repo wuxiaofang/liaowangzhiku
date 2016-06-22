@@ -21,7 +21,7 @@
 #import "UIColor+Factory.h"
 #import "WXFDevice.h"
 #import "UIImage+Extension.h"
-
+#import "NSArray+Common.h"
 
 //文件路径
 #define kPATH_OF_APP_HOME       NSHomeDirectory()

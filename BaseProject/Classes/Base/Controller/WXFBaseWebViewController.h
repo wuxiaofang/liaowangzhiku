@@ -14,4 +14,6 @@
 
 - (void)createWebView;
 
+- (void)laodWebViewData:(NSString*)webviewUrl;
+
 @end

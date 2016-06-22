@@ -17,4 +17,8 @@
 
 - (BOOL)versionLessThanOrEqualTo:(NSString*)aVersion;
 
+
+- (NSDictionary*)queryContentsUsingEncoding:(NSStringEncoding)encoding;
+
+
 @end

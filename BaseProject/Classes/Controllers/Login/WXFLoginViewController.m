@@ -223,7 +223,7 @@
     NSString* social_id = [[UIDevice currentDevice] uuid];
     NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
     [paramater setValue:social_id forKey:@"social_id"];
-    [paramater setValue:self.phoneNumberTextField.text forKey:@"username"];
+    [paramater setValue:self.phoneNumberTextField.text forKey:@"user_name"];
     [paramater setValue:self.phoneVerifyCodeTextField.text forKey:@"password"];
     [paramater setValue:@"1" forKey:@"os_type"];
     [paramater setValue:@"1" forKey:@"channel"];
@@ -236,6 +236,10 @@
         
         NSInteger code = [parser.responseDictionary integerSafeForKey:@"code"];
         if(code == 0){
+            NSString* jssession = [parser.responseDictionary stringSafeForKey:kJSESSIONID];
+            if(jssession.length > 0){
+                DefaultSetValueForKey(jssession, kJSESSIONID);
+            }
             [self loginSuccess];
             [self showSuccessToast:(msg.length > 0?msg:@"登录成功")];
         }else{

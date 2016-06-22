@@ -75,8 +75,12 @@
             if(description && description.length > 0){
                 shareText = description;
             }
+            NSData* data = nil;
+            if([remote_shareImage isKindOfClass:[UIImage class]]){
+                data = [remote_shareImage changeToWeChatShareThumbData];;
+            }
             
-            NSData* data = [remote_shareImage changeToWeChatShareThumbData];;
+            
             QQApiNewsObject* img = [QQApiNewsObject objectWithURL:[NSURL URLWithString:webpageUrl] title:shareTitle description:shareText previewImageData:data];
             SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:img];
             

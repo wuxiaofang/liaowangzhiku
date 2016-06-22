@@ -51,7 +51,7 @@
      parameters:(id)parameters
        callBack:(void (^)(WXFParser *parser))callBackBlock
 {
-    NSString* string = DefaultValueForKey(@"JSESSIONID");
+    NSString* string = DefaultValueForKey(kJSESSIONID);
     if(string.length > 0){
         [self.httpSessionManager.requestSerializer setValue:string forHTTPHeaderField:@"JSESSIONID"];
     }
@@ -91,8 +91,7 @@
       parameters:(id)parameters
         callBack:(void (^)(WXFParser *parser))callBackBlock
 {
-    NSString* string = DefaultValueForKey(@"JSESSIONID");
-    string = @"111111111111111111";
+    NSString* string = DefaultValueForKey(kJSESSIONID);
     if(string.length > 0){
         [self.httpSessionManager.requestSerializer setValue:string forHTTPHeaderField:@"JSESSIONID"];
     }

@@ -46,12 +46,12 @@
 #import "WXFWeiboShareHelper.h"
 #import "WXFQQShareHelper.h"
 
-#define kWechatKey    @"wxe28df2055ea70290"
+#define kWechatKey    @"wxd3816b2b8999e216"
 
 
-#define kWeiBoKey     @"2055961935"
-#define kWeiBoSecret  @"abe30d18ecd832e710b2c14a1a03d13c"
-#define kWeiboRedirectURL    @"http://www.yongche.com/favicon.ico"   //新浪回调地址
+#define kWeiBoKey     @"2973213602"
+#define kWeiBoSecret  @"69bb2649d647ca079675fb3371b34eb9"
+#define kWeiboRedirectURL    @"http://lwinst.zkdxa.com"   //新浪回调地址
 #define kWeiboAccessTokenKey @"kSinaAccessTokenKey"                  //新浪本地Token存储的key
 #define kWeiboExpireDateKey  @"kSinaExpireDateKey"                   //新浪授权过期时间
 
@@ -67,5 +67,9 @@
 
 
 #import "AppDelegate.h"
+
+
+#define kJSESSIONID  @"JSESSIONID"
+
 
 #endif /* PrefixHeader_pch */

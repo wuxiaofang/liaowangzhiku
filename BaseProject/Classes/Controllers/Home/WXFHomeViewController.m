@@ -81,15 +81,7 @@
 //    }
 }
 
-- (void)laodWebViewData:(NSString*)webviewUrl
-{
-    if(webviewUrl.length > 0){
-        NSURL* url = [NSURL URLWithString:webviewUrl];
-        NSURLRequest* urlRequest = [[NSURLRequest alloc] initWithURL:url];
-        [self.webView loadRequest:urlRequest];
-    }
-    
-}
+
 - (void)shareButtonPress:(UIButton*)button
 {
     if(button.tag == 0){

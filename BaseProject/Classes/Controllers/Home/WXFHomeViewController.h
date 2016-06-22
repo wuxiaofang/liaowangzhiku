@@ -10,6 +10,6 @@
 
 @interface WXFHomeViewController : WXFBaseWebViewController
 
-- (void)laodWebViewData:(NSString*)webviewUrl;
+
 
 @end

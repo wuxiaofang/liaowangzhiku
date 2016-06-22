@@ -54,18 +54,19 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSString*  absoluteString = [[request URL] absoluteString];
     NSLog(@"%@",absoluteString);
     if([scheme isEqualToString:@"share"]){
+        NSDictionary *query = [request.URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
         if([absoluteString rangeOfString:@"pengyouquan"].location != NSNotFound){
-            [self shareToWeiXinPengYouQuan];
+            [self shareToWeiXinPengYouQuan:query];
             return NO;
         }else if([absoluteString rangeOfString:@"weixin"].location != NSNotFound){
-            [self shareToWeiXinFriends];
+            [self shareToWeiXinFriends:query];
             return NO;
         
         }else if([absoluteString rangeOfString:@"weibo"].location != NSNotFound){
-            [self shareToSinaWeibo];
+            [self shareToSinaWeibo:query];
             return NO;
         }else if([absoluteString rangeOfString:@"qqzone"].location != NSNotFound){
-            [self shareToQQ];
+            [self shareToQQ:query];
             return NO;
         }
     }else if([absoluteString rangeOfString:@"/login.jspx"].location != NSNotFound){
@@ -109,12 +110,18 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 }
 
 
-- (void)shareToQQ
+- (void)shareToQQ:(NSDictionary*)query
 {
-    [[WXFQQShareHelper sharedQQHelper] shareToQQWithTitle:@"瞭望智库"
-                                          shareImageOrURL:[UIImage imageNamed:@"welcome_iphone6p"]
-                                              description:@"分享到好友" scene:0
-                                               webpageUrl:@"http://www.qq.com"
+   
+    NSString* title = [[query arraySafeForKey:@"title"] objectAtIndexSafe:0];
+    NSString* imageurl = [[query arraySafeForKey:@"imageurl"] objectAtIndexSafe:0];
+    NSString* webpage = [[query arraySafeForKey:@"webpage"] objectAtIndexSafe:0];
+    NSString* description = [[query arraySafeForKey:@"description"] objectAtIndexSafe:0];
+    [[WXFQQShareHelper sharedQQHelper] shareToQQWithTitle:title
+                                          shareImageOrURL:imageurl
+                                              description:description
+                                                    scene:0
+                                               webpageUrl:webpage
                                              callBackFunc:^(int status, int scene) {
                                                  
                                                  if(status == 0){
@@ -123,12 +130,18 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                              }];
 }
 
-- (void)shareToWeiXinFriends
+- (void)shareToWeiXinFriends:(NSDictionary*)query
 {
-    [[WXFWeChatShareHelper sharedWeChatHelper] shareToWechatWithTitle:@"瞭望智库"
-                                                      shareImageOrURL:[UIImage imageNamed:@"welcome_iphone6p"]
-                                                          description:@"分享到好友" scene:0
-                                                           webpageUrl:@"http://www.baidu.com"
+    NSString* title = [[query arraySafeForKey:@"title"] objectAtIndexSafe:0];
+    NSString* imageurl = [[query arraySafeForKey:@"imageurl"] objectAtIndexSafe:0];
+    NSString* webpage = [[query arraySafeForKey:@"webpage"] objectAtIndexSafe:0];
+    NSString* description = [[query arraySafeForKey:@"description"] objectAtIndexSafe:0];
+    
+    [[WXFWeChatShareHelper sharedWeChatHelper] shareToWechatWithTitle:title
+                                                      shareImageOrURL:imageurl
+                                                          description:description
+                                                                scene:0
+                                                           webpageUrl:webpage
                                                          callBackFunc:^(int status, int scene) {
                                                              
                                                              if(status == 0){
@@ -137,12 +150,19 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                                          }];
 }
 
-- (void)shareToWeiXinPengYouQuan
+- (void)shareToWeiXinPengYouQuan:(NSDictionary*)query
 {
-    [[WXFWeChatShareHelper sharedWeChatHelper] shareToWechatWithTitle:@"瞭望智库"
-                                                      shareImageOrURL:[UIImage imageNamed:@"welcome_iphone6p"]
-                                                          description:@"分享到朋友圈" scene:1
-                                                           webpageUrl:@"http://www.baidu.com"
+    
+    NSString* title = [[query arraySafeForKey:@"title"] objectAtIndexSafe:0];
+    NSString* imageurl = [[query arraySafeForKey:@"imageurl"] objectAtIndexSafe:0];
+    NSString* webpage = [[query arraySafeForKey:@"webpage"] objectAtIndexSafe:0];
+    NSString* description = [[query arraySafeForKey:@"description"] objectAtIndexSafe:0];
+    
+    [[WXFWeChatShareHelper sharedWeChatHelper] shareToWechatWithTitle:title
+                                                      shareImageOrURL:imageurl
+                                                          description:description
+                                                                scene:1
+                                                           webpageUrl:webpage
                                                          callBackFunc:^(int status, int scene) {
                                                              if(status == 0){
                                                                  [self showToastWithText:@"分享成功"];
@@ -151,11 +171,15 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 }
 
-- (void)shareToSinaWeibo
+- (void)shareToSinaWeibo:(NSDictionary*)query
 {
-    [[WXFWeiboShareHelper sharedWeiBoHelper] shareToWeiboWithTitle:@"瞭望智库"
-                                                   shareImageOrURL:[UIImage imageNamed:@"welcome_iphone6p"]
-                                                        webpageUrl:@"http://www.baidu.com"
+    NSString* title = [[query arraySafeForKey:@"title"] objectAtIndexSafe:0];
+    NSString* imageurl = [[query arraySafeForKey:@"imageurl"] objectAtIndexSafe:0];
+    NSString* webpage = [[query arraySafeForKey:@"webpage"] objectAtIndexSafe:0];
+//    NSString* description = [[query arraySafeForKey:@"description"] objectAtIndexSafe:0];
+    [[WXFWeiboShareHelper sharedWeiBoHelper] shareToWeiboWithTitle:title
+                                                   shareImageOrURL:imageurl
+                                                        webpageUrl:webpage
                                            presentedViewController:self
                                                       callBackFunc:^(int status, int scene) {
                                                           if(status == 0){
@@ -174,10 +198,38 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }];
     login.userDidLoginFinishBlock = ^(BOOL isSuccess){
         if(isSuccess){
+            NSString* string = DefaultValueForKey(kJSESSIONID);
+            
+            if(string.length > 0){
+                NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+                [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+                [cookieDict setObject:string forKey:NSHTTPCookieValue];
+                NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+            }
             [self.webView reload];
         }
     };
 }
 
+- (void)laodWebViewData:(NSString*)webviewUrl
+{
+    if(webviewUrl.length > 0){
+        NSString* string = DefaultValueForKey(kJSESSIONID);
+        
+        if(string.length > 0){
+            NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+            [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+            [cookieDict setObject:string forKey:NSHTTPCookieValue];
+            NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+        }
+        
+        NSURL* url = [NSURL URLWithString:webviewUrl];
+        NSURLRequest* urlRequest = [[NSURLRequest alloc] initWithURL:url];
+        [self.webView loadRequest:urlRequest];
+    }
+    
+}
 
 @end
