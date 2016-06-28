@@ -51,6 +51,7 @@
 
 #define kWeiBoKey     @"2973213602"
 #define kWeiBoSecret  @"69bb2649d647ca079675fb3371b34eb9"
+//#define kWeiboRedirectURL    @"http://lwinst.zkdxa.com"   //新浪回调地址
 #define kWeiboRedirectURL    @"http://lwinst.zkdxa.com"   //新浪回调地址
 #define kWeiboAccessTokenKey @"kSinaAccessTokenKey"                  //新浪本地Token存储的key
 #define kWeiboExpireDateKey  @"kSinaExpireDateKey"                   //新浪授权过期时间

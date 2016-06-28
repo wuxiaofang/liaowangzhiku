@@ -318,7 +318,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:^{
         if(self.userDidLoginFinishBlock){
-            self.userDidLoginFinishBlock(NO);
+            self.userDidLoginFinishBlock(YES);
         }
     }];
 }

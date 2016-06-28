@@ -263,7 +263,6 @@
 		2F071EC11CFD642500882DBD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2FFBED661D05574B005E9428 /* ShareCenter */,
 				2FFBED531D0554DD005E9428 /* Vender */,
 				2FFBED171D0554CE005E9428 /* Base */,
 				2FFBED211D0554CE005E9428 /* Controllers */,
@@ -455,6 +454,7 @@
 		2FFBED531D0554DD005E9428 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				2FFBED661D05574B005E9428 /* ShareCenter */,
 				2FFBED561D05550F005E9428 /* QQ */,
 				2FFBED551D055506005E9428 /* Webo */,
 				2FFBED541D0554FA005E9428 /* Wechat */,
@@ -505,7 +505,8 @@
 				2F645E6F1D0BDDEF0038ED30 /* WXFQQShareHelper.h */,
 				2F645E701D0BDDEF0038ED30 /* WXFQQShareHelper.m */,
 			);
-			path = ShareCenter;
+			name = ShareCenter;
+			path = ../ShareCenter;
 			sourceTree = "<group>";
 		};
 		2FFBED6A1D056B92005E9428 /* libWeiboSDK */ = {

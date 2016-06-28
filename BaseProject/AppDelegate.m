@@ -49,7 +49,7 @@
     
     [self.window addSubview:self.welcomeView];
 
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     return YES;
 }
 

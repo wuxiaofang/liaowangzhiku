@@ -27,6 +27,7 @@
 - (void)registerThirdSDK
 {
     [WeiboSDK registerApp:kWeiBoKey];
+    [WeiboSDK enableDebugMode:YES];
     [WXApi registerApp:kWechatKey];
 }
 
