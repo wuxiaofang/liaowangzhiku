@@ -68,9 +68,12 @@
 
 
 #import "AppDelegate.h"
+#import "JPUSHService.h"
 
 
 #define kJSESSIONID  @"JSESSIONID"
 
+
+#define kDeviceToken  @"kDeviceTiken"
 
 #endif /* PrefixHeader_pch */

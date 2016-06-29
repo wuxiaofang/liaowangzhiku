@@ -31,6 +31,9 @@
 		2F645E6B1D0BD8000038ED30 /* WXFWeiboShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E6A1D0BD8000038ED30 /* WXFWeiboShareHelper.m */; };
 		2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E6D1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m */; };
 		2F645E711D0BDDEF0038ED30 /* WXFQQShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E701D0BDDEF0038ED30 /* WXFQQShareHelper.m */; };
+		2F65A7661D23749F00CAF718 /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7641D23749F00CAF718 /* jpush-ios-2.1.8.a */; };
+		2F65A7681D2374D900CAF718 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7671D2374D900CAF718 /* CFNetwork.framework */; };
+		2F65A76A1D2374EA00CAF718 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */; };
 		2FB8CF271D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */; };
 		2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF291D069C9800CEFC75 /* libiconv.tbd */; };
@@ -116,6 +119,10 @@
 		2F645E6D1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFCustomWeiboShareViewController.m; sourceTree = "<group>"; };
 		2F645E6F1D0BDDEF0038ED30 /* WXFQQShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFQQShareHelper.h; sourceTree = "<group>"; };
 		2F645E701D0BDDEF0038ED30 /* WXFQQShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFQQShareHelper.m; sourceTree = "<group>"; };
+		2F65A7641D23749F00CAF718 /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
+		2F65A7651D23749F00CAF718 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		2F65A7671D2374D900CAF718 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2FB8CF291D069C9800CEFC75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -195,12 +202,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F65A76A1D2374EA00CAF718 /* CoreFoundation.framework in Frameworks */,
+				2F65A7681D2374D900CAF718 /* CFNetwork.framework in Frameworks */,
 				2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */,
 				2FB8CF2E1D069CB200CEFC75 /* libz.tbd in Frameworks */,
 				2FB8CF2C1D069CA600CEFC75 /* libstdc++.tbd in Frameworks */,
 				2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */,
 				2FFBED831D056C25005E9428 /* CoreGraphics.framework in Frameworks */,
 				2FFBED811D056C18005E9428 /* CoreText.framework in Frameworks */,
+				2F65A7661D23749F00CAF718 /* jpush-ios-2.1.8.a in Frameworks */,
 				2FFBED7F1D056C10005E9428 /* Security.framework in Frameworks */,
 				2FFBED7D1D056C02005E9428 /* ImageIO.framework in Frameworks */,
 				2FFBED7B1D056BFD005E9428 /* QuartzCore.framework in Frameworks */,
@@ -334,6 +344,15 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		2F65A7631D23749400CAF718 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				2F65A7641D23749F00CAF718 /* jpush-ios-2.1.8.a */,
+				2F65A7651D23749F00CAF718 /* JPUSHService.h */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
 		2FFBED171D0554CE005E9428 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +473,7 @@
 		2FFBED531D0554DD005E9428 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				2F65A7631D23749400CAF718 /* JPush */,
 				2FFBED661D05574B005E9428 /* ShareCenter */,
 				2FFBED561D05550F005E9428 /* QQ */,
 				2FFBED551D055506005E9428 /* Webo */,
@@ -532,6 +552,8 @@
 		52CA8B505776920D1F166EC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */,
+				2F65A7671D2374D900CAF718 /* CFNetwork.framework */,
 				2FB8CF2D1D069CB200CEFC75 /* libz.tbd */,
 				2FB8CF2B1D069CA600CEFC75 /* libstdc++.tbd */,
 				2FB8CF291D069C9800CEFC75 /* libiconv.tbd */,
@@ -593,7 +615,12 @@
 				TargetAttributes = {
 					2F071EA61CFD62B600882DBD = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UCDV8PA4AL;
+						DevelopmentTeam = KMD6QAZ84K;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -860,6 +887,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/BaseProject/Classes/Vender/Wechat",
 					"$(SRCROOT)/BaseProject/Classes/Vender/Webo/libWeiboSDK",
+					"$(PROJECT_DIR)/BaseProject/Classes/Vender/JPush",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -893,7 +921,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
 			};
 			name = Debug;
 		};
@@ -905,7 +933,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: feng gao (F968YM6YG5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/BaseProject/Classes/Vender/QQ",
@@ -929,6 +957,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/BaseProject/Classes/Vender/Wechat",
 					"$(SRCROOT)/BaseProject/Classes/Vender/Webo/libWeiboSDK",
+					"$(PROJECT_DIR)/BaseProject/Classes/Vender/JPush",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -962,7 +991,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
 			};
 			name = Release;
 		};

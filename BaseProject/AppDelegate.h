@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) WXFHomeViewController* homeViewController;
 
-- (void)showLoginViewController;
 
 @end
 

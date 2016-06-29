@@ -229,7 +229,12 @@
     [paramater setValue:@"1" forKey:@"channel"];
     [paramater setValue:[UIDevice currentDevice].systemVersion forKey:@"system_version"];
     [paramater setValue:@"safari" forKey:@"user_agent"];
-    [paramater setValue:@"" forKey:@"device_token"];
+    
+    NSString* jpushId = [JPUSHService registrationID];
+    if(jpushId.length <= 0){
+        jpushId = @"";
+    }
+    [paramater setValue:jpushId forKey:@"device_token"];
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         
         NSString* msg = [parser.responseDictionary stringSafeForKey:@"msg"];
