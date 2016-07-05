@@ -27,10 +27,9 @@
 
 - (void)createMySubviews
 {
-    [self createWebView];
     
     [self.navigationController setNavigationBarHidden:YES];
-    [self laodWebViewData:@"http://lwinst.zkdxa.com"];
+//    [self laodWebViewData:@"http://lwinst.zkdxa.com"];
 //    {
 //        UIButton* button = [[UIButton alloc] init];
 //        button.frame = CGRectMake(10, 60, 100, 50);

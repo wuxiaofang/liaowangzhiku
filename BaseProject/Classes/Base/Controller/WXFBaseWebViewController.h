@@ -10,6 +10,8 @@
 
 @interface WXFBaseWebViewController : WXFBaseViewController<UIWebViewDelegate>
 
+@property (nonatomic, strong) NSString* webviewUrl;
+
 @property (nonatomic, strong) UIWebView* webView;
 
 - (void)createWebView;

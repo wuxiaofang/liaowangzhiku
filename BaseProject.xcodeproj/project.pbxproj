@@ -34,6 +34,7 @@
 		2F65A7661D23749F00CAF718 /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7641D23749F00CAF718 /* jpush-ios-2.1.8.a */; };
 		2F65A7681D2374D900CAF718 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7671D2374D900CAF718 /* CFNetwork.framework */; };
 		2F65A76A1D2374EA00CAF718 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */; };
+		2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F67834C1D29FA7600A3733E /* WXFModifyPasswordViewController.m */; };
 		2FB8CF271D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */; };
 		2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF291D069C9800CEFC75 /* libiconv.tbd */; };
@@ -123,6 +124,8 @@
 		2F65A7651D23749F00CAF718 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		2F65A7671D2374D900CAF718 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2F67834B1D29FA7600A3733E /* WXFModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFModifyPasswordViewController.h; sourceTree = "<group>"; };
+		2F67834C1D29FA7600A3733E /* WXFModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFModifyPasswordViewController.m; sourceTree = "<group>"; };
 		2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2FB8CF291D069C9800CEFC75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -353,6 +356,15 @@
 			path = JPush;
 			sourceTree = "<group>";
 		};
+		2F67834A1D29FA5B00A3733E /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				2F67834B1D29FA7600A3733E /* WXFModifyPasswordViewController.h */,
+				2F67834C1D29FA7600A3733E /* WXFModifyPasswordViewController.m */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
 		2FFBED171D0554CE005E9428 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +391,7 @@
 		2FFBED211D0554CE005E9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F67834A1D29FA5B00A3733E /* Modify */,
 				2F53C8D21D06F5BB00CEEA2C /* Welcome */,
 				2F53C8CB1D06B91400CEEA2C /* Login */,
 				2FFBED221D0554CE005E9428 /* Home */,
@@ -712,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FFBED441D0554CE005E9428 /* WXFBaseTableViewController.m in Sources */,
+				2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */,
 				2FFBED451D0554CE005E9428 /* WXFBaseViewController.m in Sources */,
 				2FFBED4E1D0554CE005E9428 /* WXFJSONResponseSerializer.m in Sources */,
 				2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */,
@@ -921,7 +935,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
+				PROVISIONING_PROFILE = "1204f174-0e77-44c5-9378-321e233b5a14";
 			};
 			name = Debug;
 		};
@@ -991,7 +1005,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
+				PROVISIONING_PROFILE = "1204f174-0e77-44c5-9378-321e233b5a14";
 			};
 			name = Release;
 		};

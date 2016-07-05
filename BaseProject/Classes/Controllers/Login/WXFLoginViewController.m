@@ -7,6 +7,7 @@
 //
 
 #import "WXFLoginViewController.h"
+#import "WXFModifyPasswordViewController.h"
 
 @interface WXFLoginViewController ()
 
@@ -28,6 +29,7 @@
 
 @property (nonatomic, strong) UIImageView* bgImageView;
 
+@property (nonatomic, strong) UIButton* closeButton;
 
 @end
 
@@ -42,29 +44,39 @@
     
     self.phoneNumberTextFieldBg = [[UIImageView alloc] init];
     self.phoneNumberTextFieldBg.image = [[UIImage imageNamed:@"textField_bg"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    self.phoneNumberTextFieldBg.layer.cornerRadius = 3;
+    self.phoneNumberTextFieldBg.layer.masksToBounds = YES;
     [self.view addSubview:self.phoneNumberTextFieldBg];
     
     self.phoneVerifyCodeTextFieldBg = [[UIImageView alloc] init];
     self.phoneVerifyCodeTextFieldBg.image = [[UIImage imageNamed:@"textField_bg"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    self.phoneVerifyCodeTextFieldBg.layer.cornerRadius = 3;
+    self.phoneVerifyCodeTextFieldBg.layer.masksToBounds = YES;
     [self.view addSubview:self.phoneVerifyCodeTextFieldBg];
     
+    UIImage* image = [UIImage imageNamed:@"back_button"];
     
-    UIButton* button = [[UIButton alloc] init];
-    [button setTitle:@"关闭" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    button.frame = CGRectMake(10, 10, 40, 30);
-    [button addTarget:self action:@selector(closeButtonPress) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    self.closeButton = [[UIButton alloc] init];
+    [self.closeButton setImage:image forState:UIControlStateNormal];
+    self.closeButton.size = image.size;
+    [self.closeButton addTarget:self action:@selector(closeButtonPress) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.closeButton];
     
 }
 
 - (void)closeButtonPress
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        if(self.userDidLoginFinishBlock){
-            self.userDidLoginFinishBlock(NO);
-        }
-    }];
+    if(self.userDidLoginFinishBlock){
+        self.userDidLoginFinishBlock(NO);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+
+    
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        if(self.userDidLoginFinishBlock){
+//            self.userDidLoginFinishBlock(NO);
+//        }
+//    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -113,6 +125,10 @@
     self.getUserAccountButton.left = self.view.width - 22.5 - self.getUserAccountButton.width;
     self.getUserAccountButton.top = self.loginButton.bottom  + 10;
     
+    
+    self.closeButton.left = 20;
+    self.closeButton.top = self.view.height - self.closeButton.height - 30;
+    
 }
 
 - (UITextField*)phoneNumberTextField
@@ -121,7 +137,7 @@
         _phoneNumberTextField = [self createTextField:@"请输入用户名"
                                         lefrImageName:@"login_input_name"];
         _phoneNumberTextField.keyboardType = UIKeyboardTypeDefault;
-        _phoneNumberTextField.font = [UIFont systemFontOfSize:12.0f];
+        _phoneNumberTextField.font = [UIFont systemFontOfSize:14.0f];
         [self.view addSubview:_phoneNumberTextField];
 
         _phoneNumberTextField.returnKeyType = UIReturnKeyDone;
@@ -139,7 +155,7 @@
         [self.view addSubview:_phoneVerifyCodeTextField];
         _phoneVerifyCodeTextField.keyboardType = UIKeyboardTypeDefault;
 
-        _phoneVerifyCodeTextField.font = [UIFont systemFontOfSize:12.0f];
+        _phoneVerifyCodeTextField.font = [UIFont systemFontOfSize:14.0f];
         _phoneVerifyCodeTextField.returnKeyType = UIReturnKeyDone;
     }
     return _phoneVerifyCodeTextField;
@@ -196,7 +212,7 @@
                       forState:UIControlStateNormal];
         [_loginButton setTitleColor:UIColorFromRGB(0xffffff)
                            forState:UIControlStateNormal];
-        _loginButton.font = [UIFont systemFontOfSize:15.0f];
+        _loginButton.font = [UIFont systemFontOfSize:17.0f];
         [_loginButton addTarget:self
                          action:@selector(loginButtonPress)
                forControlEvents:UIControlEventTouchUpInside];
@@ -225,6 +241,7 @@
     [paramater setValue:social_id forKey:@"social_id"];
     [paramater setValue:self.phoneNumberTextField.text forKey:@"user_name"];
     [paramater setValue:self.phoneVerifyCodeTextField.text forKey:@"password"];
+    [paramater setValue:self.phoneNumberTextField.text forKey:@"alias"];
     [paramater setValue:@"1" forKey:@"os_type"];
     [paramater setValue:@"1" forKey:@"channel"];
     [paramater setValue:[UIDevice currentDevice].systemVersion forKey:@"system_version"];
@@ -245,6 +262,10 @@
             if(jssession.length > 0){
                 DefaultSetValueForKey(jssession, kJSESSIONID);
             }
+            [JPUSHService setTags:[NSSet setWithObjects:@"ios",@"dev",@"test", nil] alias:self.phoneNumberTextField.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+                NSLog(@"%@",iAlias);
+            }];
+            
             [self loginSuccess];
             [self showSuccessToast:(msg.length > 0?msg:@"登录成功")];
         }else{
@@ -264,7 +285,7 @@
                                forState:UIControlStateNormal];
         [_modifyPasswordButton setTitleColor:[UIColor whiteColor]
                                     forState:UIControlStateNormal];
-        _modifyPasswordButton.font = [UIFont systemFontOfSize:12.0f];
+        _modifyPasswordButton.font = [UIFont systemFontOfSize:14.0f];
         [_modifyPasswordButton addTarget:self
                                   action:@selector(modifyPasswordButtonPress)
                         forControlEvents:UIControlEventTouchUpInside];
@@ -285,7 +306,7 @@
                                forState:UIControlStateNormal];
         [_getUserAccountButton setTitleColor:[UIColor whiteColor]
                                     forState:UIControlStateNormal];
-        _getUserAccountButton.font = [UIFont systemFontOfSize:12.0f];
+        _getUserAccountButton.font = [UIFont systemFontOfSize:14.0f];
         [_getUserAccountButton addTarget:self
                                   action:@selector(getUserAccountButtonPress)
                         forControlEvents:UIControlEventTouchUpInside];
@@ -300,17 +321,18 @@
 
 - (void)modifyPasswordButtonPress
 {
-//    WXFModifyPasswordViewController* modify = [[WXFModifyPasswordViewController alloc] init];
-//    if(self.phoneNumberTextField.text.length > 0){
-//        modify.username = self.phoneNumberTextField.text;
-//    }
-//    
-//    [self.navigationController pushViewController:modify animated:YES];
+    WXFModifyPasswordViewController* modify = [[WXFModifyPasswordViewController alloc] init];
+    modify.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/center/user/password/find.jspx";
+    
+    [self.navigationController pushViewController:modify animated:YES];
 }
 
 - (void)getUserAccountButtonPress
 {
-
+    WXFModifyPasswordViewController* modify = [[WXFModifyPasswordViewController alloc] init];
+    modify.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/center/user/username/obtain.jspx";
+    
+    [self.navigationController pushViewController:modify animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -321,11 +343,17 @@
 
 - (void)loginSuccess
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        if(self.userDidLoginFinishBlock){
-            self.userDidLoginFinishBlock(YES);
-        }
-    }];
+    if(self.userDidLoginFinishBlock){
+        self.userDidLoginFinishBlock(YES);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        if(self.userDidLoginFinishBlock){
+//            self.userDidLoginFinishBlock(YES);
+//        }
+//    }];
 }
 
 @end

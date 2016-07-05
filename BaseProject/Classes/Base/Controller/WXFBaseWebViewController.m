@@ -22,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createWebView];
+    if(self.webviewUrl){
+        [self laodWebViewData:self.webviewUrl];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +74,17 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             [self shareToQQ:query];
             return NO;
         }
+    }else if([scheme isEqualToString:@"win"]){
+        NSDictionary *query = [request.URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
+        if([absoluteString rangeOfString:@"close"].location != NSNotFound){
+            [self.navigationController popViewControllerAnimated:YES];
+            return NO;
+        }else if([absoluteString rangeOfString:@"open"].location != NSNotFound){
+            [self openNewWebviewVC:query];
+            return NO;
+            
+        }
+    
     }else if([absoluteString rangeOfString:@"/login.jspx"].location != NSNotFound){
         [self pushLoginViewController];
         return NO;
@@ -193,9 +209,11 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
     WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
     
-    [self.navigationController presentViewController:login animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:login animated:YES];
+    
+//    [self.navigationController presentViewController:login animated:YES completion:^{
+//        
+//    }];
     login.userDidLoginFinishBlock = ^(BOOL isSuccess){
         if(isSuccess){
             NSString* string = DefaultValueForKey(kJSESSIONID);
@@ -230,6 +248,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self.webView loadRequest:urlRequest];
     }
     
+}
+
+- (void)openNewWebviewVC:(NSDictionary*)query
+{
+     NSString* title = [[query arraySafeForKey:@"url"] objectAtIndexSafe:0];
+    WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+    vc.webviewUrl = title;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

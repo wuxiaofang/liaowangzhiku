@@ -33,6 +33,7 @@ static BOOL isProduction = FALSE;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.homeViewController = [[WXFHomeViewController alloc] init];
+    self.homeViewController.webviewUrl = @"http://lwinst.zkdxa.com";
     WXFBaseNavigationViewController* nav = [[WXFBaseNavigationViewController alloc] initWithRootViewController:self.homeViewController];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
@@ -72,6 +73,8 @@ static BOOL isProduction = FALSE;
                           channel:channel
                  apsForProduction:isProduction
             advertisingIdentifier:nil];
+    
+    
     
     return YES;
 }
