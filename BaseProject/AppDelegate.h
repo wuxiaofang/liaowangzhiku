@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WXFHomeViewController.h"
+#import "WXFTabbarViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>
 
@@ -15,6 +16,7 @@
 
 @property (strong, nonatomic) WXFHomeViewController* homeViewController;
 
+@property (nonatomic, strong) WXFTabbarViewController * tabbarController;
 
 @end
 

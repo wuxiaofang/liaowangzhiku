@@ -252,6 +252,7 @@
         jpushId = @"";
     }
     [paramater setValue:jpushId forKey:@"device_token"];
+    
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         
         NSString* msg = [parser.responseDictionary stringSafeForKey:@"msg"];

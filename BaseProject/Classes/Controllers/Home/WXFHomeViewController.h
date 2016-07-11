@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WXFBaseTableViewController.h"
 
-@interface WXFHomeViewController : WXFBaseWebViewController
-
+@interface WXFHomeViewController : WXFBaseTableViewController
 
 
 @end

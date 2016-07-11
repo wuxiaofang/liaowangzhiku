@@ -26,6 +26,10 @@
 		2F071F161CFD653800882DBD /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F071F151CFD653800882DBD /* libz.1.2.5.tbd */; };
 		2F53C8CE1D06B92B00CEEA2C /* WXFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */; };
 		2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */; };
+		2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */; };
+		2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E51D33546E0095EAC5 /* WXFReportViewController.m */; };
+		2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E81D3354820095EAC5 /* WXFConferenceViewController.m */; };
+		2F5628ED1D3355C40095EAC5 /* WXFTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628EC1D3355C40095EAC5 /* WXFTabbarViewController.m */; };
 		2F645E651D0BD0740038ED30 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E641D0BD0740038ED30 /* UIView+HUD.m */; };
 		2F645E681D0BD20B0038ED30 /* WXFWeChatShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E671D0BD20B0038ED30 /* WXFWeChatShareHelper.m */; };
 		2F645E6B1D0BD8000038ED30 /* WXFWeiboShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F645E6A1D0BD8000038ED30 /* WXFWeiboShareHelper.m */; };
@@ -110,6 +114,14 @@
 		2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFLoginViewController.m; sourceTree = "<group>"; };
 		2F53C8D61D06F7F100CEEA2C /* WXFWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFWelcomeView.h; sourceTree = "<group>"; };
 		2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFWelcomeView.m; sourceTree = "<group>"; };
+		2F5628E11D33545E0095EAC5 /* WXFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyViewController.h; sourceTree = "<group>"; };
+		2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyViewController.m; sourceTree = "<group>"; };
+		2F5628E41D33546E0095EAC5 /* WXFReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReportViewController.h; sourceTree = "<group>"; };
+		2F5628E51D33546E0095EAC5 /* WXFReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFReportViewController.m; sourceTree = "<group>"; };
+		2F5628E71D3354820095EAC5 /* WXFConferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFConferenceViewController.h; sourceTree = "<group>"; };
+		2F5628E81D3354820095EAC5 /* WXFConferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFConferenceViewController.m; sourceTree = "<group>"; };
+		2F5628EB1D3355C40095EAC5 /* WXFTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFTabbarViewController.h; sourceTree = "<group>"; };
+		2F5628EC1D3355C40095EAC5 /* WXFTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFTabbarViewController.m; sourceTree = "<group>"; };
 		2F645E631D0BD0740038ED30 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
 		2F645E641D0BD0740038ED30 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
 		2F645E661D0BD20B0038ED30 /* WXFWeChatShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFWeChatShareHelper.h; sourceTree = "<group>"; };
@@ -141,8 +153,8 @@
 		2FFBED1E1D0554CE005E9428 /* WXFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFBaseViewController.m; sourceTree = "<group>"; };
 		2FFBED1F1D0554CE005E9428 /* WXFBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFBaseWebViewController.h; sourceTree = "<group>"; };
 		2FFBED201D0554CE005E9428 /* WXFBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFBaseWebViewController.m; sourceTree = "<group>"; };
-		2FFBED231D0554CE005E9428 /* WXFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeViewController.h; sourceTree = "<group>"; };
-		2FFBED241D0554CE005E9428 /* WXFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeViewController.m; sourceTree = "<group>"; };
+		2FFBED231D0554CE005E9428 /* WXFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXFHomeViewController.h; path = ../WXFHomeViewController.h; sourceTree = "<group>"; };
+		2FFBED241D0554CE005E9428 /* WXFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXFHomeViewController.m; path = ../WXFHomeViewController.m; sourceTree = "<group>"; };
 		2FFBED261D0554CE005E9428 /* WXFDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFDataManager.h; sourceTree = "<group>"; };
 		2FFBED271D0554CE005E9428 /* WXFDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFDataManager.m; sourceTree = "<group>"; };
 		2FFBED2A1D0554CE005E9428 /* WXFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFParser.h; sourceTree = "<group>"; };
@@ -347,6 +359,75 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		2F5628DA1D3354080095EAC5 /* Conference */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628DF1D3354450095EAC5 /* Controller */,
+			);
+			path = Conference;
+			sourceTree = "<group>";
+		};
+		2F5628DB1D3354260095EAC5 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628DE1D33543F0095EAC5 /* Controller */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		2F5628DC1D3354320095EAC5 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628DD1D3354390095EAC5 /* Controller */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		2F5628DD1D3354390095EAC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628E11D33545E0095EAC5 /* WXFMyViewController.h */,
+				2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F5628DE1D33543F0095EAC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628E41D33546E0095EAC5 /* WXFReportViewController.h */,
+				2F5628E51D33546E0095EAC5 /* WXFReportViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F5628DF1D3354450095EAC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628E71D3354820095EAC5 /* WXFConferenceViewController.h */,
+				2F5628E81D3354820095EAC5 /* WXFConferenceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F5628E01D3354490095EAC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FFBED231D0554CE005E9428 /* WXFHomeViewController.h */,
+				2FFBED241D0554CE005E9428 /* WXFHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F5628EA1D3355C40095EAC5 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2F5628EB1D3355C40095EAC5 /* WXFTabbarViewController.h */,
+				2F5628EC1D3355C40095EAC5 /* WXFTabbarViewController.m */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		2F65A7631D23749400CAF718 /* JPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +472,10 @@
 		2FFBED211D0554CE005E9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F5628EA1D3355C40095EAC5 /* Tabbar */,
+				2F5628DC1D3354320095EAC5 /* My */,
+				2F5628DB1D3354260095EAC5 /* Report */,
+				2F5628DA1D3354080095EAC5 /* Conference */,
 				2F67834A1D29FA5B00A3733E /* Modify */,
 				2F53C8D21D06F5BB00CEEA2C /* Welcome */,
 				2F53C8CB1D06B91400CEEA2C /* Login */,
@@ -402,8 +487,7 @@
 		2FFBED221D0554CE005E9428 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2FFBED231D0554CE005E9428 /* WXFHomeViewController.h */,
-				2FFBED241D0554CE005E9428 /* WXFHomeViewController.m */,
+				2F5628E01D3354490095EAC5 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -728,6 +812,7 @@
 				2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */,
 				2FFBED451D0554CE005E9428 /* WXFBaseViewController.m in Sources */,
 				2FFBED4E1D0554CE005E9428 /* WXFJSONResponseSerializer.m in Sources */,
+				2F5628ED1D3355C40095EAC5 /* WXFTabbarViewController.m in Sources */,
 				2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */,
 				2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */,
 				2F071EDE1CFD643500882DBD /* UIView+Frame.m in Sources */,
@@ -736,6 +821,7 @@
 				2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */,
 				2FFBED4B1D0554CE005E9428 /* WXFHttpClient.m in Sources */,
 				2FFBED4F1D0554CE005E9428 /* XMLReader.m in Sources */,
+				2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */,
 				2F071EDF1CFD643500882DBD /* NSDictionary+SafeData.m in Sources */,
 				2F071EAF1CFD62B600882DBD /* AppDelegate.m in Sources */,
 				2F645E681D0BD20B0038ED30 /* WXFWeChatShareHelper.m in Sources */,
@@ -759,6 +845,8 @@
 				2F071EAC1CFD62B600882DBD /* main.m in Sources */,
 				2FFBED511D0554CE005E9428 /* UIColor+WXFColor.m in Sources */,
 				2FFBED4D1D0554CE005E9428 /* WXFHTTPSessionManager.m in Sources */,
+				2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */,
+				2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */,
 				2FFBED521D0554CE005E9428 /* WXFDevice.m in Sources */,
 				2F071EDC1CFD643500882DBD /* NSString+YYAdd.m in Sources */,
 				2F53C8CE1D06B92B00CEEA2C /* WXFLoginViewController.m in Sources */,
@@ -935,7 +1023,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1204f174-0e77-44c5-9378-321e233b5a14";
+				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
 			};
 			name = Debug;
 		};
@@ -1005,7 +1093,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1204f174-0e77-44c5-9378-321e233b5a14";
+				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
 			};
 			name = Release;
 		};

@@ -61,7 +61,7 @@
                         progress:nil
                          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                              if(callBackBlock){
-                                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+//                                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
 
 //                                 NSString *theXML = [[NSString alloc] initWithBytes: [responseObject mutableBytes] length:[responseObject length] encoding:NSUTF8StringEncoding];
                                  WXFParser* parse = [[WXFParser alloc] init];
