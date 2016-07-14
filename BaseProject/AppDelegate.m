@@ -87,17 +87,17 @@ static BOOL isProduction = TRUE;
     UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
     UITabBarItem *item3 = [tabBar.items objectAtIndex:3];
     // 对item设置相应地图片
-    item0.selectedImage = [[UIImage imageNamed:@"tab_1_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
-    item0.image = [[UIImage imageNamed:@"tab_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item0.selectedImage = [[UIImage imageNamed:@"foot_1act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    item0.image = [[UIImage imageNamed:@"foot_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item1.selectedImage = [[UIImage imageNamed:@"tab_2_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
-    item1.image = [[UIImage imageNamed:@"tab_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item1.selectedImage = [[UIImage imageNamed:@"foot_2act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    item1.image = [[UIImage imageNamed:@"foot_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item2.selectedImage = [[UIImage imageNamed:@"tab_3_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
-    item2.image = [[UIImage imageNamed:@"tab_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item2.selectedImage = [[UIImage imageNamed:@"foot_3act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    item2.image = [[UIImage imageNamed:@"foot_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item3.selectedImage = [[UIImage imageNamed:@"tab_4_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
-    item3.image = [[UIImage imageNamed:@"tab_4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item3.selectedImage = [[UIImage imageNamed:@"foot_4act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+    item3.image = [[UIImage imageNamed:@"foot_4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     return YES;
 }

@@ -26,7 +26,7 @@
     if(self.webviewUrl){
         [self laodWebViewData:self.webviewUrl];
     }
-    
+    [self showBackButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +100,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self reduceRequestCount];
+    [self setCustomLabelForNavTitle:[self.webView pageTitle]];
+
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
 {
@@ -109,7 +111,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)addRequestCount
 {
     self.requestCount += 1;
-    if(self.requestCount > 0 && self.showLoading){
+    if(self.requestCount > 0 && !self.showLoading){
         self.showLoading = YES;
         [self showHud];
     }

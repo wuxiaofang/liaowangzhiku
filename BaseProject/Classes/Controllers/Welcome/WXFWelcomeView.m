@@ -56,6 +56,10 @@
             self.alpha = 0;
         } completion:^(BOOL finished) {
             [self hiddenHud];
+            
+            if(self.dismissWelcomeViewBlock){
+                self.dismissWelcomeViewBlock(nil);
+            }
             [self removeFromSuperview];
         }];
         

@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor c_ffffff];
+    self.view.backgroundColor = UIColorFromRGB(0xefeff4);
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
@@ -59,8 +59,8 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD showImage:nil status:text];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismissWithDelay:2.0];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismissWithDelay:1.0];
     });
     
     
@@ -122,7 +122,7 @@
 
 - (void)showBackButton
 {
-    UIImage *image = [UIImage imageNamed:@"back_black"];
+    UIImage *image = [UIImage imageNamed:@"nav_back_btn"];
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0,44, 44)];
     [button setImage:image forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];

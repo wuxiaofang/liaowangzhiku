@@ -24,6 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.listTableView.frame = self.view.bounds;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -38,7 +44,7 @@
     self.listTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.listTableView.delegate = self;
     self.listTableView.dataSource = self;
-    self.listTableView.backgroundColor = [UIColor c_ffffff];
+    self.listTableView.backgroundColor = UIColorFromRGB(0xefeff4);
     self.listTableView.backgroundView = nil;
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.listTableView];

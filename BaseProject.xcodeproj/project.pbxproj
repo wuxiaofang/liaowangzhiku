@@ -24,6 +24,13 @@
 		2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F071ED61CFD643500882DBD /* UIColor+Factory.m */; };
 		2F071EE31CFD643500882DBD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F071ED81CFD643500882DBD /* UIImage+Extension.m */; };
 		2F071F161CFD653800882DBD /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F071F151CFD653800882DBD /* libz.1.2.5.tbd */; };
+		2F2F6B221D35D285000F82EA /* WXFSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B211D35D285000F82EA /* WXFSearchBar.m */; };
+		2F2F6B261D35D5F4000F82EA /* WXFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B251D35D5F4000F82EA /* WXFHomeHeaderView.m */; };
+		2F2F6B291D35FAE7000F82EA /* WXFHomeGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B281D35FAE7000F82EA /* WXFHomeGridView.m */; };
+		2F2F6B2C1D35FCF3000F82EA /* WXFHomeIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B2B1D35FCF3000F82EA /* WXFHomeIconButton.m */; };
+		2F2F6B301D36025E000F82EA /* WXFHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B2F1D36025E000F82EA /* WXFHomeModel.m */; };
+		2F2F6B331D3608A6000F82EA /* WXFHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B321D3608A6000F82EA /* WXFHomeTableViewCell.m */; };
+		2F2F6B371D360F54000F82EA /* UIWebView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B361D360F54000F82EA /* UIWebView+Extend.m */; };
 		2F53C8CE1D06B92B00CEEA2C /* WXFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */; };
 		2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */; };
 		2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */; };
@@ -39,6 +46,10 @@
 		2F65A7681D2374D900CAF718 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7671D2374D900CAF718 /* CFNetwork.framework */; };
 		2F65A76A1D2374EA00CAF718 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */; };
 		2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F67834C1D29FA7600A3733E /* WXFModifyPasswordViewController.m */; };
+		2F70E3531D367AE900C99876 /* WXFMyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3521D367AE900C99876 /* WXFMyInfoTableViewCell.m */; };
+		2F70E3561D36807D00C99876 /* WXFMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3551D36807D00C99876 /* WXFMyFootView.m */; };
+		2F70E3591D3685C200C99876 /* WXFGuanZhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */; };
+		2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */; };
 		2FB8CF271D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */; };
 		2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF291D069C9800CEFC75 /* libiconv.tbd */; };
@@ -110,6 +121,20 @@
 		2F071ED91CFD643500882DBD /* WXFCategoryCommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFCategoryCommonHeader.h; sourceTree = "<group>"; };
 		2F071F141CFD649D00882DBD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2F071F151CFD653800882DBD /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		2F2F6B201D35D285000F82EA /* WXFSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSearchBar.h; sourceTree = "<group>"; };
+		2F2F6B211D35D285000F82EA /* WXFSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSearchBar.m; sourceTree = "<group>"; };
+		2F2F6B241D35D5F4000F82EA /* WXFHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeHeaderView.h; sourceTree = "<group>"; };
+		2F2F6B251D35D5F4000F82EA /* WXFHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeHeaderView.m; sourceTree = "<group>"; };
+		2F2F6B271D35FAE7000F82EA /* WXFHomeGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeGridView.h; sourceTree = "<group>"; };
+		2F2F6B281D35FAE7000F82EA /* WXFHomeGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeGridView.m; sourceTree = "<group>"; };
+		2F2F6B2A1D35FCF3000F82EA /* WXFHomeIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeIconButton.h; sourceTree = "<group>"; };
+		2F2F6B2B1D35FCF3000F82EA /* WXFHomeIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeIconButton.m; sourceTree = "<group>"; };
+		2F2F6B2E1D36025E000F82EA /* WXFHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeModel.h; sourceTree = "<group>"; };
+		2F2F6B2F1D36025E000F82EA /* WXFHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeModel.m; sourceTree = "<group>"; };
+		2F2F6B311D3608A6000F82EA /* WXFHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFHomeTableViewCell.h; sourceTree = "<group>"; };
+		2F2F6B321D3608A6000F82EA /* WXFHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFHomeTableViewCell.m; sourceTree = "<group>"; };
+		2F2F6B351D360F54000F82EA /* UIWebView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Extend.h"; sourceTree = "<group>"; };
+		2F2F6B361D360F54000F82EA /* UIWebView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Extend.m"; sourceTree = "<group>"; };
 		2F53C8CC1D06B92B00CEEA2C /* WXFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFLoginViewController.h; sourceTree = "<group>"; };
 		2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFLoginViewController.m; sourceTree = "<group>"; };
 		2F53C8D61D06F7F100CEEA2C /* WXFWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFWelcomeView.h; sourceTree = "<group>"; };
@@ -138,6 +163,14 @@
 		2F65A7691D2374EA00CAF718 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2F67834B1D29FA7600A3733E /* WXFModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFModifyPasswordViewController.h; sourceTree = "<group>"; };
 		2F67834C1D29FA7600A3733E /* WXFModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFModifyPasswordViewController.m; sourceTree = "<group>"; };
+		2F70E3511D367AE900C99876 /* WXFMyInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyInfoTableViewCell.h; sourceTree = "<group>"; };
+		2F70E3521D367AE900C99876 /* WXFMyInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyInfoTableViewCell.m; sourceTree = "<group>"; };
+		2F70E3541D36807D00C99876 /* WXFMyFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyFootView.h; sourceTree = "<group>"; };
+		2F70E3551D36807D00C99876 /* WXFMyFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyFootView.m; sourceTree = "<group>"; };
+		2F70E3571D3685C200C99876 /* WXFGuanZhuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFGuanZhuTableViewCell.h; sourceTree = "<group>"; };
+		2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFGuanZhuTableViewCell.m; sourceTree = "<group>"; };
+		2F70E35A1D37241D00C99876 /* WXFMyCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyCommonTableViewCell.h; sourceTree = "<group>"; };
+		2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyCommonTableViewCell.m; sourceTree = "<group>"; };
 		2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2FB8CF291D069C9800CEFC75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -288,6 +321,7 @@
 		2F071EC11CFD642500882DBD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2F2F6B1D1D35D25A000F82EA /* Common */,
 				2FFBED531D0554DD005E9428 /* Vender */,
 				2FFBED171D0554CE005E9428 /* Base */,
 				2FFBED211D0554CE005E9428 /* Controllers */,
@@ -303,6 +337,8 @@
 		2F071EC21CFD643500882DBD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				2F2F6B351D360F54000F82EA /* UIWebView+Extend.h */,
+				2F2F6B361D360F54000F82EA /* UIWebView+Extend.m */,
 				2FBE3BF31D1ABF0D00B78ACB /* NSArray+Common.h */,
 				2FBE3BF41D1ABF0D00B78ACB /* NSArray+Common.m */,
 				2F071EC31CFD643500882DBD /* Category_YY */,
@@ -339,6 +375,62 @@
 				2F071ECE1CFD643500882DBD /* YYKitMacro.h */,
 			);
 			path = Category_YY;
+			sourceTree = "<group>";
+		};
+		2F2F6B1D1D35D25A000F82EA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2F2F6B1E1D35D263000F82EA /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2F2F6B1E1D35D263000F82EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F2F6B1F1D35D270000F82EA /* SearchBar */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F2F6B1F1D35D270000F82EA /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				2F2F6B201D35D285000F82EA /* WXFSearchBar.h */,
+				2F2F6B211D35D285000F82EA /* WXFSearchBar.m */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		2F2F6B231D35D5D4000F82EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F2F6B241D35D5F4000F82EA /* WXFHomeHeaderView.h */,
+				2F2F6B251D35D5F4000F82EA /* WXFHomeHeaderView.m */,
+				2F2F6B271D35FAE7000F82EA /* WXFHomeGridView.h */,
+				2F2F6B281D35FAE7000F82EA /* WXFHomeGridView.m */,
+				2F2F6B2A1D35FCF3000F82EA /* WXFHomeIconButton.h */,
+				2F2F6B2B1D35FCF3000F82EA /* WXFHomeIconButton.m */,
+				2F2F6B311D3608A6000F82EA /* WXFHomeTableViewCell.h */,
+				2F2F6B321D3608A6000F82EA /* WXFHomeTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F2F6B2D1D360245000F82EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F2F6B2E1D36025E000F82EA /* WXFHomeModel.h */,
+				2F2F6B2F1D36025E000F82EA /* WXFHomeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F2F6B341D360EAE000F82EA /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		2F53C8CB1D06B91400CEEA2C /* Login */ = {
@@ -378,6 +470,7 @@
 		2F5628DC1D3354320095EAC5 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				2F70E3501D367AD300C99876 /* View */,
 				2F5628DD1D3354390095EAC5 /* Controller */,
 			);
 			path = My;
@@ -446,6 +539,21 @@
 			path = Modify;
 			sourceTree = "<group>";
 		};
+		2F70E3501D367AD300C99876 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F70E3511D367AE900C99876 /* WXFMyInfoTableViewCell.h */,
+				2F70E3521D367AE900C99876 /* WXFMyInfoTableViewCell.m */,
+				2F70E3541D36807D00C99876 /* WXFMyFootView.h */,
+				2F70E3551D36807D00C99876 /* WXFMyFootView.m */,
+				2F70E3571D3685C200C99876 /* WXFGuanZhuTableViewCell.h */,
+				2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */,
+				2F70E35A1D37241D00C99876 /* WXFMyCommonTableViewCell.h */,
+				2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2FFBED171D0554CE005E9428 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +580,7 @@
 		2FFBED211D0554CE005E9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F2F6B341D360EAE000F82EA /* WebView */,
 				2F5628EA1D3355C40095EAC5 /* Tabbar */,
 				2F5628DC1D3354320095EAC5 /* My */,
 				2F5628DB1D3354260095EAC5 /* Report */,
@@ -487,6 +596,8 @@
 		2FFBED221D0554CE005E9428 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2F2F6B2D1D360245000F82EA /* Model */,
+				2F2F6B231D35D5D4000F82EA /* View */,
 				2F5628E01D3354490095EAC5 /* Controller */,
 			);
 			path = Home;
@@ -808,16 +919,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2F6B221D35D285000F82EA /* WXFSearchBar.m in Sources */,
 				2FFBED441D0554CE005E9428 /* WXFBaseTableViewController.m in Sources */,
 				2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */,
 				2FFBED451D0554CE005E9428 /* WXFBaseViewController.m in Sources */,
+				2F2F6B261D35D5F4000F82EA /* WXFHomeHeaderView.m in Sources */,
 				2FFBED4E1D0554CE005E9428 /* WXFJSONResponseSerializer.m in Sources */,
 				2F5628ED1D3355C40095EAC5 /* WXFTabbarViewController.m in Sources */,
 				2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */,
 				2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */,
 				2F071EDE1CFD643500882DBD /* UIView+Frame.m in Sources */,
+				2F2F6B291D35FAE7000F82EA /* WXFHomeGridView.m in Sources */,
 				2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */,
 				2F645E6B1D0BD8000038ED30 /* WXFWeiboShareHelper.m in Sources */,
+				2F2F6B371D360F54000F82EA /* UIWebView+Extend.m in Sources */,
 				2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */,
 				2FFBED4B1D0554CE005E9428 /* WXFHttpClient.m in Sources */,
 				2FFBED4F1D0554CE005E9428 /* XMLReader.m in Sources */,
@@ -833,11 +948,17 @@
 				2FFBED471D0554CE005E9428 /* WXFHomeViewController.m in Sources */,
 				2FBE3BF51D1ABF0D00B78ACB /* NSArray+Common.m in Sources */,
 				2FFBED691D05575E005E9428 /* WXFShareCenter.m in Sources */,
+				2F70E3531D367AE900C99876 /* WXFMyInfoTableViewCell.m in Sources */,
+				2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */,
 				2FFBED491D0554CE005E9428 /* WXFParser.m in Sources */,
 				2FFBED461D0554CE005E9428 /* WXFBaseWebViewController.m in Sources */,
+				2F2F6B301D36025E000F82EA /* WXFHomeModel.m in Sources */,
 				2F645E711D0BDDEF0038ED30 /* WXFQQShareHelper.m in Sources */,
+				2F70E3591D3685C200C99876 /* WXFGuanZhuTableViewCell.m in Sources */,
 				2FFBED501D0554CE005E9428 /* WXFUser.m in Sources */,
 				2FFBED4C1D0554CE005E9428 /* WXFHttpConnectClient.m in Sources */,
+				2F70E3561D36807D00C99876 /* WXFMyFootView.m in Sources */,
+				2F2F6B331D3608A6000F82EA /* WXFHomeTableViewCell.m in Sources */,
 				2F071EE31CFD643500882DBD /* UIImage+Extension.m in Sources */,
 				2FFBED481D0554CE005E9428 /* WXFDataManager.m in Sources */,
 				2F071EDA1CFD643500882DBD /* NSData+YYAdd.m in Sources */,
@@ -848,6 +969,7 @@
 				2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */,
 				2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */,
 				2FFBED521D0554CE005E9428 /* WXFDevice.m in Sources */,
+				2F2F6B2C1D35FCF3000F82EA /* WXFHomeIconButton.m in Sources */,
 				2F071EDC1CFD643500882DBD /* NSString+YYAdd.m in Sources */,
 				2F53C8CE1D06B92B00CEEA2C /* WXFLoginViewController.m in Sources */,
 			);
