@@ -50,6 +50,7 @@
 		2F70E3561D36807D00C99876 /* WXFMyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3551D36807D00C99876 /* WXFMyFootView.m */; };
 		2F70E3591D3685C200C99876 /* WXFGuanZhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */; };
 		2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */; };
+		2F70E3701D37BA1900C99876 /* WXFMyLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */; };
 		2FB8CF271D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */; };
 		2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF291D069C9800CEFC75 /* libiconv.tbd */; };
@@ -171,6 +172,8 @@
 		2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFGuanZhuTableViewCell.m; sourceTree = "<group>"; };
 		2F70E35A1D37241D00C99876 /* WXFMyCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyCommonTableViewCell.h; sourceTree = "<group>"; };
 		2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyCommonTableViewCell.m; sourceTree = "<group>"; };
+		2F70E36E1D37BA1900C99876 /* WXFMyLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyLogoutTableViewCell.h; sourceTree = "<group>"; };
+		2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyLogoutTableViewCell.m; sourceTree = "<group>"; };
 		2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2FB8CF291D069C9800CEFC75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -550,6 +553,8 @@
 				2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */,
 				2F70E35A1D37241D00C99876 /* WXFMyCommonTableViewCell.h */,
 				2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */,
+				2F70E36E1D37BA1900C99876 /* WXFMyLogoutTableViewCell.h */,
+				2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -930,6 +935,7 @@
 				2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */,
 				2F071EDE1CFD643500882DBD /* UIView+Frame.m in Sources */,
 				2F2F6B291D35FAE7000F82EA /* WXFHomeGridView.m in Sources */,
+				2F70E3701D37BA1900C99876 /* WXFMyLogoutTableViewCell.m in Sources */,
 				2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */,
 				2F645E6B1D0BD8000038ED30 /* WXFWeiboShareHelper.m in Sources */,
 				2F2F6B371D360F54000F82EA /* UIWebView+Extend.m in Sources */,

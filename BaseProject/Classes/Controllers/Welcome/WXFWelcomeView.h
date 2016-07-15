@@ -12,6 +12,8 @@ typedef void(^DismissWelcomeViewBlock)(NSString* webviewUrl);
 
 @interface WXFWelcomeView : UIView
 
+
+
 @property (nonatomic, copy) DismissWelcomeViewBlock dismissWelcomeViewBlock;
 
 @end

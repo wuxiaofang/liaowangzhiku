@@ -8,15 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^GetUserInfoFinishBlock)(BOOL isSuccess);
+
 @interface WXFUser : NSObject
 
-@property (nonatomic, copy) NSString* userName;
+@property (nonatomic, strong) NSDictionary* userInfo;
 
-@property (nonatomic, copy) NSString* headimgurl;
+@property (nonatomic, copy) NSString* userName; //名字
 
-@property (nonatomic, copy) NSString* role;
+@property (nonatomic, copy) NSString* userImg;  //头像
 
-@property (nonatomic, copy) NSString* uid;
+@property (nonatomic, copy) NSString* research_field; //研究领域
+
+@property (nonatomic, copy) NSString* position; //职位
+
+@property (nonatomic, copy) NSString* rnum; //关注记者的数量
+
+@property (nonatomic, copy) NSString* enum_l; //关注专家的数量
 
 - (void)parseUserInfo:(NSDictionary*)dic;
 
@@ -27,5 +35,7 @@
 - (BOOL)isNeedModifyPassword;
 
 - (void)logout;
+
+- (void)getUserInfo:(GetUserInfoFinishBlock)getUserInfoFinishBlock;
 
 @end

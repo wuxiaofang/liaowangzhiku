@@ -10,6 +10,9 @@
 #import "WXFMyInfoTableViewCell.h"
 #import "WXFMyFootView.h"
 #import "WXFMyCommonTableViewCell.h"
+#import "WXFLoginViewController.h"
+#import "WXFGuanZhuTableViewCell.h"
+
 @interface WXFMyViewController ()
 
 @end
@@ -29,6 +32,16 @@
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.listTableView];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
+        if(isSuccess){
+            [self.listTableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,7 +133,7 @@
     if(indexPath.section == 0){
         cellIdentify = @"WXFMyInfoTableViewCell";
     }else if(indexPath.section == 1){
-
+        cellIdentify = @"WXFGuanZhuTableViewCell";
     }else if(indexPath.section == 2){
         cellIdentify = @"WXFMyCommonTableViewCell";
     }else if(indexPath.section == 3){
@@ -137,10 +150,31 @@
     }
 
     if(indexPath.section == 0){
-        WXFMyInfoTableViewCell* myInfoCell = (WXFMyInfoTableViewCell*)cell;
         
+        WXFMyInfoTableViewCell* myInfoCell = (WXFMyInfoTableViewCell*)cell;
+        [myInfoCell reloadData];
         
     }else if(indexPath.section == 1){
+        WXFGuanZhuTableViewCell* zhutiCell = (WXFGuanZhuTableViewCell*)cell;
+        zhutiCell.gridView2.titleLabel.text = [WXFUser instance].rnum;
+        zhutiCell.gridView2.subLabel.text = @"关注的记者";
+        
+        zhutiCell.gridView1.titleLabel.text = [WXFUser instance].enum_l;
+        zhutiCell.gridView1.subLabel.text = @"关注的专家";
+        
+        [zhutiCell.gridView1.titleLabel sizeToFit];
+        [zhutiCell.gridView1.subLabel sizeToFit];
+        [zhutiCell.gridView2.titleLabel sizeToFit];
+        [zhutiCell.gridView2.subLabel sizeToFit];
+        
+        
+        zhutiCell.gridView1.didGridViewBlock = ^(){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/expert.jspx"];
+        };
+        
+        zhutiCell.gridView2.didGridViewBlock = ^(){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/reporter.jspx"];
+        };
         
     }else if(indexPath.section == 2){
         WXFMyCommonTableViewCell* commonCell = (WXFMyCommonTableViewCell*)cell;
@@ -178,5 +212,85 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+
+    if(![WXFUser instance].isLogin){
+        [self pushLoginVC];
+        return;
+    }
+    
+    if(indexPath.section == 0){
+        
+        [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/info.jspx"];
+        
+    }else if(indexPath.section == 1){
+        
+    }else if(indexPath.section == 2){
+        if(indexPath.row == 0){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/circle.jspx"];
+        }else if(indexPath.row == 1){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/topic.jspx"];
+        }else if(indexPath.row == 2){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/collection.jspx"];
+        }else if(indexPath.row == 3){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/message.jspx"];
+        }
+        
+    }else if(indexPath.section == 3){
+        if(indexPath.row == 0){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/invite.jspx"];
+        }
+    }else if(indexPath.section == 4){
+        if(indexPath.row == 0){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/password/form.jspx"];
+        }else if(indexPath.row == 1){
+            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/feedback/form.jspx"];
+        }
+    }else if(indexPath.section == 5){
+        
+    }
+
+}
+
+- (void)pushWebviewWithUrl:(NSString*)url
+{
+    WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.webviewUrl = url;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)pushLoginVC
+{
+    WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
+    login.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:login animated:YES];
+    
+    login.userDidLoginFinishBlock = ^(BOOL isSuccess){
+        if(isSuccess){
+            NSString* string = DefaultValueForKey(kJSESSIONID);
+            
+            if(string.length > 0){
+                NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+                [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+                [cookieDict setObject:string forKey:NSHTTPCookieValue];
+                NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+            }
+            [self.listTableView reloadData];
+            
+            [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
+                if(isSuccess){
+                    [self.listTableView reloadData];
+                }
+            }];
+        }
+    };
+
 }
 @end

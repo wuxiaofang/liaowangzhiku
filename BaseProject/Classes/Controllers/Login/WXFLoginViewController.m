@@ -267,6 +267,7 @@
                 NSLog(@"%@",iAlias);
             }];
             
+            
             [self loginSuccess];
             [self showSuccessToast:(msg.length > 0?msg:@"登录成功")];
         }else{
@@ -347,6 +348,10 @@
     if(self.userDidLoginFinishBlock){
         self.userDidLoginFinishBlock(YES);
     }
+    
+    [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
+        
+    }];
     
     [self.navigationController popViewControllerAnimated:YES];
     

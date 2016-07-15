@@ -72,6 +72,51 @@
     self.seperateLine.width = self.width;
     self.seperateLine.height = 0.5;
     
+    if([WXFUser instance].isLogin){
+    
+        CGFloat starty = (self.height - self.titleLabel.height - 2 - self.subLabel.height - self.subSubLabel.height) / 2;
+        
+        self.titleLabel.left = self.userImageView.right + 5;
+        self.titleLabel.top = starty;
+        
+        self.subLabel.left = self.userImageView.right + 5;
+        self.subLabel.top = self.titleLabel.bottom + 2;
+        
+        self.subSubLabel.left = self.userImageView.right + 5;
+        self.subSubLabel.top = self.subLabel.bottom;
+        
+    }else{
+        self.titleLabel.left = self.userImageView.right + 5;
+        self.titleLabel.centerY = self.height / 2;
+    }
+    
+}
+
+- (void)reloadData
+{
+    self.titleLabel.hidden = YES;
+    self.subLabel.hidden = YES;
+    self.subSubLabel.hidden = YES;
+    
+    if([WXFUser instance].isLogin){
+        [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[WXFUser instance].userImg] placeholderImage:[UIImage imageNamed:@"me_top"]];
+        self.titleLabel.text = [WXFUser instance].userName;
+        self.subLabel.text = [WXFUser instance].position;
+        self.subSubLabel.text = [WXFUser instance].research_field;
+        self.titleLabel.hidden = NO;
+        self.subLabel.hidden = NO;
+        self.subSubLabel.hidden = NO;
+    }else{
+        self.userImageView.image = [UIImage imageNamed:@"me_top"];
+        self.titleLabel.text = @"未登录/请登录";
+        self.titleLabel.hidden = NO;
+        
+    }
+    
+    [self.titleLabel sizeToFit];
+    [self.subLabel sizeToFit];
+    [self.subSubLabel sizeToFit];
+    [self setNeedsLayout];
 }
 
 @end
