@@ -1151,7 +1151,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
+				PROVISIONING_PROFILE = "1b1eb95f-12cf-450a-bc91-0fecbda5d764";
 			};
 			name = Debug;
 		};
@@ -1221,7 +1221,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4198a062-6a4c-48e4-a8c5-b6e3c51a3b2b";
+				PROVISIONING_PROFILE = "1b1eb95f-12cf-450a-bc91-0fecbda5d764";
 			};
 			name = Release;
 		};

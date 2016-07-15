@@ -62,6 +62,8 @@
         row = 1;
     }else if(section == 4){
         row = 2;
+    }else if(section == 5){
+        row = 1;
     }
     return row;
 }
@@ -89,7 +91,7 @@
     }else if(indexPath.section == 4){
         heigth = 40;
     }else if(indexPath.section == 5){
-        heigth = 60;
+        heigth = 40;
     }
     
     return heigth;
@@ -141,7 +143,7 @@
     }else if(indexPath.section == 4){
         cellIdentify = @"WXFMyCommonTableViewCell";
     }else if(indexPath.section == 5){
-        cellIdentify = @"WXFMyCommonTableViewCell";
+        cellIdentify = @"WXFMyLogoutTableViewCell";
     }
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
@@ -208,7 +210,7 @@
             commonCell.iconImageView.image = [UIImage imageNamed:@"me07"];
         }
     }else if(indexPath.section == 5){
-        
+        NSLog(@"as;dlka;lskdfasdf");
     }
     
     return cell;
@@ -252,7 +254,8 @@
             [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/feedback/form.jspx"];
         }
     }else if(indexPath.section == 5){
-        
+        [[WXFUser instance] logout];
+        [self.listTableView reloadData];
     }
 
 }

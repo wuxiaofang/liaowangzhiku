@@ -27,6 +27,18 @@
         [self laodWebViewData:self.webviewUrl];
     }
     [self showBackButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLogout) name:kUserLogoutNotification object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)userLogout
+{
+    [self.webView reload];
 }
 
 - (void)didReceiveMemoryWarning {

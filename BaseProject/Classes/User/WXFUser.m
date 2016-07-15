@@ -25,7 +25,7 @@
 - (BOOL)isLogin
 {
     NSString* username = DefaultValueForKey(kJSESSIONID);
-    if(username > 0){
+    if(username.length > 0){
         return YES;
     }
     return NO;
@@ -47,6 +47,13 @@
     DefaultSetValueForKey(@"", kJSESSIONID);
     DefaultSetValueForKey(@{}, kUserInfo);
     DefaultSetValueForKey(@YES, @"newUser");
+    NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+    [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+    [cookieDict setObject:@"" forKey:NSHTTPCookieValue];
+    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogoutNotification object:nil];
 }
 
 - (void)parseUserInfo:(NSDictionary*)dic

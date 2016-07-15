@@ -76,4 +76,6 @@
 
 #define kDeviceToken  @"kDeviceTiken"
 
+#define kUserLogoutNotification  @"UserLogoutNotification"
+
 #endif /* PrefixHeader_pch */

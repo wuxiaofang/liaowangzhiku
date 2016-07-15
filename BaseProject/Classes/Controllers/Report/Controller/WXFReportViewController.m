@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setCustomLabelForNavTitle:@"瞭望课题申报"];
+    self.webviewUrl = @"http://lwinst.zkdxa.com/app/user/circle/form.jspx";
+    [self laodWebViewData:self.webviewUrl];
     self.navigationItem.leftBarButtonItem = nil;
 }
 
