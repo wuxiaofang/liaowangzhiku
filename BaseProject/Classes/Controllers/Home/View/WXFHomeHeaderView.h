@@ -13,6 +13,9 @@
 
 #define kHeaderHeigth     304
 
+
+
+
 @interface WXFHomeHeaderView : UIView
 
 @property (nonatomic, strong) UIView* seperateLine;

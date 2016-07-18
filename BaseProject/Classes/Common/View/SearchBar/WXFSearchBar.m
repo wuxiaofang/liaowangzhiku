@@ -27,8 +27,18 @@
         self.contentLabel.text = @"输入专家、记者、智库、圈子";
         [self.contentLabel sizeToFit];
         self.contentLabel.frame = CGRectIntegral(self.contentLabel.frame);
+        
+        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture)];
+        [self addGestureRecognizer:tap];
     }
     return self;
+}
+
+- (void)tapGesture
+{
+    if(self.searchBarDidBlock){
+        self.searchBarDidBlock();
+    }
 }
 
 - (void)layoutSubviews

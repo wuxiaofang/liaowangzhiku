@@ -104,6 +104,7 @@
                                   WXFParser* parse = [[WXFParser alloc] init];
                                   [parse parseResponseForSuccess:responseObject
                                                             task:task];
+                                  DLog(@"%@",parse.responseDictionary);
                                   callBackBlock(parse);
                               }
                           }

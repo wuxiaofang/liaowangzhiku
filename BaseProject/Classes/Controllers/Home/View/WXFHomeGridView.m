@@ -80,7 +80,10 @@
 
 - (void)buttonPress:(UIControl*)control
 {
-
+    if(self.gridViewDidBlock){
+    
+        self.gridViewDidBlock(control.tag);
+    }
 }
 
 - (void)layoutSubviews

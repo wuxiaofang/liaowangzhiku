@@ -57,6 +57,8 @@
 		2FB8CF2C1D069CA600CEFC75 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF2B1D069CA600CEFC75 /* libstdc++.tbd */; };
 		2FB8CF2E1D069CB200CEFC75 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF2D1D069CB200CEFC75 /* libz.tbd */; };
 		2FBE3BF51D1ABF0D00B78ACB /* NSArray+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3BF41D1ABF0D00B78ACB /* NSArray+Common.m */; };
+		2FC4D4E71D3BC6FD00F5586E /* WXFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */; };
+		2FC4D4EA1D3BD09500F5586E /* WXFConferenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */; };
 		2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBED1A1D0554CE005E9428 /* WXFBaseNavigationViewController.m */; };
 		2FFBED441D0554CE005E9428 /* WXFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBED1C1D0554CE005E9428 /* WXFBaseTableViewController.m */; };
 		2FFBED451D0554CE005E9428 /* WXFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBED1E1D0554CE005E9428 /* WXFBaseViewController.m */; };
@@ -181,6 +183,10 @@
 		2FB8CF2D1D069CB200CEFC75 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2FBE3BF31D1ABF0D00B78ACB /* NSArray+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Common.h"; sourceTree = "<group>"; };
 		2FBE3BF41D1ABF0D00B78ACB /* NSArray+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Common.m"; sourceTree = "<group>"; };
+		2FC4D4E51D3BC6FD00F5586E /* WXFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSegmentView.h; sourceTree = "<group>"; };
+		2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSegmentView.m; sourceTree = "<group>"; };
+		2FC4D4E81D3BD09500F5586E /* WXFConferenceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFConferenceCell.h; sourceTree = "<group>"; };
+		2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFConferenceCell.m; sourceTree = "<group>"; };
 		2FFBED191D0554CE005E9428 /* WXFBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFBaseNavigationViewController.h; sourceTree = "<group>"; };
 		2FFBED1A1D0554CE005E9428 /* WXFBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFBaseNavigationViewController.m; sourceTree = "<group>"; };
 		2FFBED1B1D0554CE005E9428 /* WXFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFBaseTableViewController.h; sourceTree = "<group>"; };
@@ -457,6 +463,7 @@
 		2F5628DA1D3354080095EAC5 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				2FC4D4E41D3BC69400F5586E /* View */,
 				2F5628DF1D3354450095EAC5 /* Controller */,
 			);
 			path = Conference;
@@ -555,6 +562,17 @@
 				2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */,
 				2F70E36E1D37BA1900C99876 /* WXFMyLogoutTableViewCell.h */,
 				2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FC4D4E41D3BC69400F5586E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FC4D4E51D3BC6FD00F5586E /* WXFSegmentView.h */,
+				2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */,
+				2FC4D4E81D3BD09500F5586E /* WXFConferenceCell.h */,
+				2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -943,6 +961,7 @@
 				2FFBED4B1D0554CE005E9428 /* WXFHttpClient.m in Sources */,
 				2FFBED4F1D0554CE005E9428 /* XMLReader.m in Sources */,
 				2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */,
+				2FC4D4EA1D3BD09500F5586E /* WXFConferenceCell.m in Sources */,
 				2F071EDF1CFD643500882DBD /* NSDictionary+SafeData.m in Sources */,
 				2F071EAF1CFD62B600882DBD /* AppDelegate.m in Sources */,
 				2F645E681D0BD20B0038ED30 /* WXFWeChatShareHelper.m in Sources */,
@@ -953,6 +972,7 @@
 				2FFBED4A1D0554CE005E9428 /* WXFAFXMLParserResponseSerializer.m in Sources */,
 				2FFBED471D0554CE005E9428 /* WXFHomeViewController.m in Sources */,
 				2FBE3BF51D1ABF0D00B78ACB /* NSArray+Common.m in Sources */,
+				2FC4D4E71D3BC6FD00F5586E /* WXFSegmentView.m in Sources */,
 				2FFBED691D05575E005E9428 /* WXFShareCenter.m in Sources */,
 				2F70E3531D367AE900C99876 /* WXFMyInfoTableViewCell.m in Sources */,
 				2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */,

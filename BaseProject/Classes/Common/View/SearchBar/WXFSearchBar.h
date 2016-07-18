@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SearchBarDidBlock)();
+
 @interface WXFSearchBar : UIView
+
+@property (nonatomic, copy)SearchBarDidBlock searchBarDidBlock;
 
 @property (nonatomic, strong) UIImageView* bgImageView;
 

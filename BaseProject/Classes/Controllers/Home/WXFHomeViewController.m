@@ -54,6 +54,74 @@
     self.tableHeaderView = [[WXFHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 304)];
     self.listTableView.tableHeaderView = self.tableHeaderView;
     
+    __weak typeof(self)weakSelf = self;
+    
+    self.tableHeaderView.searchBar.searchBarDidBlock = ^(){
+        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/search.jspx";
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    
+    self.tableHeaderView.gridView.gridViewDidBlock = ^(NSInteger index){
+        NSString* url = nil;
+        if(index == 0){
+            url = @"http://lwinst.zkdxa.com/app/comm/expert/v_list.jspx";
+        }else if(index == 1){
+            url = @"http://lwinst.zkdxa.com/app/comm/reporter/v_list.jspx";
+        }
+        else if(index == 2){
+            url = @"http://lwinst.zkdxa.com/app/comm/mechanism/v_list.jspx";
+        }
+        else if(index == 3){
+            url = @"http://lwinst.zkdxa.com/app/user/circle/v_list.jspx";
+        }
+        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.webviewUrl = url;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+//        if(index == 3){
+//            if([WXFUser instance].isLogin){
+//                WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+//                vc.hidesBottomBarWhenPushed = YES;
+//                vc.webviewUrl = url;
+//                [weakSelf.navigationController pushViewController:vc animated:YES];
+//            }else{
+//                WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
+//                login.hidesBottomBarWhenPushed = YES;
+//                [weakSelf.navigationController pushViewController:login animated:YES];
+//                login.userDidLoginFinishBlock = ^(BOOL isSuccess){
+//                    if(isSuccess){
+//                        NSString* string = DefaultValueForKey(kJSESSIONID);
+//                        
+//                        if(string.length > 0){
+//                            NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+//                            [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+//                            [cookieDict setObject:string forKey:NSHTTPCookieValue];
+//                            NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+//                            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+//                        }
+//
+//                        
+//                        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+//                        vc.hidesBottomBarWhenPushed = YES;
+//                        vc.webviewUrl = url;
+//                        [weakSelf.navigationController pushViewController:vc animated:YES];
+//                        
+//                        
+//                    }
+//                };
+//            }
+//            
+//        }else{
+//            WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            vc.webviewUrl = url;
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//        }
+        
+    };
+    
     
     self.listTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
@@ -191,7 +259,7 @@
         
         NSDictionary* dic = [self.listArray objectAtIndex:indexPath.row];
         cell.titlelabel.text = [dic stringSafeForKey:@"title"];
-        cell.subTitle.text = [dic stringSafeForKey:@"title"];
+        cell.subTitle.text = [dic stringSafeForKey:@"description"];
         NSString* imageUrl = [dic stringSafeForKey:@"titleImg"];
         [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if([imageURL.absoluteString isEqualToString:imageUrl]){

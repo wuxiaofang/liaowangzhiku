@@ -222,7 +222,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)pushLoginViewController
 {
     WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
-    
+    login.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:login animated:YES];
     
 //    [self.navigationController presentViewController:login animated:YES completion:^{
@@ -268,6 +268,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
      NSString* title = [[query arraySafeForKey:@"url"] objectAtIndexSafe:0];
     WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
     vc.webviewUrl = title;
     [self.navigationController pushViewController:vc animated:YES];
 }

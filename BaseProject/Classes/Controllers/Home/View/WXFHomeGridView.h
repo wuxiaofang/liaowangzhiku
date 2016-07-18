@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^GridViewDidBlock)(NSInteger index);
+
 @interface WXFHomeGridView : UIView
+
+@property (nonatomic, copy)GridViewDidBlock gridViewDidBlock;
 
 @end
