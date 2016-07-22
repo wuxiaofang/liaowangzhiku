@@ -33,6 +33,13 @@
 		2F2F6B371D360F54000F82EA /* UIWebView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F6B361D360F54000F82EA /* UIWebView+Extend.m */; };
 		2F53C8CE1D06B92B00CEEA2C /* WXFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */; };
 		2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */; };
+		2F54EA7F1D41EBDA00CE04F0 /* WXFSpecialistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA7E1D41EBDA00CE04F0 /* WXFSpecialistViewController.m */; };
+		2F54EA821D41EBEE00CE04F0 /* WXFReporterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA811D41EBEE00CE04F0 /* WXFReporterViewController.m */; };
+		2F54EA851D41EBFC00CE04F0 /* WXFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA841D41EBFC00CE04F0 /* WXFSearchViewController.m */; };
+		2F54EA881D41EC0A00CE04F0 /* WXFZhiKuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA871D41EC0A00CE04F0 /* WXFZhiKuViewController.m */; };
+		2F54EA8B1D41EC1800CE04F0 /* WXFQuanZiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA8A1D41EC1800CE04F0 /* WXFQuanZiViewController.m */; };
+		2F54EA901D41EED400CE04F0 /* WXFZhiKuSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA8F1D41EED400CE04F0 /* WXFZhiKuSegment.m */; };
+		2F54EA931D41EF0300CE04F0 /* WXFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA921D41EF0300CE04F0 /* WXFSegmentView.m */; };
 		2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */; };
 		2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E51D33546E0095EAC5 /* WXFReportViewController.m */; };
 		2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E81D3354820095EAC5 /* WXFConferenceViewController.m */; };
@@ -57,7 +64,6 @@
 		2FB8CF2C1D069CA600CEFC75 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF2B1D069CA600CEFC75 /* libstdc++.tbd */; };
 		2FB8CF2E1D069CB200CEFC75 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF2D1D069CB200CEFC75 /* libz.tbd */; };
 		2FBE3BF51D1ABF0D00B78ACB /* NSArray+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3BF41D1ABF0D00B78ACB /* NSArray+Common.m */; };
-		2FC4D4E71D3BC6FD00F5586E /* WXFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */; };
 		2FC4D4EA1D3BD09500F5586E /* WXFConferenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */; };
 		2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBED1A1D0554CE005E9428 /* WXFBaseNavigationViewController.m */; };
 		2FFBED441D0554CE005E9428 /* WXFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBED1C1D0554CE005E9428 /* WXFBaseTableViewController.m */; };
@@ -142,6 +148,20 @@
 		2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFLoginViewController.m; sourceTree = "<group>"; };
 		2F53C8D61D06F7F100CEEA2C /* WXFWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFWelcomeView.h; sourceTree = "<group>"; };
 		2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFWelcomeView.m; sourceTree = "<group>"; };
+		2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSpecialistViewController.h; sourceTree = "<group>"; };
+		2F54EA7E1D41EBDA00CE04F0 /* WXFSpecialistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSpecialistViewController.m; sourceTree = "<group>"; };
+		2F54EA801D41EBEE00CE04F0 /* WXFReporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReporterViewController.h; sourceTree = "<group>"; };
+		2F54EA811D41EBEE00CE04F0 /* WXFReporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFReporterViewController.m; sourceTree = "<group>"; };
+		2F54EA831D41EBFC00CE04F0 /* WXFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSearchViewController.h; sourceTree = "<group>"; };
+		2F54EA841D41EBFC00CE04F0 /* WXFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSearchViewController.m; sourceTree = "<group>"; };
+		2F54EA861D41EC0A00CE04F0 /* WXFZhiKuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFZhiKuViewController.h; sourceTree = "<group>"; };
+		2F54EA871D41EC0A00CE04F0 /* WXFZhiKuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFZhiKuViewController.m; sourceTree = "<group>"; };
+		2F54EA891D41EC1800CE04F0 /* WXFQuanZiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFQuanZiViewController.h; sourceTree = "<group>"; };
+		2F54EA8A1D41EC1800CE04F0 /* WXFQuanZiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFQuanZiViewController.m; sourceTree = "<group>"; };
+		2F54EA8E1D41EED400CE04F0 /* WXFZhiKuSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFZhiKuSegment.h; sourceTree = "<group>"; };
+		2F54EA8F1D41EED400CE04F0 /* WXFZhiKuSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFZhiKuSegment.m; sourceTree = "<group>"; };
+		2F54EA911D41EF0300CE04F0 /* WXFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSegmentView.h; sourceTree = "<group>"; };
+		2F54EA921D41EF0300CE04F0 /* WXFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSegmentView.m; sourceTree = "<group>"; };
 		2F5628E11D33545E0095EAC5 /* WXFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyViewController.h; sourceTree = "<group>"; };
 		2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyViewController.m; sourceTree = "<group>"; };
 		2F5628E41D33546E0095EAC5 /* WXFReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReportViewController.h; sourceTree = "<group>"; };
@@ -183,8 +203,6 @@
 		2FB8CF2D1D069CB200CEFC75 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2FBE3BF31D1ABF0D00B78ACB /* NSArray+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Common.h"; sourceTree = "<group>"; };
 		2FBE3BF41D1ABF0D00B78ACB /* NSArray+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Common.m"; sourceTree = "<group>"; };
-		2FC4D4E51D3BC6FD00F5586E /* WXFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSegmentView.h; sourceTree = "<group>"; };
-		2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSegmentView.m; sourceTree = "<group>"; };
 		2FC4D4E81D3BD09500F5586E /* WXFConferenceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFConferenceCell.h; sourceTree = "<group>"; };
 		2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFConferenceCell.m; sourceTree = "<group>"; };
 		2FFBED191D0554CE005E9428 /* WXFBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFBaseNavigationViewController.h; sourceTree = "<group>"; };
@@ -397,6 +415,8 @@
 		2F2F6B1E1D35D263000F82EA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA8D1D41EDC700CE04F0 /* PopView */,
+				2F54EA8C1D41EDBB00CE04F0 /* Segment */,
 				2F2F6B1F1D35D270000F82EA /* SearchBar */,
 			);
 			path = View;
@@ -458,6 +478,149 @@
 				2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		2F54EA6E1D41EAD500CE04F0 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA781D41EBA000CE04F0 /* Controller */,
+				2F54EA731D41EB5C00CE04F0 /* View */,
+			);
+			path = Specialist;
+			sourceTree = "<group>";
+		};
+		2F54EA6F1D41EAED00CE04F0 /* Reporter */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA791D41EBA700CE04F0 /* Controller */,
+				2F54EA741D41EB6200CE04F0 /* View */,
+			);
+			path = Reporter;
+			sourceTree = "<group>";
+		};
+		2F54EA701D41EAF900CE04F0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA7A1D41EBAD00CE04F0 /* Controller */,
+				2F54EA751D41EB7300CE04F0 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2F54EA711D41EB2400CE04F0 /* ZhiKu */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA7B1D41EBB400CE04F0 /* Controller */,
+				2F54EA761D41EB8400CE04F0 /* View */,
+			);
+			path = ZhiKu;
+			sourceTree = "<group>";
+		};
+		2F54EA721D41EB4C00CE04F0 /* QuanZi */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA7C1D41EBB800CE04F0 /* Controller */,
+				2F54EA771D41EB8A00CE04F0 /* View */,
+			);
+			path = QuanZi;
+			sourceTree = "<group>";
+		};
+		2F54EA731D41EB5C00CE04F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F54EA741D41EB6200CE04F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F54EA751D41EB7300CE04F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F54EA761D41EB8400CE04F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F54EA771D41EB8A00CE04F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F54EA781D41EBA000CE04F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */,
+				2F54EA7E1D41EBDA00CE04F0 /* WXFSpecialistViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F54EA791D41EBA700CE04F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA801D41EBEE00CE04F0 /* WXFReporterViewController.h */,
+				2F54EA811D41EBEE00CE04F0 /* WXFReporterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F54EA7A1D41EBAD00CE04F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA831D41EBFC00CE04F0 /* WXFSearchViewController.h */,
+				2F54EA841D41EBFC00CE04F0 /* WXFSearchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F54EA7B1D41EBB400CE04F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA861D41EC0A00CE04F0 /* WXFZhiKuViewController.h */,
+				2F54EA871D41EC0A00CE04F0 /* WXFZhiKuViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F54EA7C1D41EBB800CE04F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA891D41EC1800CE04F0 /* WXFQuanZiViewController.h */,
+				2F54EA8A1D41EC1800CE04F0 /* WXFQuanZiViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F54EA8C1D41EDBB00CE04F0 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EA911D41EF0300CE04F0 /* WXFSegmentView.h */,
+				2F54EA921D41EF0300CE04F0 /* WXFSegmentView.m */,
+				2F54EA8E1D41EED400CE04F0 /* WXFZhiKuSegment.h */,
+				2F54EA8F1D41EED400CE04F0 /* WXFZhiKuSegment.m */,
+			);
+			path = Segment;
+			sourceTree = "<group>";
+		};
+		2F54EA8D1D41EDC700CE04F0 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PopView;
 			sourceTree = "<group>";
 		};
 		2F5628DA1D3354080095EAC5 /* Conference */ = {
@@ -569,8 +732,6 @@
 		2FC4D4E41D3BC69400F5586E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2FC4D4E51D3BC6FD00F5586E /* WXFSegmentView.h */,
-				2FC4D4E61D3BC6FD00F5586E /* WXFSegmentView.m */,
 				2FC4D4E81D3BD09500F5586E /* WXFConferenceCell.h */,
 				2FC4D4E91D3BD09500F5586E /* WXFConferenceCell.m */,
 			);
@@ -603,6 +764,11 @@
 		2FFBED211D0554CE005E9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA721D41EB4C00CE04F0 /* QuanZi */,
+				2F54EA711D41EB2400CE04F0 /* ZhiKu */,
+				2F54EA701D41EAF900CE04F0 /* Search */,
+				2F54EA6F1D41EAED00CE04F0 /* Reporter */,
+				2F54EA6E1D41EAD500CE04F0 /* Specialist */,
 				2F2F6B341D360EAE000F82EA /* WebView */,
 				2F5628EA1D3355C40095EAC5 /* Tabbar */,
 				2F5628DC1D3354320095EAC5 /* My */,
@@ -943,15 +1109,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F2F6B221D35D285000F82EA /* WXFSearchBar.m in Sources */,
+				2F54EA821D41EBEE00CE04F0 /* WXFReporterViewController.m in Sources */,
 				2FFBED441D0554CE005E9428 /* WXFBaseTableViewController.m in Sources */,
 				2F67834D1D29FA7600A3733E /* WXFModifyPasswordViewController.m in Sources */,
 				2FFBED451D0554CE005E9428 /* WXFBaseViewController.m in Sources */,
 				2F2F6B261D35D5F4000F82EA /* WXFHomeHeaderView.m in Sources */,
 				2FFBED4E1D0554CE005E9428 /* WXFJSONResponseSerializer.m in Sources */,
 				2F5628ED1D3355C40095EAC5 /* WXFTabbarViewController.m in Sources */,
+				2F54EA8B1D41EC1800CE04F0 /* WXFQuanZiViewController.m in Sources */,
 				2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */,
 				2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */,
 				2F071EDE1CFD643500882DBD /* UIView+Frame.m in Sources */,
+				2F54EA7F1D41EBDA00CE04F0 /* WXFSpecialistViewController.m in Sources */,
 				2F2F6B291D35FAE7000F82EA /* WXFHomeGridView.m in Sources */,
 				2F70E3701D37BA1900C99876 /* WXFMyLogoutTableViewCell.m in Sources */,
 				2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */,
@@ -966,20 +1135,22 @@
 				2F071EAF1CFD62B600882DBD /* AppDelegate.m in Sources */,
 				2F645E681D0BD20B0038ED30 /* WXFWeChatShareHelper.m in Sources */,
 				2F071EDB1CFD643500882DBD /* NSNumber+YYAdd.m in Sources */,
+				2F54EA881D41EC0A00CE04F0 /* WXFZhiKuViewController.m in Sources */,
 				2F645E651D0BD0740038ED30 /* UIView+HUD.m in Sources */,
 				2F071EE11CFD643500882DBD /* NSString+extend.m in Sources */,
 				2F071EE01CFD643500882DBD /* NSObject+YCAddition.m in Sources */,
 				2FFBED4A1D0554CE005E9428 /* WXFAFXMLParserResponseSerializer.m in Sources */,
 				2FFBED471D0554CE005E9428 /* WXFHomeViewController.m in Sources */,
 				2FBE3BF51D1ABF0D00B78ACB /* NSArray+Common.m in Sources */,
-				2FC4D4E71D3BC6FD00F5586E /* WXFSegmentView.m in Sources */,
 				2FFBED691D05575E005E9428 /* WXFShareCenter.m in Sources */,
+				2F54EA851D41EBFC00CE04F0 /* WXFSearchViewController.m in Sources */,
 				2F70E3531D367AE900C99876 /* WXFMyInfoTableViewCell.m in Sources */,
 				2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */,
 				2FFBED491D0554CE005E9428 /* WXFParser.m in Sources */,
 				2FFBED461D0554CE005E9428 /* WXFBaseWebViewController.m in Sources */,
 				2F2F6B301D36025E000F82EA /* WXFHomeModel.m in Sources */,
 				2F645E711D0BDDEF0038ED30 /* WXFQQShareHelper.m in Sources */,
+				2F54EA931D41EF0300CE04F0 /* WXFSegmentView.m in Sources */,
 				2F70E3591D3685C200C99876 /* WXFGuanZhuTableViewCell.m in Sources */,
 				2FFBED501D0554CE005E9428 /* WXFUser.m in Sources */,
 				2FFBED4C1D0554CE005E9428 /* WXFHttpConnectClient.m in Sources */,
@@ -990,6 +1161,7 @@
 				2F071EDA1CFD643500882DBD /* NSData+YYAdd.m in Sources */,
 				2F071EDD1CFD643500882DBD /* UIDevice+YYAdd.m in Sources */,
 				2F071EAC1CFD62B600882DBD /* main.m in Sources */,
+				2F54EA901D41EED400CE04F0 /* WXFZhiKuSegment.m in Sources */,
 				2FFBED511D0554CE005E9428 /* UIColor+WXFColor.m in Sources */,
 				2FFBED4D1D0554CE005E9428 /* WXFHTTPSessionManager.m in Sources */,
 				2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */,

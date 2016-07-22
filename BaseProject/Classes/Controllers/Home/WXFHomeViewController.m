@@ -15,6 +15,12 @@
 #import "WXFHomeHeaderView.h"
 #import "MJRefresh.h"
 #import "WXFHomeTableViewCell.h"
+#import "WXFSpecialistViewController.h"
+#import "WXFReporterViewController.h"
+#import "WXFSearchViewController.h"
+#import "WXFZhiKuViewController.h"
+#import "WXFQuanZiViewController.h"
+
 
 @interface WXFHomeViewController ()
 
@@ -57,68 +63,33 @@
     __weak typeof(self)weakSelf = self;
     
     self.tableHeaderView.searchBar.searchBarDidBlock = ^(){
-        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        vc.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/search.jspx";
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        WXFSearchViewController* searchVC = [[WXFSearchViewController alloc] init];
+        searchVC.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:searchVC animated:YES];
     };
     
     self.tableHeaderView.gridView.gridViewDidBlock = ^(NSInteger index){
-        NSString* url = nil;
         if(index == 0){
-            url = @"http://lwinst.zkdxa.com/app/comm/expert/v_list.jspx";
+
+            WXFSpecialistViewController* searchVC = [[WXFSpecialistViewController alloc] init];
+            searchVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:searchVC animated:YES];
+            
         }else if(index == 1){
-            url = @"http://lwinst.zkdxa.com/app/comm/reporter/v_list.jspx";
+            WXFReporterViewController* searchVC = [[WXFReporterViewController alloc] init];
+            searchVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:searchVC animated:YES];
         }
         else if(index == 2){
-            url = @"http://lwinst.zkdxa.com/app/comm/mechanism/v_list.jspx";
+            WXFZhiKuViewController* searchVC = [[WXFZhiKuViewController alloc] init];
+            searchVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:searchVC animated:YES];
         }
         else if(index == 3){
-            url = @"http://lwinst.zkdxa.com/app/user/circle/v_list.jspx";
+            WXFQuanZiViewController* searchVC = [[WXFQuanZiViewController alloc] init];
+            searchVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:searchVC animated:YES];
         }
-        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        vc.webviewUrl = url;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-//        if(index == 3){
-//            if([WXFUser instance].isLogin){
-//                WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
-//                vc.hidesBottomBarWhenPushed = YES;
-//                vc.webviewUrl = url;
-//                [weakSelf.navigationController pushViewController:vc animated:YES];
-//            }else{
-//                WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
-//                login.hidesBottomBarWhenPushed = YES;
-//                [weakSelf.navigationController pushViewController:login animated:YES];
-//                login.userDidLoginFinishBlock = ^(BOOL isSuccess){
-//                    if(isSuccess){
-//                        NSString* string = DefaultValueForKey(kJSESSIONID);
-//                        
-//                        if(string.length > 0){
-//                            NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
-//                            [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
-//                            [cookieDict setObject:string forKey:NSHTTPCookieValue];
-//                            NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
-//                            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
-//                        }
-//
-//                        
-//                        WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
-//                        vc.hidesBottomBarWhenPushed = YES;
-//                        vc.webviewUrl = url;
-//                        [weakSelf.navigationController pushViewController:vc animated:YES];
-//                        
-//                        
-//                    }
-//                };
-//            }
-//            
-//        }else{
-//            WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
-//            vc.hidesBottomBarWhenPushed = YES;
-//            vc.webviewUrl = url;
-//            [weakSelf.navigationController pushViewController:vc animated:YES];
-//        }
         
     };
     
