@@ -44,5 +44,6 @@
 
 - (NSData*)changeToWeChatShareThumbData;
 
++ (UIImage *)compressImage:(UIImage *)image toSize:(CGSize)size withCompressionQuality:(CGFloat)quality;
 
 @end

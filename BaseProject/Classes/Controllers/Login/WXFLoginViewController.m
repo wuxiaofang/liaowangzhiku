@@ -268,6 +268,12 @@
             NSString* jssession = [parser.responseDictionary stringSafeForKey:kJSESSIONID];
             if(jssession.length > 0){
                 DefaultSetValueForKey(jssession, kJSESSIONID);
+                NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+                [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+                [cookieDict setObject:jssession forKey:NSHTTPCookieValue];
+                NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+
             }
             [JPUSHService setTags:[NSSet setWithObjects:@"ios",@"dev",@"test", nil] alias:self.phoneNumberTextField.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 NSLog(@"%@",iAlias);
@@ -351,9 +357,7 @@
 
 - (void)loginSuccess
 {
-    if(self.userDidLoginFinishBlock){
-        self.userDidLoginFinishBlock(YES);
-    }
+    
     
     [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
         
@@ -361,6 +365,11 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if(self.userDidLoginFinishBlock){
+            self.userDidLoginFinishBlock(YES);
+        }
+    });
 //    [self dismissViewControllerAnimated:YES completion:^{
 //        if(self.userDidLoginFinishBlock){
 //            self.userDidLoginFinishBlock(YES);

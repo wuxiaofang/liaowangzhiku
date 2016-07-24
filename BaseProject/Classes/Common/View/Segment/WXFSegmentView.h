@@ -12,6 +12,10 @@ typedef void(^SegmentSelectBlock)(NSInteger index);
 
 @interface WXFSegmentView : UIView
 
+@property (nonatomic, strong) UIButton* button1;
+
+@property (nonatomic, strong) UIButton* button2;
+
 @property (nonatomic, copy) SegmentSelectBlock segmentSelectBlock;
 
 - (void)setSelectIndex:(NSInteger)index;

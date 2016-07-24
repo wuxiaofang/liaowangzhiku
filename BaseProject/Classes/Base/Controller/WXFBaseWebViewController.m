@@ -9,7 +9,7 @@
 #import "WXFBaseWebViewController.h"
 #import "WXFLoginViewController.h"
 
-@interface WXFBaseWebViewController ()
+@interface WXFBaseWebViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, assign) NSInteger requestCount;
 
@@ -271,6 +271,70 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     vc.hidesBottomBarWhenPushed = YES;
     vc.webviewUrl = title;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)setImagePickerSelecteImage{
+    UIActionSheet *actionSheet;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                  delegate:self
+                                         cancelButtonTitle:@"取消"
+                                    destructiveButtonTitle:nil
+                                         otherButtonTitles:@"拍摄照片", @"从图片库中选取", nil];
+    } else {
+        actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                  delegate:self
+                                         cancelButtonTitle:@"取消"
+                                    destructiveButtonTitle:nil
+                                         otherButtonTitles:@"从图片库中选取", nil];
+    }
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex]) {
+        NSInteger sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        if (buttonIndex == 0) {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                sourceType = UIImagePickerControllerSourceTypeCamera;
+            }
+        }
+        [self showImagePickerController:sourceType];
+    }
+}
+
+- (void)showImagePickerController:(UIImagePickerControllerSourceType)sourceType
+{
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+    pickerController.delegate  = self;
+    pickerController.sourceType = sourceType;
+    pickerController.allowsEditing = YES;
+    if (IOS8) {
+        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    }else{
+        self.modalPresentationStyle =    UIModalPresentationCustom;
+    }
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagPIckerControllder
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *resultImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    CGSize  imgSize = CGSizeMake(1600, 960);
+    UIImage* imagePickerSelecteImage = [UIImage compressImage:resultImage
+                                               toSize:imgSize
+                               withCompressionQuality:0.0];
+    [self uploadUserProfile:imagePickerSelecteImage];
+}
+
+- (void)uploadUserProfile:(UIImage*)image
+{
+
 }
 
 @end

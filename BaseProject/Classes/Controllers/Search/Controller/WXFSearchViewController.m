@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self showBackButton];
+    [self setCustomLabelForNavTitle:@"瞭望智库"];
 }
 
 - (void)didReceiveMemoryWarning {

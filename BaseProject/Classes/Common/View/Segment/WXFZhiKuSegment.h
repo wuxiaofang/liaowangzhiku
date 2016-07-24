@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class WXFZhiKuSegmentItem;
+
+typedef void(^ZhuTiSegmentSelectBlock)(NSInteger index);
+
 @interface WXFZhiKuSegment : UIView
 
+@property (nonatomic, copy) ZhuTiSegmentSelectBlock zhuTiSegmentSelectBlock;
 
+@property (nonatomic, strong)WXFZhiKuSegmentItem* item1;
+
+@property (nonatomic, strong)WXFZhiKuSegmentItem* item2;
+
+- (void)setSelectIndex:(NSInteger)index;
 
 @end
 

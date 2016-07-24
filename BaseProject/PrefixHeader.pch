@@ -78,4 +78,6 @@
 
 #define kUserLogoutNotification  @"UserLogoutNotification"
 
+#define IOS8                [[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0
+
 #endif /* PrefixHeader_pch */

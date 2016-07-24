@@ -40,6 +40,10 @@
 		2F54EA8B1D41EC1800CE04F0 /* WXFQuanZiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA8A1D41EC1800CE04F0 /* WXFQuanZiViewController.m */; };
 		2F54EA901D41EED400CE04F0 /* WXFZhiKuSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA8F1D41EED400CE04F0 /* WXFZhiKuSegment.m */; };
 		2F54EA931D41EF0300CE04F0 /* WXFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA921D41EF0300CE04F0 /* WXFSegmentView.m */; };
+		2F54EA9A1D424A9A00CE04F0 /* WXFSegmentPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA991D424A9A00CE04F0 /* WXFSegmentPopView.m */; };
+		2F54EA9D1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA9C1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.m */; };
+		2F54EAA01D433D2300CE04F0 /* WXFReporterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EA9F1D433D2300CE04F0 /* WXFReporterTableViewCell.m */; };
+		2F54EAA31D43629400CE04F0 /* WXFQuznZITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EAA21D43629400CE04F0 /* WXFQuznZITableViewCell.m */; };
 		2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */; };
 		2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E51D33546E0095EAC5 /* WXFReportViewController.m */; };
 		2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5628E81D3354820095EAC5 /* WXFConferenceViewController.m */; };
@@ -162,6 +166,14 @@
 		2F54EA8F1D41EED400CE04F0 /* WXFZhiKuSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFZhiKuSegment.m; sourceTree = "<group>"; };
 		2F54EA911D41EF0300CE04F0 /* WXFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSegmentView.h; sourceTree = "<group>"; };
 		2F54EA921D41EF0300CE04F0 /* WXFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSegmentView.m; sourceTree = "<group>"; };
+		2F54EA981D424A9A00CE04F0 /* WXFSegmentPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSegmentPopView.h; sourceTree = "<group>"; };
+		2F54EA991D424A9A00CE04F0 /* WXFSegmentPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSegmentPopView.m; sourceTree = "<group>"; };
+		2F54EA9B1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSpecialistCellTableViewCell.h; sourceTree = "<group>"; };
+		2F54EA9C1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSpecialistCellTableViewCell.m; sourceTree = "<group>"; };
+		2F54EA9E1D433D2300CE04F0 /* WXFReporterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReporterTableViewCell.h; sourceTree = "<group>"; };
+		2F54EA9F1D433D2300CE04F0 /* WXFReporterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFReporterTableViewCell.m; sourceTree = "<group>"; };
+		2F54EAA11D43629400CE04F0 /* WXFQuznZITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFQuznZITableViewCell.h; sourceTree = "<group>"; };
+		2F54EAA21D43629400CE04F0 /* WXFQuznZITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFQuznZITableViewCell.m; sourceTree = "<group>"; };
 		2F5628E11D33545E0095EAC5 /* WXFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyViewController.h; sourceTree = "<group>"; };
 		2F5628E21D33545E0095EAC5 /* WXFMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyViewController.m; sourceTree = "<group>"; };
 		2F5628E41D33546E0095EAC5 /* WXFReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReportViewController.h; sourceTree = "<group>"; };
@@ -528,6 +540,8 @@
 		2F54EA731D41EB5C00CE04F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA9B1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.h */,
+				2F54EA9C1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -535,6 +549,8 @@
 		2F54EA741D41EB6200CE04F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA9E1D433D2300CE04F0 /* WXFReporterTableViewCell.h */,
+				2F54EA9F1D433D2300CE04F0 /* WXFReporterTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -556,6 +572,8 @@
 		2F54EA771D41EB8A00CE04F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EAA11D43629400CE04F0 /* WXFQuznZITableViewCell.h */,
+				2F54EAA21D43629400CE04F0 /* WXFQuznZITableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,6 +637,8 @@
 		2F54EA8D1D41EDC700CE04F0 /* PopView */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA981D424A9A00CE04F0 /* WXFSegmentPopView.h */,
+				2F54EA991D424A9A00CE04F0 /* WXFSegmentPopView.m */,
 			);
 			path = PopView;
 			sourceTree = "<group>";
@@ -1116,6 +1136,7 @@
 				2F2F6B261D35D5F4000F82EA /* WXFHomeHeaderView.m in Sources */,
 				2FFBED4E1D0554CE005E9428 /* WXFJSONResponseSerializer.m in Sources */,
 				2F5628ED1D3355C40095EAC5 /* WXFTabbarViewController.m in Sources */,
+				2F54EA9D1D4338FD00CE04F0 /* WXFSpecialistCellTableViewCell.m in Sources */,
 				2F54EA8B1D41EC1800CE04F0 /* WXFQuanZiViewController.m in Sources */,
 				2F071EE21CFD643500882DBD /* UIColor+Factory.m in Sources */,
 				2F645E6E1D0BD9FD0038ED30 /* WXFCustomWeiboShareViewController.m in Sources */,
@@ -1129,6 +1150,7 @@
 				2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */,
 				2FFBED4B1D0554CE005E9428 /* WXFHttpClient.m in Sources */,
 				2FFBED4F1D0554CE005E9428 /* XMLReader.m in Sources */,
+				2F54EAA31D43629400CE04F0 /* WXFQuznZITableViewCell.m in Sources */,
 				2F5628E31D33545E0095EAC5 /* WXFMyViewController.m in Sources */,
 				2FC4D4EA1D3BD09500F5586E /* WXFConferenceCell.m in Sources */,
 				2F071EDF1CFD643500882DBD /* NSDictionary+SafeData.m in Sources */,
@@ -1146,6 +1168,7 @@
 				2F54EA851D41EBFC00CE04F0 /* WXFSearchViewController.m in Sources */,
 				2F70E3531D367AE900C99876 /* WXFMyInfoTableViewCell.m in Sources */,
 				2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */,
+				2F54EAA01D433D2300CE04F0 /* WXFReporterTableViewCell.m in Sources */,
 				2FFBED491D0554CE005E9428 /* WXFParser.m in Sources */,
 				2FFBED461D0554CE005E9428 /* WXFBaseWebViewController.m in Sources */,
 				2F2F6B301D36025E000F82EA /* WXFHomeModel.m in Sources */,
@@ -1166,6 +1189,7 @@
 				2FFBED4D1D0554CE005E9428 /* WXFHTTPSessionManager.m in Sources */,
 				2F5628E91D3354820095EAC5 /* WXFConferenceViewController.m in Sources */,
 				2F5628E61D33546E0095EAC5 /* WXFReportViewController.m in Sources */,
+				2F54EA9A1D424A9A00CE04F0 /* WXFSegmentPopView.m in Sources */,
 				2FFBED521D0554CE005E9428 /* WXFDevice.m in Sources */,
 				2F2F6B2C1D35FCF3000F82EA /* WXFHomeIconButton.m in Sources */,
 				2F071EDC1CFD643500882DBD /* NSString+YYAdd.m in Sources */,
@@ -1343,7 +1367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1b1eb95f-12cf-450a-bc91-0fecbda5d764";
+				PROVISIONING_PROFILE = "b2584a6b-5500-41f9-8a5f-f0a8996642e5";
 			};
 			name = Debug;
 		};
@@ -1413,7 +1437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1b1eb95f-12cf-450a-bc91-0fecbda5d764";
+				PROVISIONING_PROFILE = "b2584a6b-5500-41f9-8a5f-f0a8996642e5";
 			};
 			name = Release;
 		};

@@ -86,9 +86,27 @@
             [weakSelf.navigationController pushViewController:searchVC animated:YES];
         }
         else if(index == 3){
-            WXFQuanZiViewController* searchVC = [[WXFQuanZiViewController alloc] init];
-            searchVC.hidesBottomBarWhenPushed = YES;
-            [weakSelf.navigationController pushViewController:searchVC animated:YES];
+            
+            if([WXFUser instance].isLogin){
+                WXFQuanZiViewController* searchVC = [[WXFQuanZiViewController alloc] init];
+                searchVC.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:searchVC animated:YES];
+            }else{
+                WXFLoginViewController* login = [[WXFLoginViewController alloc] init];
+                login.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:login animated:YES];
+
+                login.userDidLoginFinishBlock = ^(BOOL isSuccess){
+                    if(isSuccess){
+                        WXFQuanZiViewController* searchVC = [[WXFQuanZiViewController alloc] init];
+                        searchVC.hidesBottomBarWhenPushed = YES;
+                        [weakSelf.navigationController pushViewController:searchVC animated:YES];
+                    }
+                };
+
+            }
+            
+           
         }
         
     };
