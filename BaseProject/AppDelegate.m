@@ -12,6 +12,8 @@
 #import "WXFBaseNavigationViewController.h"
 #import "WXFShareCenter.h"
 #import "WXFLoginViewController.h"
+#import "WXFReportViewController.h"
+
 static NSString *appKey = @"b5df8393a621ba8ef1294ab8";
 static NSString *channel = @"1";
 
@@ -22,7 +24,7 @@ static BOOL isProduction = TRUE;
 #endif
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @property (nonatomic, strong)WXFWelcomeView* welcomeView;
 
@@ -82,6 +84,7 @@ static BOOL isProduction = TRUE;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     self.tabbarController =  [storyBoard instantiateViewControllerWithIdentifier:@"WXFTabbarViewController"];
+    self.tabbarController.delegate = self;
     self.window.rootViewController = self.tabbarController;
     [self.window makeKeyAndVisible];
     
@@ -267,6 +270,11 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
 {
      [[WXFShareCenter instance] application:application handleOpenURL:url];
     return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    
 }
 
 

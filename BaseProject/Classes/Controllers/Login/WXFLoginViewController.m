@@ -39,6 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setCustomLabelForNavTitle:@"登陆"];
+    self.hiddenNavBar = YES;
     self.bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loginBg"]];
     [self.view addSubview:self.bgImageView];
     
@@ -79,17 +80,9 @@
 //    }];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
+
+
 
 
 - (void)viewDidLayoutSubviews

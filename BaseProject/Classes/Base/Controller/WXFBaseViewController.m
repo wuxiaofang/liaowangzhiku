@@ -22,6 +22,16 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if(self.hiddenNavBar){
+        [self.navigationController setNavigationBarHidden:YES animated:animated];
+    }else{
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+    }
+    
+}
 
 
 - (void)setCustomLabelForNavTitle:(NSString*)title

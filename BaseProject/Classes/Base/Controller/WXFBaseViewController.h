@@ -15,6 +15,9 @@
 
 @property (nonatomic, assign) CGFloat cellHeigth;
 
+//default NO
+@property (nonatomic, assign) BOOL hiddenNavBar;
+
 - (void)setCustomLabelForNavTitle:(NSString*)title;
 
 
