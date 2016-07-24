@@ -21,6 +21,7 @@
         self.userImageView.height = 60;
         self.userImageView.layer.masksToBounds = YES;
         self.userImageView.layer.cornerRadius = 30;
+        self.userImageView.backgroundColor = UIColorFromRGB(0xcccccc);
         [self addSubview:self.userImageView];
         
         self.titleLabel = [[UILabel alloc] init];

@@ -15,6 +15,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         self.iconImageView = [[UIImageView alloc] init];
+        self.iconImageView.contentMode = UIViewContentModeCenter;
+        self.iconImageView.backgroundColor = UIColorFromRGB(0xcccccc);
         [self addSubview:self.iconImageView];
         
         self.titlelabel = [[UILabel alloc] init];

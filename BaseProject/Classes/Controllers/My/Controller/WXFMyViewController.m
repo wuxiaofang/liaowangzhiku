@@ -37,11 +37,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
-        if(isSuccess){
-            [self.listTableView reloadData];
-        }
-    }];
+    if([WXFUser instance].isLogin){
+        [[WXFUser instance] getUserInfo:^(BOOL isSuccess) {
+            if(isSuccess){
+                [self.listTableView reloadData];
+            }
+        }];
+    }else{
+        [self.listTableView reloadData];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +62,7 @@
     }else if(section == 1){
         row = 1;
     }else if(section == 2){
-        row = 4;
+        row = 5;
     }else if(section == 3){
         row = 1;
     }else if(section == 4){
@@ -171,11 +176,13 @@
         
         
         zhutiCell.gridView1.didGridViewBlock = ^(){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/expert.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/expert.jspx",kBaseUrl]];
         };
         
         zhutiCell.gridView2.didGridViewBlock = ^(){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/reporter.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/reporter.jspx",kBaseUrl]];
         };
         
     }else if(indexPath.section == 2){
@@ -187,9 +194,12 @@
             commonCell.titleLabel.text = @"我的课题";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me02"];
         }else if(indexPath.row == 2){
+            commonCell.titleLabel.text = @"我的报名";
+            commonCell.iconImageView.image = [UIImage imageNamed:@"me08"];
+        }else if(indexPath.row == 3){
             commonCell.titleLabel.text = @"我的收藏";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me03"];
-        }else if(indexPath.row == 3){
+        }else if(indexPath.row == 4){
             commonCell.titleLabel.text = @"推送消息";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me04"];
         }
@@ -228,35 +238,77 @@
     
     if(indexPath.section == 0){
         
-        [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/info.jspx"];
+        
+        [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/info.jspx",kBaseUrl]];
         
     }else if(indexPath.section == 1){
         
     }else if(indexPath.section == 2){
         if(indexPath.row == 0){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/circle.jspx"];
+            
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/circle.jspx",kBaseUrl]];
         }else if(indexPath.row == 1){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/topic.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/topic.jspx",kBaseUrl]];
         }else if(indexPath.row == 2){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/collection.jspx"];
+            
+            
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/meeting.jspx",kBaseUrl]];
+            
         }else if(indexPath.row == 3){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/message.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/collection.jspx",kBaseUrl]];
+        }else if(indexPath.row == 4){
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/message.jspx",kBaseUrl]];
         }
         
     }else if(indexPath.section == 3){
         if(indexPath.row == 0){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/invite.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/invite.jspx",kBaseUrl]];
         }
     }else if(indexPath.section == 4){
         if(indexPath.row == 0){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/center/password/form.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/password/form.jspx",kBaseUrl]];
         }else if(indexPath.row == 1){
-            [self pushWebviewWithUrl:@"http://lwinst.zkdxa.com/app/user/feedback/form.jspx"];
+            
+            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/feedback/form.jspx",kBaseUrl]];
         }
     }else if(indexPath.section == 5){
-        [[WXFUser instance] logout];
-        [self.listTableView reloadData];
+        [self logout];
     }
+
+}
+
+- (void)logout
+{
+    NSString* social_id = [[UIDevice currentDevice] uuid];
+    NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
+    [paramater setValue:social_id forKey:@"social_id"];
+    
+    [paramater setValue:[WXFUser instance].uid forKey:@"uid"];
+
+    
+    [[WXFHttpClient shareInstance] postData:@"/app/user/api/logout.jspx" parameters:paramater callBack:^(WXFParser *parser) {
+        
+        NSString* msg = [parser.responseDictionary stringSafeForKey:@"msg"];
+        
+        NSInteger code = [parser.responseDictionary intSafeForKey:@"success"];
+        if(code == 1){
+            
+            [[WXFUser instance] logout];
+            [self.listTableView reloadData];
+            
+            [self showSuccessToast:(msg.length > 0?msg:@"退出登录成功")];
+        }else{
+            [self showFailedToast:(msg.length > 0?msg:@"退出登录失败")];
+        }
+        
+    }];
 
 }
 

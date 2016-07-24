@@ -32,11 +32,9 @@
 {
     [super layoutSubviews];
     
-    CGFloat margin = 5;
-    CGFloat gap = 10;
     
-    self.gridView1.frame = CGRectMake(margin, gap, (self.width - margin - margin - gap)/2, self.height - gap);
-    self.gridView2.frame = CGRectMake(self.width/2 + margin, gap, (self.width - margin - margin - gap)/2, self.height - gap);
+    self.gridView1.frame = CGRectMake(10, 10, (self.width - 20 - 5 )/2, self.height - 10);
+    self.gridView2.frame = CGRectMake(self.width/2 + 2.5, 10, (self.width - 20 - 5)/2, self.height - 10);
 }
 
 @end
@@ -49,27 +47,32 @@
     self = [super initWithFrame:frame];
     if(self){
         self.backgroundColor = [UIColor whiteColor];
-        
+        self.layer.borderWidth = 0.5;
+        self.layer.borderColor = UIColorFromRGB(0xe4e4e4).CGColor;
+    
         self.profileImageView = [[UIImageView alloc] init];
-        self.profileImageView.backgroundColor = [UIColor yellowColor];
+        self.profileImageView.backgroundColor = UIColorFromRGB(0xe5e5e5);
         [self addSubview:self.profileImageView];
         
         self.userHeaderImageView = [[UIImageView alloc] init];
-        self.userHeaderImageView.layer.cornerRadius = 15;
+        self.userHeaderImageView.layer.cornerRadius = 19;
         self.userHeaderImageView.layer.masksToBounds = YES;
-        self.userHeaderImageView.backgroundColor = [UIColor blueColor];
+        self.userHeaderImageView.backgroundColor = UIColorFromRGB(0xcccccc);
+      
         [self addSubview:self.userHeaderImageView];
         
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.textColor = UIColorFromRGB(0x000000);
-        self.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+        self.titleLabel.font = [UIFont systemFontOfSize:12.0f];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
+        self.titleLabel.numberOfLines = 0;
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self addSubview:self.titleLabel];
         
         
         self.usernameLabel = [[UILabel alloc] init];
         self.usernameLabel.textColor = UIColorFromRGB(0x828282);
-        self.usernameLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.usernameLabel.font = [UIFont systemFontOfSize:9.0f];
         self.usernameLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.usernameLabel];
         
@@ -90,17 +93,20 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.profileImageView.frame = CGRectMake(0, 0, self.width, self.height / 2 + 5);
+    self.profileImageView.frame = CGRectMake(0, 0, self.width, 110);
     
-    self.userHeaderImageView.frame = CGRectMake(10, self.profileImageView.bottom - 4, 30, 30);
+    self.userHeaderImageView.frame = CGRectMake(8, self.profileImageView.bottom - 13, 39, 39);
 
     self.usernameLabel.left = self.userHeaderImageView.right + 5;
-    self.usernameLabel.centerY = self.userHeaderImageView.centerY;
+    self.usernameLabel.top = self.profileImageView.bottom + 5;
     
 
-    
     self.titleLabel.left = 10;
     self.titleLabel.top = self.userHeaderImageView.bottom + 5;
+    self.titleLabel.width = self.width - 15;
+    
+    CGSize size = [self.titleLabel.text sizeForFont:self.titleLabel.font size:CGSizeMake(self.width - 15, 999) mode:self.titleLabel.lineBreakMode];
+    self.titleLabel.height = size.height;
 }
 
 - (void)reloadData:(NSDictionary*)dictionary
@@ -113,23 +119,31 @@
     NSString* username = [admin stringSafeForKey:@"username"];
     
     self.titleLabel.text = title;
-    [self.titleLabel sizeToFit];
+
     
     self.usernameLabel.text = [NSString stringWithFormat:@"版主：%@",username];
     [self.usernameLabel sizeToFit];
-    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if([imageURL.absoluteString isEqualToString:userImg]){
+//    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:[UIImage imageNamed:@"default_head"]];
+    
+    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:[UIImage imageNamed:@"default_head"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(image && [imageURL.absoluteString isEqualToString:userImg]){
             self.userHeaderImageView.image = image;
+            self.userHeaderImageView.contentMode = UIViewContentModeScaleToFill;
         }else{
-            self.userHeaderImageView.image = nil;
+            self.userHeaderImageView.image = [UIImage imageNamed:@"default_head"];
+            self.userHeaderImageView.contentMode = UIViewContentModeScaleToFill;
         }
     }];
 
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:cover] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if([imageURL.absoluteString isEqualToString:cover]){
+    self.profileImageView.contentMode = UIViewContentModeCenter;
+    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:cover] placeholderImage:[UIImage imageNamed:@"default_img"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(image && [imageURL.absoluteString isEqualToString:cover]){
             self.profileImageView.image = image;
+            self.profileImageView.contentMode = UIViewContentModeScaleToFill;
+            
         }else{
-            self.profileImageView.image = nil;
+            self.profileImageView.image = [UIImage imageNamed:@"default_img"];
+            self.profileImageView.contentMode = UIViewContentModeCenter;
         }
     }];
 

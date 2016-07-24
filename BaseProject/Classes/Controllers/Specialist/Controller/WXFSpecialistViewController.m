@@ -25,6 +25,14 @@
 //0为智能  1为领域
 @property (nonatomic, copy) NSString* orderById;
 
+@property (nonatomic, copy) NSString* fieldById;
+
+@property (nonatomic, strong) NSArray* fieldList;
+
+@property (nonatomic, strong) NSArray* orderList;
+
+
+
 @end
 
 @implementation WXFSpecialistViewController
@@ -32,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.listArray = [NSMutableArray array];
+    [self getConditionList];
     // Do any additional setup after loading the view.
     [self setCustomLabelForNavTitle:@"瞭望专家库"];
     [self showBackButton];
@@ -46,17 +55,34 @@
     self.zhutiSegment.zhuTiSegmentSelectBlock = ^(NSInteger index){
         
         if(index == 0){
-            NSArray* array = @[@"政治",@"经济",@"新能源",@"文学",@"外交",@"电子",@"互联网",@"其他"];
+            
+            NSMutableArray* muArray = [NSMutableArray array];
+            for(NSDictionary* dic in weakSelf.fieldList){
+                NSString* value = [dic stringSafeForKey:@"value"];
+                if(value.length > 0){
+                    [muArray addObject:value];
+                }
+            }
             WXFSegmentPopView* popview = [[WXFSegmentPopView alloc] init];
-            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:array title:@"按领域排序" didSelectBlock:^(NSInteger index) {
-                self.orderById = @"1";
+            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:muArray title:@"按领域排序" didSelectBlock:^(NSInteger index) {
+                NSDictionary* filterDic = [self.fieldList objectAtIndexSafe:index];
+                self.fieldById = [filterDic stringSafeForKey:@"key"];
                 [self.listTableView.mj_header beginRefreshing];
             }];
         }else{
-            NSArray* array = @[@"人气最高",@"学历最高"];
+            
+            NSMutableArray* muArray = [NSMutableArray array];
+            for(NSDictionary* dic in weakSelf.orderList){
+                NSString* value = [dic stringSafeForKey:@"value"];
+                if(value.length > 0){
+                    [muArray addObject:value];
+                }
+            }
+            
             WXFSegmentPopView* popview = [[WXFSegmentPopView alloc] init];
-            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:array title:@"智能排序" didSelectBlock:^(NSInteger index) {
-                self.orderById = @"0";
+            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:muArray title:@"智能排序" didSelectBlock:^(NSInteger index) {
+                NSDictionary* filterDic = [self.orderList objectAtIndexSafe:index];
+                self.orderById = [filterDic stringSafeForKey:@"key"];
                 [self.listTableView.mj_header beginRefreshing];
             }];
         }
@@ -72,7 +98,6 @@
     }];
     
     self.listTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(reloadMoreData)];
-    self.orderById = @"1";
     [self refreshListData];
 }
 
@@ -89,9 +114,24 @@
 {
     
     NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
-    [paramater setValue:self.orderById forKey:@"orderBy"];
+    
     [paramater setValue:@"2" forKey:@"pType"];
     [paramater setValue:@"1" forKey:@"pageNo"];
+    
+    if(self.orderById.length > 0){
+        [paramater setValue:self.orderById forKey:@"orderBy"];
+    }else{
+        [paramater setValue:@"" forKey:@"orderBy"];
+    }
+    
+    if(self.fieldById.length > 0){
+        [paramater setValue:self.fieldById forKey:@"field"];
+    }else{
+        [paramater setValue:@"" forKey:@"field"];
+    }
+    
+
+    
     
     [[WXFHttpClient shareInstance] postData:@"app/comm/user/list.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         [self hiddenHud];
@@ -133,9 +173,19 @@
 - (void)reloadMoreData
 {
     NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
-    [paramater setValue:self.orderById forKey:@"orderBy"];
     [paramater setValue:@"2" forKey:@"pType"];
     [paramater setValue:[NSString stringWithFormat:@"%ld",(self.currentPage + 1)] forKey:@"pageNo"];
+    if(self.orderById.length > 0){
+        [paramater setValue:self.orderById forKey:@"orderBy"];
+    }else{
+        [paramater setValue:@"" forKey:@"orderBy"];
+    }
+    
+    if(self.fieldById.length > 0){
+        [paramater setValue:self.fieldById forKey:@"field"];
+    }else{
+        [paramater setValue:@"" forKey:@"field"];
+    }
     
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/list.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         
@@ -192,11 +242,13 @@
         cell.subLabel.text = [dic stringSafeForKey:@"position"];
         cell.subSubLabel.text = [dic stringSafeForKey:@"research_field"];
         NSString* imageUrl = [dic stringSafeForKey:@"userImg"];
-        [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            if([imageURL.absoluteString isEqualToString:imageUrl]){
+        [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"default_head"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(image && [imageURL.absoluteString isEqualToString:imageUrl]){
                 cell.userImageView.image = image;
+                cell.userImageView.contentMode = UIViewContentModeScaleToFill;
             }else{
-                cell.userImageView.image = nil;
+                cell.userImageView.image = [UIImage imageNamed:@"default_head"];
+                cell.userImageView.contentMode = UIViewContentModeCenter;
             }
         }];
         
@@ -232,6 +284,27 @@
     }
     
     
+}
+
+- (void)getConditionList
+{
+    NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
+    [paramater setValue:@"2" forKey:@"pType"];
+  
+    
+    [[WXFHttpClient shareInstance] getData:@"/app/comm/user/condition.jspx" parameters:paramater callBack:^(WXFParser *parser) {
+        
+        NSInteger code = [parser.responseDictionary intSafeForKey:@"success"];
+        if(code == 1){
+            self.orderList  = [parser.responseDictionary arraySafeForKey:@"orderList"];
+            self.fieldList = [parser.responseDictionary arraySafeForKey:@"fieldList"];
+            
+        }
+        
+        
+        
+    }];
+
 }
 
 

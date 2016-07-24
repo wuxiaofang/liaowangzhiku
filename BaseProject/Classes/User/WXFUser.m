@@ -47,17 +47,36 @@
     DefaultSetValueForKey(@"", kJSESSIONID);
     DefaultSetValueForKey(@{}, kUserInfo);
     DefaultSetValueForKey(@YES, @"newUser");
-    NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
-    [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
-    [cookieDict setObject:@"" forKey:NSHTTPCookieValue];
-    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+//    NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+//    [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+//    [cookieDict setObject:@"" forKey:NSHTTPCookieValue];
+//    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+//    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    NSArray* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies;
+    for(NSHTTPCookie* cook in cookies){
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cook];
+    }
+
+    [[WXFHttpClient shareInstance] clearAllSessionManager];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogoutNotification object:nil];
 }
 
 - (void)parseUserInfo:(NSDictionary*)dic
 {
+    
+    NSString* jssession = [dic stringSafeForKey:kJSESSIONID];
+    if(jssession.length > 0){
+        DefaultSetValueForKey(jssession, kJSESSIONID);
+        NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+        [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+        [cookieDict setObject:jssession forKey:NSHTTPCookieValue];
+        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+        
+    }
+
+    
 //    self.userName = [dic stringSafeForKey:@"user_name"];
 //    self.headimgurl = [dic stringSafeForKey:@"headimgurl"];
 //    self.role = [dic stringSafeForKey:@"role"];
@@ -108,6 +127,13 @@
 {
     NSDictionary* dic = DefaultValueForKey(kUserInfo);
     return [dic stringSafeForKey:@"userImg"];
+}
+
+- (NSString*)uid
+{
+    NSDictionary* dic = DefaultValueForKey(kUserInfo);
+    return [dic stringSafeForKey:@"id"];
+    
 }
 
 - (NSString*)research_field

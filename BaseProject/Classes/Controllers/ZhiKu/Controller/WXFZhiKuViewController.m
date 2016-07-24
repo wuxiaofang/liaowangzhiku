@@ -50,7 +50,7 @@
     self.segmentView = [[WXFSegmentView alloc] init];
     [self.segmentView.button1 setTitle:@"海外智库" forState:UIControlStateNormal];
     [self.segmentView.button2 setTitle:@"国内智库" forState:UIControlStateNormal];
-    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 44);
+    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 35);
     [self.view addSubview:self.segmentView];
     __weak typeof(self)weakSelf = self;
     self.segmentView.segmentSelectBlock = ^(NSInteger index){
@@ -318,11 +318,13 @@
             cell.titlelabel.text = [dic stringSafeForKey:@"name"];
             cell.subTitle.text = [dic stringSafeForKey:@"introduction"];
             NSString* imageUrl = [dic stringSafeForKey:@"titleImg"];
-            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                if([imageURL.absoluteString isEqualToString:imageUrl]){
+            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"default_img"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if(image && [imageURL.absoluteString isEqualToString:imageUrl]){
                     cell.iconImageView.image = image;
+                    cell.iconImageView.contentMode = UIViewContentModeScaleToFill;
                 }else{
-                    cell.iconImageView.image = nil;
+                    cell.iconImageView.image = [UIImage imageNamed:@"default_img"];
+                    cell.iconImageView.contentMode = UIViewContentModeCenter;
                 }
             }];
             
@@ -335,11 +337,13 @@
             cell.titlelabel.text = [dic stringSafeForKey:@"name"];
             cell.subTitle.text = [dic stringSafeForKey:@"introduction"];
             NSString* imageUrl = [dic stringSafeForKey:@"titleImg"];
-            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                if([imageURL.absoluteString isEqualToString:imageUrl]){
+            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"default_img"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if(image && [imageURL.absoluteString isEqualToString:imageUrl]){
                     cell.iconImageView.image = image;
+                    cell.iconImageView.contentMode = UIViewContentModeScaleToFill;
                 }else{
-                    cell.iconImageView.image = nil;
+                    cell.iconImageView.image = [UIImage imageNamed:@"default_img"];
+                    cell.iconImageView.contentMode = UIViewContentModeCenter;
                 }
             }];
             

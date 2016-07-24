@@ -52,7 +52,7 @@
     self.segmentView = [[WXFSegmentView alloc] init];
     [self.segmentView.button1 setTitle:@"讨论圈子" forState:UIControlStateNormal];
     [self.segmentView.button2 setTitle:@"研究课题" forState:UIControlStateNormal];
-    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 44);
+    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 35);
     [self.view addSubview:self.segmentView];
     __weak typeof(self)weakSelf = self;
     self.segmentView.segmentSelectBlock = ^(NSInteger index){
@@ -287,7 +287,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    return 185;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

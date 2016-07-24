@@ -160,7 +160,7 @@
         
         [self.view addSubview:_phoneVerifyCodeTextField];
         _phoneVerifyCodeTextField.keyboardType = UIKeyboardTypeDefault;
-
+        _phoneVerifyCodeTextField.secureTextEntry = YES;
         _phoneVerifyCodeTextField.font = [UIFont systemFontOfSize:14.0f];
         _phoneVerifyCodeTextField.returnKeyType = UIReturnKeyDone;
     }
@@ -262,8 +262,10 @@
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         
         NSString* msg = [parser.responseDictionary stringSafeForKey:@"msg"];
-        
-        NSInteger code = [parser.responseDictionary integerSafeForKey:@"code"];
+        NSInteger code = -1;
+        if([parser.responseDictionary objectForKey:@"code"]){
+            code = [parser.responseDictionary integerSafeForKey:@"code"];
+        }
         if(code == 0){
             NSString* jssession = [parser.responseDictionary stringSafeForKey:kJSESSIONID];
             if(jssession.length > 0){
@@ -287,8 +289,6 @@
         }
         
     }];
-    
-    
 }
 
 - (UIButton*)modifyPasswordButton
@@ -336,15 +336,15 @@
 - (void)modifyPasswordButtonPress
 {
     WXFModifyPasswordViewController* modify = [[WXFModifyPasswordViewController alloc] init];
-    modify.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/center/user/password/find.jspx";
-    
+    modify.webviewUrl = [NSString stringWithFormat:@"%@/app/comm/center/user/password/find.jspx",kBaseUrl];
     [self.navigationController pushViewController:modify animated:YES];
 }
 
 - (void)getUserAccountButtonPress
 {
     WXFModifyPasswordViewController* modify = [[WXFModifyPasswordViewController alloc] init];
-    modify.webviewUrl = @"http://lwinst.zkdxa.com/app/comm/center/user/username/obtain.jspx";
+    modify.webviewUrl = [NSString stringWithFormat:@"%@/app/comm/center/user/username/obtain.jspx",kBaseUrl];
+    
     
     [self.navigationController pushViewController:modify animated:YES];
 }

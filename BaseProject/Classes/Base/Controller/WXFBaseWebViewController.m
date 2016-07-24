@@ -31,6 +31,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLogout) name:kUserLogoutNotification object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -97,6 +109,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             
         }
     
+    }else if([scheme isEqualToString:@"avatar"]){
+        [self setImagePickerSelecteImage];
+        return NO;
+        
     }else if([absoluteString rangeOfString:@"/login.jspx"].location != NSNotFound){
         [self pushLoginViewController];
         return NO;
@@ -334,7 +350,65 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)uploadUserProfile:(UIImage*)image
 {
-
+    NSString * path = [self getPathByFileName:@"head.png"];
+    NSData *imaegeData = UIImageJPEGRepresentation(image, 0.6);
+    BOOL isSuccess = [imaegeData writeToFile:path atomically:YES];
+    if(isSuccess){
+        [self showHud];
+        NSDictionary *params = @{@"uploadFile":@"multipart/form-data"};
+        [[WXFHttpClient shareInstance] postFile:path andUrlString:@"/zkapp/user/o_upload_image.jspx" parameters:params keyString:@"uploadFile" mimeType:@"image/jpg" callBack:^(WXFParser *parser) {
+//            {"uploadPath":"/user/images/201607/241733475624.png","success":true,"desc":"上传成功！"}
+            NSLog(@"%@",parser.responseDictionary);
+            NSInteger code = [parser.responseDictionary intSafeForKey:@"success"];
+            NSString* desc = [parser.responseDictionary stringSafeForKey:@"desc"];
+            NSString* uploadPath = [parser.responseDictionary stringSafeForKey:@"uploadPath"];
+            if(code == 1 && uploadPath.length > 0){
+                
+                [self updateUserHeader:uploadPath];
+            }else{
+                [self hiddenHud];
+                [self showFailedToast:desc];
+            }
+        }];
+    }
+    
 }
 
+- (void)updateUserHeader:(NSString*)uploadPath
+{
+    NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
+    [paramater setValue:uploadPath forKey:@"userImg"];
+    
+    
+    [[WXFHttpClient shareInstance] postData:@"/app/user/center/info.jspx" parameters:paramater callBack:^(WXFParser *parser) {
+        [self hiddenHud];
+        NSInteger code = [parser.responseDictionary intSafeForKey:@"success"];
+        NSString* desc = [parser.responseDictionary stringSafeForKey:@"desc"];
+        if(code == 1){
+            
+            [self showSuccessToast:desc];
+            
+            
+            
+            NSString *js = [NSString stringWithFormat:@"imgShowReload('%@')",uploadPath];
+            [self.webView stringByEvaluatingJavaScriptFromString:js];
+
+        }else{
+            [self showFailedToast:desc];
+        }
+        
+        
+        
+    }];
+}
+
+- (NSString*)getCacheDirectory {
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"tmp"];
+}
+
+- (NSString*)getPathByFileName:(NSString *)_fileName
+{
+    NSString* fileDirectory = [[self getCacheDirectory] stringByAppendingPathComponent:_fileName];
+    return fileDirectory;
+}
 @end

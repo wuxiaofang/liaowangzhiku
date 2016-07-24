@@ -18,9 +18,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setCustomLabelForNavTitle:@"瞭望课题申报"];
-    self.webviewUrl = @"http://lwinst.zkdxa.com/app/user/circle/form.jspx";
+    
+    self.webviewUrl = [NSString stringWithFormat:@"%@/app/user/circle/form.jspx",kBaseUrl];
     [self laodWebViewData:self.webviewUrl];
     self.navigationItem.leftBarButtonItem = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,13 +8,12 @@
 
 #import "WXFHttpClient.h"
 #import "WXFParser.h"
-#import "WXFHTTPSessionManager.h"
 
-#define  kBaseUrl   @"http://xhappws.m1c.cn/"
+
 
 @interface WXFHttpClient()
 
-@property (nonatomic, strong) WXFHTTPSessionManager* httpSessionManager;
+
 
 @end
 
@@ -35,10 +34,16 @@
 {
     self = [super init];
     if(self){
-        NSURL* baseUrl = [NSURL URLWithString:@"http://lwinst.zkdxa.com"];
+        NSURL* baseUrl = [NSURL URLWithString:kBaseUrl];
         self.httpSessionManager = [[WXFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
     }
     return self;
+}
+
+- (void)clearAllSessionManager
+{
+    NSURL* baseUrl = [NSURL URLWithString:kBaseUrl];
+    self.httpSessionManager = [[WXFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
 }
 
 /*
@@ -117,6 +122,53 @@
                               }
                              
                           }];
+}
+
+
+- (void)postFile:(NSString *)filePath
+    andUrlString:(NSString*)url
+      parameters:(NSDictionary *)parameters
+       keyString:(NSString*)key
+        mimeType:(NSString *)type
+         callBack:(void (^)(WXFParser *parser))callBackBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    NSString* string = DefaultValueForKey(kJSESSIONID);
+    if(string.length > 0){
+        [self.httpSessionManager.requestSerializer setValue:string forHTTPHeaderField:@"JSESSIONID"];
+    }
+    
+//    []
+    [self.httpSessionManager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        if (![fileManager fileExistsAtPath:filePath]) {
+            DLog(@"post file is not exist");
+        }
+        
+        [formData appendPartWithFileData:data
+                                    name:key
+                                fileName:[filePath lastPathComponent]
+                                mimeType:type];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if(callBackBlock){
+            WXFParser* parse = [[WXFParser alloc] init];
+            [parse parseResponseForSuccess:responseObject
+                                      task:task];
+            DLog(@"%@",parse.responseDictionary);
+            callBackBlock(parse);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if(callBackBlock){
+            WXFParser* parse = [[WXFParser alloc] init];
+            [parse parseResponseForFailed:error
+                                     task:task];
+            callBackBlock(parse);
+        }
+    }];
+    
+
 }
 
 @end

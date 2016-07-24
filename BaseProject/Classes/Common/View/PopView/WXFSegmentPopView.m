@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) NSArray* dataArray;
 
-@property (nonatomic, strong) WXFSegmentPopHeaderView* headerView;
+//@property (nonatomic, strong) WXFSegmentPopHeaderView* headerView;
 
 @end
 
@@ -38,13 +38,13 @@
 
 }
 
-- (WXFSegmentPopHeaderView*)headerView
-{
-    if(_headerView == nil){
-        _headerView = [[WXFSegmentPopHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, 40)];
-    }
-    return _headerView;
-}
+//- (WXFSegmentPopHeaderView*)headerView
+//{
+//    if(_headerView == nil){
+//        _headerView = [[WXFSegmentPopHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, 40)];
+//    }
+//    return _headerView;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -82,10 +82,10 @@ didSelectBlock:(DidSegmentPopBlock)didSelectBlock
     [superView addSubview:self];
     self.dataArray = dataArray;
     self.didSegmentPopBlock  = didSelectBlock;
-    self.headerView.myLabel.text = title;
-    self.tableView.tableHeaderView = self.headerView;
+//    self.headerView.myLabel.text = title;
+//    self.tableView.tableHeaderView = self.headerView;
     
-    CGFloat heigth = self.dataArray.count * 40 + 40;
+    CGFloat heigth = self.dataArray.count * 40 ;
     if(heigth > frame.size.height - 40){
         heigth = frame.size.height - 40;
     }

@@ -26,6 +26,8 @@ typedef void(^GetUserInfoFinishBlock)(BOOL isSuccess);
 
 @property (nonatomic, copy) NSString* enum_l; //关注专家的数量
 
+@property (nonatomic, copy) NSString* uid;
+
 - (void)parseUserInfo:(NSDictionary*)dic;
 
 + (WXFUser*)instance;

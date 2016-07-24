@@ -9,10 +9,11 @@
         <scene sceneID="4Ni-R7-Pkx">
             <objects>
                 <tabBarController storyboardIdentifier="WXFTabbarViewController" id="bqk-dE-fGB" customClass="WXFTabbarViewController" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="QFS-Yd-Ci7">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="QFS-Yd-Ci7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="qmd-3W-QeM" kind="relationship" relationship="viewControllers" id="4v6-6L-7i2"/>
@@ -29,8 +30,10 @@
         <scene sceneID="JyT-O0-D6Z">
             <objects>
                 <navigationController storyboardIdentifier="WXFHomeNavigationViewController" id="qmd-3W-QeM" customClass="WXFBaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="瞭望" id="ZyR-MS-RRb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E7e-oe-xhD">
+                    <tabBarItem key="tabBarItem" title="瞭望" id="ZyR-MS-RRb">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="E7e-oe-xhD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -46,8 +49,10 @@
         <scene sceneID="jBx-oo-w2h">
             <objects>
                 <navigationController storyboardIdentifier="WXFConferenceNavigationViewController" id="IX7-QC-pQs" customClass="WXFBaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="会议" id="Hg0-jg-RZr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xsW-8g-bwx">
+                    <tabBarItem key="tabBarItem" title="会议" id="Hg0-jg-RZr">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xsW-8g-bwx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -63,8 +68,10 @@
         <scene sceneID="eLK-pt-MZB">
             <objects>
                 <navigationController storyboardIdentifier="WXFReportNavigationViewController" id="mMl-s3-k2U" customClass="WXFBaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="申报" id="jPO-JP-SKx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="069-J6-XPP">
+                    <tabBarItem key="tabBarItem" title="申报" id="jPO-JP-SKx">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="069-J6-XPP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -80,8 +87,10 @@
         <scene sceneID="2hs-st-Hku">
             <objects>
                 <navigationController storyboardIdentifier="WXFMyNavigationViewController" id="9wD-ml-zt1" customClass="WXFBaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="Db3-uh-od3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRz-QE-7rw">
+                    <tabBarItem key="tabBarItem" title="我的" id="Db3-uh-od3">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QRz-QE-7rw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -102,7 +111,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kmo-m3-pXm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pb2-rM-nbT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -121,7 +130,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KqR-mD-66W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w46-lW-PoH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -140,7 +149,7 @@
                         <viewControllerLayoutGuide type="bottom" id="b1o-Qm-RjB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G8e-JS-br1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -159,7 +168,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sPj-8U-bhG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LmL-Ez-F9t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

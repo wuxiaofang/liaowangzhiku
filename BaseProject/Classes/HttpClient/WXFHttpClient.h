@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-
+#import "WXFHTTPSessionManager.h"
 
 @class WXFParser;
 
 @interface WXFHttpClient : NSObject
 
+@property (nonatomic, strong) WXFHTTPSessionManager* httpSessionManager;
+
 + (WXFHttpClient*)shareInstance;
 
+- (void)clearAllSessionManager;
 /*
  * HTTP GET Method
  * 登录状态下才能使用
@@ -36,4 +39,10 @@
       parameters:(id)parameters
         callBack:(void (^)(WXFParser *parser))callBackBlock;
 
+- (void)postFile:(NSString *)filePath
+    andUrlString:(NSString*)url
+      parameters:(NSDictionary *)parameters
+       keyString:(NSString*)key
+        mimeType:(NSString *)type
+        callBack:(void (^)(WXFParser *parser))callBackBlock;
 @end

@@ -65,7 +65,7 @@
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIImage *image = nil;
-    UIGraphicsBeginImageContextWithOptions(rect.size,NO,[UIScreen mainScreen].scale); {
+    UIGraphicsBeginImageContextWithOptions(rect.size,YES,[UIScreen mainScreen].scale); {
         
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetFillColorWithColor(context, [color CGColor]);
