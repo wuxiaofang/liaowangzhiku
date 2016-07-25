@@ -20,13 +20,13 @@
         [self addSubview:self.iconImageView];
         
         self.titlelabel = [[UILabel alloc] init];
-        self.titlelabel.font = [UIFont systemFontOfSize:16];
+        self.titlelabel.font = [UIFont systemFontOfSize:18];
         self.titlelabel.textColor = UIColorFromRGB(0x000000);
         self.titlelabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.titlelabel];
         
         self.subTitle = [[UILabel alloc] init];
-        self.subTitle.font = [UIFont systemFontOfSize:12];
+        self.subTitle.font = [UIFont systemFontOfSize:14];
         self.subTitle.textColor = UIColorFromRGB(0x828288);
         self.subTitle.textAlignment = NSTextAlignmentLeft;
         self.subTitle.numberOfLines = 0;

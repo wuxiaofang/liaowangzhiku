@@ -243,15 +243,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //    }];
     login.userDidLoginFinishBlock = ^(BOOL isSuccess){
         if(isSuccess){
-            NSString* string = DefaultValueForKey(kJSESSIONID);
-            
-            if(string.length > 0){
-                NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
-                [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
-                [cookieDict setObject:string forKey:NSHTTPCookieValue];
-                NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
-                [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
-            }
+           
             [self.webView reload];
         }
     };

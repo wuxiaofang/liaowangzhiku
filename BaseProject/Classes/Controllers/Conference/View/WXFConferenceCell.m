@@ -25,13 +25,13 @@
         [self.myContentView addSubview:self.iconImageView];
         
         self.titlelabel = [[UILabel alloc] init];
-        self.titlelabel.font = [UIFont systemFontOfSize:16];
+        self.titlelabel.font = [UIFont systemFontOfSize:18];
         self.titlelabel.textColor = UIColorFromRGB(0x000000);
         self.titlelabel.textAlignment = NSTextAlignmentLeft;
         [self.myContentView addSubview:self.titlelabel];
         
         self.subTitle = [[UILabel alloc] init];
-        self.subTitle.font = [UIFont systemFontOfSize:12];
+        self.subTitle.font = [UIFont systemFontOfSize:14];
         self.subTitle.textColor = UIColorFromRGB(0x828288);
         self.subTitle.textAlignment = NSTextAlignmentLeft;
         self.subTitle.numberOfLines = 0;
@@ -63,7 +63,7 @@
     self.titlelabel.width = self.width - 16;
     
     self.subTitle.left = 9;
-    self.subTitle.top = self.titlelabel.bottom + 13;
+    self.subTitle.top = self.titlelabel.bottom + 8;
     self.subTitle.height = 40;
     self.subTitle.width = self.width - 20;
     

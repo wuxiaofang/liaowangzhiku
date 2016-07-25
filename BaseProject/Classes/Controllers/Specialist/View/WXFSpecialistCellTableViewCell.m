@@ -25,19 +25,19 @@
         [self addSubview:self.userImageView];
         
         self.titleLabel = [[UILabel alloc] init];
-        self.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+        self.titleLabel.font = [UIFont systemFontOfSize:18.0f];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.textColor = UIColorFromRGB(0x000000);
         [self addSubview:self.titleLabel];
         
         self.subLabel = [[UILabel alloc] init];
-        self.subLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.subLabel.font = [UIFont systemFontOfSize:14.0f];
         self.subLabel.textAlignment = NSTextAlignmentLeft;
         self.subLabel.textColor = UIColorFromRGB(0x828282);
         [self addSubview:self.subLabel];
         
         self.subSubLabel = [[UILabel alloc] init];
-        self.subSubLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.subSubLabel.font = [UIFont systemFontOfSize:14.0f];
         self.subSubLabel.textAlignment = NSTextAlignmentLeft;
         self.subSubLabel.textColor = UIColorFromRGB(0x828282);
         [self addSubview:self.subSubLabel];

@@ -80,7 +80,7 @@
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.backgroundColor = [UIColor clearColor];
         _contentLabel.textColor = UIColorFromRGB(0x828282);
-        _contentLabel.font = [UIFont systemFontOfSize:12.0f];
+        _contentLabel.font = [UIFont systemFontOfSize:14.0f];
         _contentLabel.textAlignment = NSTextAlignmentLeft;
         _contentLabel.userInteractionEnabled = YES;
         [self addSubview:_contentLabel];

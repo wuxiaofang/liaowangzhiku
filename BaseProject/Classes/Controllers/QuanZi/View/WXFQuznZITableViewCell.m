@@ -63,7 +63,7 @@
         
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.textColor = UIColorFromRGB(0x000000);
-        self.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.titleLabel.font = [UIFont systemFontOfSize:14.0f];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -72,7 +72,7 @@
         
         self.usernameLabel = [[UILabel alloc] init];
         self.usernameLabel.textColor = UIColorFromRGB(0x828282);
-        self.usernameLabel.font = [UIFont systemFontOfSize:9.0f];
+        self.usernameLabel.font = [UIFont systemFontOfSize:11.0f];
         self.usernameLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.usernameLabel];
         
