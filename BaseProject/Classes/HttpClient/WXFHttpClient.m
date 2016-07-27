@@ -36,6 +36,17 @@
     if(self){
         NSURL* baseUrl = [NSURL URLWithString:kBaseUrl];
         self.httpSessionManager = [[WXFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
+        NSString* jssession = DefaultValueForKey(kJSESSIONID);
+        if(jssession.length > 0){
+     
+            
+            NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+            [cookieDict setObject:kJSESSIONID forKey:NSHTTPCookieName];
+            [cookieDict setObject:jssession forKey:NSHTTPCookieValue];
+            NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+            
+        }
     }
     return self;
 }

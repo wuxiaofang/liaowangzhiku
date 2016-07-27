@@ -41,10 +41,10 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.iconImageView.left = 9;
-    self.iconImageView.top = 8;
-    self.iconImageView.height = self.height - 16;
-    self.iconImageView.width = self.iconImageView.height + 10;
+    self.iconImageView.left = 8;
+    self.iconImageView.top = (self.height - 57)/2;
+    self.iconImageView.height = 57;
+    self.iconImageView.width = 76;
     
     self.titlelabel.left = self.iconImageView.right + 8;
     self.titlelabel.top = self.iconImageView.top;
@@ -52,8 +52,8 @@
     self.titlelabel.width = self.width - self.iconImageView.right - 8 - 8;
     
     self.subTitle.left = self.iconImageView.right + 8;
-    self.subTitle.top = self.titlelabel.bottom + 9;
-    self.subTitle.height = (self.height - 8 - 8 - self.titlelabel.height - 9);
+    self.subTitle.top = self.titlelabel.bottom + 7;
+    self.subTitle.height = 34;
     self.subTitle.width = self.width - self.iconImageView.right - 8 - 8;
     
     self.seperateLine.left = 0;

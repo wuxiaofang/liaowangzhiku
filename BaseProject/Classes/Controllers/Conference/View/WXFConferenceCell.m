@@ -58,13 +58,13 @@
     self.iconImageView.width = self.myContentView.width;
     
     self.titlelabel.left = 9;
-    self.titlelabel.top = self.iconImageView.bottom + 10;
+    self.titlelabel.top = self.iconImageView.bottom + 8;
     self.titlelabel.height = 20;
     self.titlelabel.width = self.width - 16;
     
     self.subTitle.left = 9;
     self.subTitle.top = self.titlelabel.bottom + 8;
-    self.subTitle.height = 40;
+    self.subTitle.height = 34;
     self.subTitle.width = self.width - 20;
     
     self.seperateLine.left = 0;

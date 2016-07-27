@@ -33,10 +33,10 @@
     [super layoutSubviews];
     [self.iconImageView sizeToFit];
     [self.label sizeToFit];
+//    
+//    CGFloat starty = (self.height - self.iconImageView.height - 5 - self.label.height) / 2;
     
-    CGFloat starty = (self.height - self.iconImageView.height - 5 - self.label.height) / 2;
-    
-    self.iconImageView.top = starty;
+    self.iconImageView.top = 24;
     self.iconImageView.centerX = self.width / 2;
     
     self.label.top = self.iconImageView.bottom + 5;

@@ -78,7 +78,7 @@ static BOOL isProduction = TRUE;
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColorFromRGB(0x1dbbe6),NSFontAttributeName:[UIFont systemFontOfSize:11]}            forState:UIControlStateSelected];
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage createImageWithColor:UIColorFromRGB(0x1dbbe6)] forBarMetrics:UIBarMetricsDefault];
-    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0xececec)];
+    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0xf7f7f7)];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

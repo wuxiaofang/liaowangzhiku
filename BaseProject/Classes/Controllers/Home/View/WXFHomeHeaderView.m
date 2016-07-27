@@ -14,8 +14,8 @@
 {
     self = [super initWithFrame:frame];
     if(self){
-        self.searchBar = [[WXFSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.width, 46)];
-        self.searchBar.backgroundColor = [UIColor clearColor];
+        self.searchBar = [[WXFSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.width, 44)];
+     
     
         [self addSubview:self.searchBar];
         
@@ -31,8 +31,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.searchBar.frame = CGRectMake(0, 0, self.width, 46);
-    self.gridView.frame = CGRectMake(0, 46, self.width, 250);
+    self.searchBar.frame = CGRectMake(0, 0, self.width, 44);
+    self.gridView.frame = CGRectMake(0, 44, self.width, 250);
     
     self.seperateLine.left = 0;
     self.seperateLine.top = self.height - 0.5;

@@ -55,7 +55,7 @@
         [self addSubview:self.profileImageView];
         
         self.userHeaderImageView = [[UIImageView alloc] init];
-        self.userHeaderImageView.layer.cornerRadius = 19;
+        self.userHeaderImageView.layer.cornerRadius = 17;
         self.userHeaderImageView.layer.masksToBounds = YES;
         self.userHeaderImageView.backgroundColor = UIColorFromRGB(0xcccccc);
       
@@ -95,7 +95,7 @@
     [super layoutSubviews];
     self.profileImageView.frame = CGRectMake(0, 0, self.width, 110);
     
-    self.userHeaderImageView.frame = CGRectMake(8, self.profileImageView.bottom - 13, 39, 39);
+    self.userHeaderImageView.frame = CGRectMake(8, self.profileImageView.bottom - 10, 35, 35);
 
     self.usernameLabel.left = self.userHeaderImageView.right + 5;
     self.usernameLabel.top = self.profileImageView.bottom + 5;
@@ -124,14 +124,14 @@
     self.usernameLabel.text = [NSString stringWithFormat:@"版主：%@",username];
     [self.usernameLabel sizeToFit];
 //    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:[UIImage imageNamed:@"default_head"]];
-    
-    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:[UIImage imageNamed:@"default_head"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    self.userHeaderImageView.contentMode = UIViewContentModeCenter;
+    [self.userHeaderImageView sd_setImageWithURL:[NSURL URLWithString:userImg] placeholderImage:[UIImage imageNamed:@"default_head_quanzi"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if(image && [imageURL.absoluteString isEqualToString:userImg]){
             self.userHeaderImageView.image = image;
             self.userHeaderImageView.contentMode = UIViewContentModeScaleToFill;
         }else{
-            self.userHeaderImageView.image = [UIImage imageNamed:@"default_head"];
-            self.userHeaderImageView.contentMode = UIViewContentModeScaleToFill;
+            self.userHeaderImageView.image = [UIImage imageNamed:@"default_head_quanzi"];
+            self.userHeaderImageView.contentMode = UIViewContentModeCenter;
         }
     }];
 

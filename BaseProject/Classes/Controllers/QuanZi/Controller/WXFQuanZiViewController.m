@@ -336,8 +336,8 @@
     };
     
     if(tableView == self.tableView1){
-        NSDictionary* dic1 = [self.listArray1 objectAtIndexSafe:indexPath.row];
-        NSDictionary* dic2 = [self.listArray1 objectAtIndexSafe:indexPath.row + 1];
+        NSDictionary* dic1 = [self.listArray1 objectAtIndexSafe:indexPath.row*2];
+        NSDictionary* dic2 = [self.listArray1 objectAtIndexSafe:indexPath.row*2 + 1];
         
         if(dic1){
             cell.gridView1.hidden = NO;
@@ -352,26 +352,10 @@
         }else{
             cell.gridView2.hidden = YES;
         }
-        
-//        if(indexPath.row < self.listArray1.count){
-        
-//            NSDictionary* dic = [self.listArray1 objectAtIndex:indexPath.row];
-//            cell.titlelabel.text = [dic stringSafeForKey:@"name"];
-//            cell.subTitle.text = [dic stringSafeForKey:@"introduction"];
-//            NSString* imageUrl = [dic stringSafeForKey:@"titleImg"];
-//            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                if([imageURL.absoluteString isEqualToString:imageUrl]){
-//                    cell.iconImageView.image = image;
-//                }else{
-//                    cell.iconImageView.image = nil;
-//                }
-//            }];
-        
-            
-//        }
+
     }else if(tableView == self.tableView2){
-        NSDictionary* dic1 = [self.listArray2 objectAtIndexSafe:indexPath.row];
-        NSDictionary* dic2 = [self.listArray2 objectAtIndexSafe:indexPath.row + 1];
+        NSDictionary* dic1 = [self.listArray2 objectAtIndexSafe:indexPath.row* 2];
+        NSDictionary* dic2 = [self.listArray2 objectAtIndexSafe:indexPath.row*2 + 1];
         
         if(dic1){
             cell.gridView1.hidden = NO;

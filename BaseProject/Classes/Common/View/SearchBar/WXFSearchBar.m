@@ -14,6 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if(self){
+        self.backgroundColor = [UIColor clearColor];
         self.bgImageView.backgroundColor = [UIColor whiteColor];
         self.bgImageView.layer.cornerRadius = 3;
         self.bgImageView.layer.masksToBounds = YES;
@@ -44,16 +45,16 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.bgImageView.left = 10;
+    self.bgImageView.left = 9;
     self.bgImageView.top = 8;
-    self.bgImageView.height = self.height - 16;
-    self.bgImageView.width = self.width - 20;
+    self.bgImageView.height = self.height - 14;
+    self.bgImageView.width = self.width - 18;
     
     self.searchImageView.left = 20;
     self.searchImageView.centerY = self.height / 2;
     
     self.contentLabel.left = self.searchImageView.right + 5;
-    self.contentLabel.centerY = self.height / 2;
+    self.contentLabel.centerY = self.height / 2 + 1;
 }
 
 - (UIImageView*)bgImageView

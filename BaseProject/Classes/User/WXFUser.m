@@ -57,7 +57,7 @@
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cook];
     }
 
-    [[WXFHttpClient shareInstance] clearAllSessionManager];
+//    [[WXFHttpClient shareInstance] clearAllSessionManager];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogoutNotification object:nil];
 }
