@@ -8,7 +8,8 @@
 
 #import "WXFDevice.h"
 #import <AdSupport/AdSupport.h>
-
+#import "SFHFKeychainUtils.h"
+#define ServiceName   @"liaowangzhiku"
 
 typedef enum
 {
@@ -23,6 +24,8 @@ typedef enum
 @interface WXFDevice()
 
 @property (nonatomic, assign) WXFDeviceType deviceType;
+
+@property (nonatomic, strong) NSString* yongcheIdfv;
 
 @end
 
@@ -119,6 +122,59 @@ typedef enum
     }
     return 0;
     
+}
+
+- (NSString*)yongcheIdfv
+{
+    if(_yongcheIdfv == nil){
+        NSError *error = nil;
+        NSString *userName = @"YONGCHEUUID";
+        NSString *uuid;
+        
+        /** 保存用户的密码*/
+        
+        
+        NSString *theUUID = [SFHFKeychainUtils getPasswordForUsername:userName
+                                                       andServiceName:ServiceName
+                                                                error:&error];
+        if(error){
+            NSLog(@"从Keychain里获取密码出错：%@", error);
+        }
+        
+        BOOL isnotexist = NO;
+        
+        if (theUUID == nil || theUUID == NULL || theUUID.length == 0 || [theUUID isKindOfClass:[NSNull class]] || [theUUID isEqual:[NSNull null]]) {
+            isnotexist = YES;
+        }
+        if ([[theUUID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0)
+        {
+            isnotexist = YES;
+        }
+        
+        if (isnotexist) {
+            uuid = [[[[[UIDevice currentDevice] identifierForVendor] UUIDString] md5String] lowercaseString];
+            
+            BOOL saved = [SFHFKeychainUtils storeUsername:userName
+                                              andPassword:uuid
+                                           forServiceName:ServiceName
+                                           updateExisting:YES
+                                                    error:&error ];
+            if (!saved) {
+                NSLog(@"保存密码时出错：%@", error);
+            }
+            theUUID = [NSString stringWithFormat:@"%@",uuid];
+        }
+        
+        
+        _yongcheIdfv = theUUID;
+    }
+    return _yongcheIdfv;
+    
+}
+
++ (NSString*)getIdentifierForVendor
+{
+    return [WXFDevice sharedInstance].yongcheIdfv;
 }
 
 @end

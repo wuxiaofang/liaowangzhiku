@@ -62,4 +62,7 @@
  **/
 + (NSInteger)freeDiskSpace;
 
+
++ (NSString*)getIdentifierForVendor;
+
 @end

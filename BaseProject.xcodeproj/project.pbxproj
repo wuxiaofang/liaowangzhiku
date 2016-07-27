@@ -62,6 +62,7 @@
 		2F70E3591D3685C200C99876 /* WXFGuanZhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E3581D3685C200C99876 /* WXFGuanZhuTableViewCell.m */; };
 		2F70E35C1D37241D00C99876 /* WXFMyCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */; };
 		2F70E3701D37BA1900C99876 /* WXFMyLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */; };
+		2F7D3F521D484F1900CDBE79 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D3F511D484F1900CDBE79 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2FB8CF271D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2FB8CF281D069C6B00CEFC75 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */; };
 		2FB8CF2A1D069C9800CEFC75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB8CF291D069C9800CEFC75 /* libiconv.tbd */; };
@@ -208,6 +209,8 @@
 		2F70E35B1D37241D00C99876 /* WXFMyCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyCommonTableViewCell.m; sourceTree = "<group>"; };
 		2F70E36E1D37BA1900C99876 /* WXFMyLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFMyLogoutTableViewCell.h; sourceTree = "<group>"; };
 		2F70E36F1D37BA1900C99876 /* WXFMyLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFMyLogoutTableViewCell.m; sourceTree = "<group>"; };
+		2F7D3F501D484F1900CDBE79 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		2F7D3F511D484F1900CDBE79 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		2FB8CF251D069C6B00CEFC75 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2FB8CF261D069C6B00CEFC75 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2FB8CF291D069C9800CEFC75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -749,6 +752,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2F7D3F4F1D484F1900CDBE79 /* SFKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				2F7D3F501D484F1900CDBE79 /* SFHFKeychainUtils.h */,
+				2F7D3F511D484F1900CDBE79 /* SFHFKeychainUtils.m */,
+			);
+			path = SFKeyChain;
+			sourceTree = "<group>";
+		};
 		2FC4D4E41D3BC69400F5586E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +875,7 @@
 		2FFBED3C1D0554CE005E9428 /* WXFTools */ = {
 			isa = PBXGroup;
 			children = (
+				2F7D3F4F1D484F1900CDBE79 /* SFKeyChain */,
 				2FFBED3D1D0554CE005E9428 /* UIColor */,
 				2FFBED401D0554CE005E9428 /* UIDevice */,
 			);
@@ -1145,6 +1158,7 @@
 				2F2F6B291D35FAE7000F82EA /* WXFHomeGridView.m in Sources */,
 				2F70E3701D37BA1900C99876 /* WXFMyLogoutTableViewCell.m in Sources */,
 				2FFBED431D0554CE005E9428 /* WXFBaseNavigationViewController.m in Sources */,
+				2F7D3F521D484F1900CDBE79 /* SFHFKeychainUtils.m in Sources */,
 				2F645E6B1D0BD8000038ED30 /* WXFWeiboShareHelper.m in Sources */,
 				2F2F6B371D360F54000F82EA /* UIWebView+Extend.m in Sources */,
 				2F53C8D81D06F7F100CEEA2C /* WXFWelcomeView.m in Sources */,
@@ -1308,6 +1322,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1378,6 +1393,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: feng gao (F968YM6YG5)";
 				FRAMEWORK_SEARCH_PATHS = (

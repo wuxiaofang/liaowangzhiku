@@ -286,7 +286,7 @@
 
 - (void)logout
 {
-    NSString* social_id = [[UIDevice currentDevice] uuid];
+    NSString* social_id = [WXFDevice getIdentifierForVendor];
     NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
     [paramater setValue:social_id forKey:@"social_id"];
     

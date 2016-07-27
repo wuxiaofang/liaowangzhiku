@@ -235,7 +235,7 @@
         [self showToastWithText:@"密码不能为空"];
     }
     [self showHud];
-    NSString* social_id = [[UIDevice currentDevice] uuid];
+    NSString* social_id = [WXFDevice getIdentifierForVendor];
     NSMutableDictionary* paramater = [NSMutableDictionary dictionary];
     [paramater setValue:social_id forKey:@"social_id"];
     [paramater setValue:self.phoneNumberTextField.text forKey:@"user_name"];

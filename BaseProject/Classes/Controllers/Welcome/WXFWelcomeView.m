@@ -42,7 +42,7 @@
 - (void)dismiss
 {
     [self showHud];
-    NSString* social_id = [[UIDevice currentDevice] uuid];
+    NSString* social_id = [WXFDevice getIdentifierForVendor];
     NSDictionary* paramater = [NSDictionary dictionaryWithObjectsAndKeys:social_id,@"social_id", nil];
     
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/auto_login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
