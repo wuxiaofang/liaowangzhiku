@@ -236,7 +236,8 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
                         if ([x intValue] == 1) {
                             WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
                             vc.webviewUrl = url;
-                            [self.homeViewController.navigationController pushViewController:vc animated:YES];
+                            vc.hidesBottomBarWhenPushed = YES;
+                            [self.tabbarController.selectedViewController  pushViewController:vc animated:YES];
                         }
                     }];
                     
@@ -244,7 +245,8 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
                 } else if (application.applicationState == UIApplicationStateInactive) {
                     WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
                     vc.webviewUrl = url;
-                    [self.homeViewController.navigationController pushViewController:vc animated:YES];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.tabbarController.selectedViewController pushViewController:vc animated:YES];
                 }
                 
                 

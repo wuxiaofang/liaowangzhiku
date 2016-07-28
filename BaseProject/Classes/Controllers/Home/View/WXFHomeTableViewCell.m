@@ -23,6 +23,8 @@
         self.titlelabel.font = [UIFont systemFontOfSize:18];
         self.titlelabel.textColor = UIColorFromRGB(0x000000);
         self.titlelabel.textAlignment = NSTextAlignmentLeft;
+        self.titlelabel.text = @"  ";
+        [self.titlelabel sizeToFit];
         [self addSubview:self.titlelabel];
         
         self.subTitle = [[UILabel alloc] init];
@@ -46,15 +48,21 @@
     self.iconImageView.height = 57;
     self.iconImageView.width = 76;
     
-    self.titlelabel.left = self.iconImageView.right + 8;
+    self.titlelabel.left = self.iconImageView.right + 10;
     self.titlelabel.top = self.iconImageView.top;
-    self.titlelabel.height = 20;
-    self.titlelabel.width = self.width - self.iconImageView.right - 8 - 8;
+//    self.titlelabel.height = 20;
+    self.titlelabel.width = self.width - self.iconImageView.right - 10 - 10;
     
-    self.subTitle.left = self.iconImageView.right + 8;
-    self.subTitle.top = self.titlelabel.bottom + 7;
-    self.subTitle.height = 34;
-    self.subTitle.width = self.width - self.iconImageView.right - 8 - 8;
+    CGSize size = [self.subTitle.text sizeForFont:self.subTitle.font size:CGSizeMake(self.width - self.iconImageView.right - 10 - 10, 9999) mode:self.subTitle.lineBreakMode];
+    
+    if(size.height > 40){
+        size.height = 40;
+    }
+    
+    self.subTitle.left = self.iconImageView.right + 10;
+    self.subTitle.top = self.titlelabel.bottom + 2;
+    self.subTitle.height = size.height;
+    self.subTitle.width = size.width;
     
     self.seperateLine.left = 0;
     self.seperateLine.top = self.height - 0.5;

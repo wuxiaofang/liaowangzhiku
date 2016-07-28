@@ -81,8 +81,8 @@
 #define IOS8                [[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0
 
 
-//#define  kBaseUrl   @"http://lwinst.zkdxa.com"
+#define  kBaseUrl   @"http://lwinst.zkdxa.com"
 
-#define kBaseUrl  @"http://123.56.98.143"
+//#define kBaseUrl  @"http://123.56.98.143"
 
 #endif /* PrefixHeader_pch */
