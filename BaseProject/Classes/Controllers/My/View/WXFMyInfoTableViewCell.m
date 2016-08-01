@@ -19,6 +19,7 @@
         self.userImageView = [[UIImageView alloc] init];
         self.userImageView.width = 60;
         self.userImageView.height = 60;
+        self.userImageView.backgroundColor = UIColorFromRGB(0xe5e5e5);
         self.userImageView.layer.masksToBounds = YES;
         self.userImageView.layer.cornerRadius = 30;
         [self addSubview:self.userImageView];
@@ -99,7 +100,7 @@
     self.subSubLabel.hidden = YES;
     
     if([WXFUser instance].isLogin){
-        [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[WXFUser instance].userImg] placeholderImage:[UIImage imageNamed:@"me_top"]];
+        [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[WXFUser instance].userImg] placeholderImage:[UIImage imageNamed:@"my_head"]];
         self.titleLabel.text = [WXFUser instance].userName;
         self.subLabel.text = [WXFUser instance].position;
         self.subSubLabel.text = [WXFUser instance].research_field;
@@ -107,7 +108,7 @@
         self.subLabel.hidden = NO;
         self.subSubLabel.hidden = NO;
     }else{
-        self.userImageView.image = [UIImage imageNamed:@"me_top"];
+        self.userImageView.image = [UIImage imageNamed:@"my_head"];
         self.titleLabel.text = @"未登录/请登录";
         self.titleLabel.hidden = NO;
         
