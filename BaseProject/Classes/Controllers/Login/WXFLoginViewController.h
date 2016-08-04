@@ -10,8 +10,14 @@
 
 typedef void(^UserDidLoginFinishBlock)(BOOL isSuccess);
 
+/*
+ * 登录
+ **/
 @interface WXFLoginViewController : WXFBaseViewController
 
+/*
+ * 登陆之后的回调
+ */
 @property (nonatomic, strong) UserDidLoginFinishBlock userDidLoginFinishBlock;
 
 @end

@@ -75,7 +75,7 @@
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
         
     }
-
+    [[WXFUser instance] getUserInfo:nil];
     
 //    self.userName = [dic stringSafeForKey:@"user_name"];
 //    self.headimgurl = [dic stringSafeForKey:@"headimgurl"];

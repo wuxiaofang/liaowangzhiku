@@ -8,6 +8,9 @@
 
 #import "WXFBaseTableViewController.h"
 
+/*
+ * 专家
+ */
 @interface WXFSpecialistViewController : WXFBaseTableViewController
 
 @end

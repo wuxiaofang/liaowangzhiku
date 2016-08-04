@@ -23,6 +23,7 @@
     self.responseSerializer = [AFJSONResponseSerializer serializer];
     
     self.responseSerializer.acceptableContentTypes = [[NSSet alloc] initWithObjects:@"application/xml", @"text/xml", @"text/html" , @"application/json", nil];
+    self.requestSerializer.timeoutInterval = 20;
 //    self.requestSerializer.HTTPShouldHandleCookies = NO;
     
     return self;

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ * 申报
+ */
 @interface WXFReportViewController : WXFBaseViewController
 
 @end

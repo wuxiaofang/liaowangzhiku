@@ -140,6 +140,7 @@ static BOOL isProduction = TRUE;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self updateUserJsession];
     [application setApplicationIconBadgeNumber:0];
     [application cancelAllLocalNotifications];
 }
@@ -277,6 +278,24 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
     
+}
+
+- (void)updateUserJsession
+{
+    NSString* social_id = [WXFDevice getIdentifierForVendor];
+    NSDictionary* paramater = [NSDictionary dictionaryWithObjectsAndKeys:social_id,@"social_id", nil];
+    
+    [[WXFHttpClient shareInstance] postData:@"/app/comm/user/auto_login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
+        
+        NSInteger code = [parser.responseDictionary intSafeForKey:@"code"];
+        if(code == 0 && parser.responseDictionary){
+            [[WXFUser instance] parseUserInfo:parser.responseDictionary];
+        }else{
+            [[WXFUser instance] logout];
+        }
+        
+    }];
+
 }
 
 

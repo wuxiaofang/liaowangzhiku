@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ * 会议
+ **/
 @interface WXFConferenceViewController : WXFBaseTableViewController
 
 @end

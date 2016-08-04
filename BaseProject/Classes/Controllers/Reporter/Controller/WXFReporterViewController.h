@@ -8,6 +8,9 @@
 
 #import "WXFBaseTableViewController.h"
 
+/*
+ * 记者
+ */
 @interface WXFReporterViewController : WXFBaseTableViewController
 
 @end

@@ -16,13 +16,18 @@
 
 @property (nonatomic, strong) WXFHTTPSessionManager* httpSessionManager;
 
+/*
+ * HTTPClient 单例模式
+ **/
 + (WXFHttpClient*)shareInstance;
 
-- (void)clearAllSessionManager;
 /*
  * HTTP GET Method
- * 登录状态下才能使用
- * 使用access_token访问服务器，刷新access_token使用getRefreshToken
+ * GET方式获取网络数据
+ * @param： 
+        URLString：http地址
+        parameters： http参数
+        callBackBlock：http完成之后的回调
  *
  **/
 - (void)getData:(NSString *)URLString
@@ -31,14 +36,29 @@
 
 /*
  * HTTP POST Method
- * 登录状态下才能使用
- * 使用access_token访问服务器，刷新access_token使用getRefreshToken
+ * POST方式获取网络数据
+ * @param：
+        URLString：http地址
+        parameters： http参数
+        callBackBlock：http完成之后的回调
  *
  **/
 - (void)postData:(NSString *)URLString
       parameters:(id)parameters
         callBack:(void (^)(WXFParser *parser))callBackBlock;
 
+/*
+ * HTTP POST File Method
+ * POST方式上传文件到服务器
+ * @param：
+        filePath：上传的文件的路径
+        url：http地址
+        parameters： http参数
+        key：上传的文件的名字
+        type：上传文件的类型
+        callBackBlock：http完成之后的回调
+ *
+ **/
 - (void)postFile:(NSString *)filePath
     andUrlString:(NSString*)url
       parameters:(NSDictionary *)parameters

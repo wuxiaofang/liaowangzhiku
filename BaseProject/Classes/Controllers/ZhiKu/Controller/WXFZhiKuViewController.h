@@ -8,6 +8,9 @@
 
 #import "WXFBaseTableViewController.h"
 
+/*
+ * 智库
+ */
 @interface WXFZhiKuViewController : WXFBaseTableViewController
 
 @end

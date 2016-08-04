@@ -25,7 +25,7 @@
         [self.searchImageView sizeToFit];
         self.searchImageView.frame = CGRectIntegral(self.searchImageView.frame);
         
-        self.contentLabel.text = @"输入专家、记者、智库、圈子";
+        self.contentLabel.text = @"输入专家、记者、智库";
         [self.contentLabel sizeToFit];
         self.contentLabel.frame = CGRectIntegral(self.contentLabel.frame);
         

@@ -48,8 +48,10 @@
     [[WXFHttpClient shareInstance] postData:@"/app/comm/user/auto_login.jspx" parameters:paramater callBack:^(WXFParser *parser) {
         
         NSInteger code = [parser.responseDictionary intSafeForKey:@"code"];
-        if(code == 0){
+        if(code == 0 && parser.responseDictionary){
             [[WXFUser instance] parseUserInfo:parser.responseDictionary];
+        }else{
+            [[WXFUser instance] logout];
         }
         
         [UIView animateWithDuration:0.3 delay:1 options:UIViewAnimationOptionCurveEaseOut animations:^{

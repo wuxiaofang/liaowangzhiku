@@ -32,6 +32,8 @@
 
 @property (nonatomic, assign) NSInteger totalPage;
 
+
+
 @end
 
 @implementation WXFHomeViewController

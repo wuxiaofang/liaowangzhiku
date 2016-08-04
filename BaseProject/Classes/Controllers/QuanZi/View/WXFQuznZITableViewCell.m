@@ -99,6 +99,7 @@
 
     self.usernameLabel.left = self.userHeaderImageView.right + 5;
     self.usernameLabel.top = self.profileImageView.bottom + 5;
+    self.usernameLabel.width = self.width - self.usernameLabel.left - 10;
     
 
     self.titleLabel.left = 10;

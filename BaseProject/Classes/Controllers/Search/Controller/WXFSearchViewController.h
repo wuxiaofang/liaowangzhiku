@@ -8,6 +8,9 @@
 
 #import "WXFBaseTableViewController.h"
 
+/*
+ * 搜索
+ */
 @interface WXFSearchViewController : WXFBaseWebViewController
 
 @end

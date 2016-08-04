@@ -8,6 +8,9 @@
 
 #import "WXFBaseTableViewController.h"
 
+/*
+ * 圈子
+ */
 @interface WXFQuanZiViewController : WXFBaseTableViewController
 
 @end
