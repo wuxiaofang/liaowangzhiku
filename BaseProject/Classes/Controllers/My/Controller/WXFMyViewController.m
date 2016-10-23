@@ -176,12 +176,18 @@
         
         
         zhutiCell.gridView1.didGridViewBlock = ^(){
-            
+            if(![WXFUser instance].isLogin){
+                [self pushLoginVC];
+                return;
+            }
             [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/expert.jspx",kBaseUrl]];
         };
         
         zhutiCell.gridView2.didGridViewBlock = ^(){
-            
+            if(![WXFUser instance].isLogin){
+                [self pushLoginVC];
+                return;
+            }
             [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/reporter.jspx",kBaseUrl]];
         };
         
