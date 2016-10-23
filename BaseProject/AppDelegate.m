@@ -14,6 +14,7 @@
 #import "WXFLoginViewController.h"
 #import "WXFReportViewController.h"
 
+
 static NSString *appKey = @"b5df8393a621ba8ef1294ab8";
 static NSString *channel = @"1";
 
@@ -26,9 +27,10 @@ static BOOL isProduction = TRUE;
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
-@property (nonatomic, strong)WXFWelcomeView* welcomeView;
+//@property (nonatomic, strong)WXFWelcomeView* welcomeView;
 
 @property (nonatomic, assign)BOOL appisBackGround;
+
 
 @end
 

@@ -128,7 +128,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [self setCustomLabelForNavTitle:[self.webView pageTitle]];
 
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+- (void)webView:(UIWebView *)webView didFailLoadWithError:( NSError *)error
 {
     [self reduceRequestCount];
 }

@@ -40,19 +40,18 @@
     // Do any additional setup after loading the view.
     [self setCustomLabelForNavTitle:@"登陆"];
     self.hiddenNavBar = YES;
-    self.bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loginBg"]];
+    self.bgImageView = [[UIImageView alloc] initWithImage:nil];
     [self.view addSubview:self.bgImageView];
+    self.bgImageView.backgroundColor = UIColorFromRGB(0xfafafa);
     
     self.phoneNumberTextFieldBg = [[UIImageView alloc] init];
     self.phoneNumberTextFieldBg.image = [[UIImage imageNamed:@"textField_bg"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    self.phoneNumberTextFieldBg.layer.cornerRadius = 3;
-    self.phoneNumberTextFieldBg.layer.masksToBounds = YES;
+
     [self.view addSubview:self.phoneNumberTextFieldBg];
     
     self.phoneVerifyCodeTextFieldBg = [[UIImageView alloc] init];
     self.phoneVerifyCodeTextFieldBg.image = [[UIImage imageNamed:@"textField_bg"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    self.phoneVerifyCodeTextFieldBg.layer.cornerRadius = 3;
-    self.phoneVerifyCodeTextFieldBg.layer.masksToBounds = YES;
+
     [self.view addSubview:self.phoneVerifyCodeTextFieldBg];
     
     UIImage* image = [UIImage imageNamed:@"back_button"];
@@ -94,39 +93,43 @@
     if(DeviceIsIphone4){
         self.logoImageView.top = 35;
     }else{
-        self.logoImageView.top = 96;
+        self.logoImageView.top = 117;
     }
     self.logoImageView.centerX = self.view.width / 2;
     
+    CGFloat left = (self.view.width - 275) / 2;
+    
+    self.phoneNumberTextFieldBg.frame = CGRectMake((self.view.width - 275) / 2, self.logoImageView.bottom + 23, 275, 34);
+    
+    self.phoneNumberTextField.left = self.phoneNumberTextFieldBg.left + 8;
+    self.phoneNumberTextField.top = self.phoneNumberTextFieldBg.top;
+    self.phoneNumberTextField.width = self.phoneNumberTextFieldBg.width - 16;
+    self.phoneNumberTextField.height = 34;
     
     
-    self.phoneNumberTextField.left = 22.5;
-    self.phoneNumberTextField.top = self.logoImageView.bottom + 22;
-    self.phoneNumberTextField.width = self.view.width - 45;
-    self.phoneNumberTextField.height = 40;
+    self.phoneVerifyCodeTextFieldBg.frame = CGRectMake(left, self.phoneNumberTextFieldBg.bottom + 15, 275, 34);
     
-    self.phoneNumberTextFieldBg.frame = self.phoneNumberTextField.frame;
+    self.phoneVerifyCodeTextField.left = left + 8;
+    self.phoneVerifyCodeTextField.top = self.phoneVerifyCodeTextFieldBg.top;
+    self.phoneVerifyCodeTextField.width = self.phoneVerifyCodeTextFieldBg.width - 16;
+    self.phoneVerifyCodeTextField.height = 34;
+
     
-    self.phoneVerifyCodeTextField.left = 22.5;
-    self.phoneVerifyCodeTextField.top = self.phoneNumberTextField.bottom  + 10;
-    self.phoneVerifyCodeTextField.width = self.view.width - 45;
-    self.phoneVerifyCodeTextField.height = 40;
-    self.phoneVerifyCodeTextFieldBg.frame = self.phoneVerifyCodeTextField.frame;
-    
-    self.loginButton.left = 22.5;
-    self.loginButton.top = self.phoneVerifyCodeTextField.bottom  + 20;
-    self.loginButton.width = self.view.width - 45;
-    self.loginButton.height = 40;
-    
-    self.modifyPasswordButton.left = 22.5;
-    self.modifyPasswordButton.top = self.loginButton.bottom  + 10;
-    
-    self.getUserAccountButton.left = self.view.width - 22.5 - self.getUserAccountButton.width;
-    self.getUserAccountButton.top = self.loginButton.bottom  + 10;
+    self.loginButton.left = left;
+    self.loginButton.top = self.phoneVerifyCodeTextFieldBg.bottom  + 15;
+    self.loginButton.width = 275;
+    self.loginButton.height = 31;
     
     
-    self.closeButton.left = 20;
-    self.closeButton.top = self.view.height - self.closeButton.height - 30;
+    self.modifyPasswordButton.left = left;
+    self.modifyPasswordButton.top = self.loginButton.bottom  + 13;
+    
+    self.getUserAccountButton.left = self.view.width - left - self.getUserAccountButton.width;
+    self.getUserAccountButton.top = self.loginButton.bottom  + 13;
+    
+    
+    self.closeButton.left = 18;
+    self.closeButton.top = self.view.height - self.closeButton.height - 65;
     
 }
 
@@ -134,9 +137,10 @@
 {
     if(_phoneNumberTextField == nil){
         _phoneNumberTextField = [self createTextField:@"请输入用户名"
-                                        lefrImageName:@"login_input_name"];
+                                        lefrImageName:nil];
         _phoneNumberTextField.keyboardType = UIKeyboardTypeDefault;
         _phoneNumberTextField.font = [UIFont systemFontOfSize:14.0f];
+        _phoneNumberTextField.textColor = UIColorFromRGB(0xb7c5ce);
         [self.view addSubview:_phoneNumberTextField];
 
         _phoneNumberTextField.returnKeyType = UIReturnKeyDone;
@@ -149,12 +153,13 @@
 {
     if(_phoneVerifyCodeTextField == nil){
         _phoneVerifyCodeTextField = [self createTextField:@"请输入密码"
-                                            lefrImageName:@"login_input_password"];
+                                            lefrImageName:nil];
         
         [self.view addSubview:_phoneVerifyCodeTextField];
         _phoneVerifyCodeTextField.keyboardType = UIKeyboardTypeDefault;
         _phoneVerifyCodeTextField.secureTextEntry = YES;
         _phoneVerifyCodeTextField.font = [UIFont systemFontOfSize:14.0f];
+        _phoneVerifyCodeTextField.textColor = UIColorFromRGB(0xb7c5ce);
         _phoneVerifyCodeTextField.returnKeyType = UIReturnKeyDone;
     }
     return _phoneVerifyCodeTextField;
@@ -169,7 +174,7 @@
     textField.backgroundColor = [UIColor clearColor];
     textField.textAlignment = NSTextAlignmentLeft;
     textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{ NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:12.0]}];
+    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{ NSForegroundColorAttributeName: UIColorFromRGB(0xb7c5ce), NSFontAttributeName : [UIFont systemFontOfSize:12.0]}];
                                        
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     textField.font = [UIFont systemFontOfSize:12.0f];
@@ -178,16 +183,19 @@
     
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:lefrImageName]];
-    imageView.backgroundColor = [UIColor clearColor];
+    if(lefrImageName){
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:lefrImageName]];
+        imageView.backgroundColor = [UIColor clearColor];
+        
+        UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 26)];
+        view.backgroundColor = [UIColor clearColor];
+        [view addSubview:imageView];
+        imageView.left = 15;
+        imageView.centerY = view.height / 2;
+        textField.leftView = view;
+        textField.leftViewMode = UITextFieldViewModeAlways;
+    }
     
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 26)];
-    view.backgroundColor = [UIColor clearColor];
-    [view addSubview:imageView];
-    imageView.left = 15;
-    imageView.centerY = view.height / 2;
-    textField.leftView = view;
-    textField.leftViewMode = UITextFieldViewModeAlways;
     return textField;
 }
 
@@ -211,11 +219,11 @@
                       forState:UIControlStateNormal];
         [_loginButton setTitleColor:UIColorFromRGB(0xffffff)
                            forState:UIControlStateNormal];
-        _loginButton.font = [UIFont systemFontOfSize:17.0f];
+        _loginButton.font = [UIFont systemFontOfSize:15.0f];
         [_loginButton addTarget:self
                          action:@selector(loginButtonPress)
                forControlEvents:UIControlEventTouchUpInside];
-        [_loginButton setBackgroundImage:[[UIImage createImageWithColor:UIColorFromRGB(0x1dbbe6)] stretchableImageWithLeftCapWidth:20 topCapHeight:20] forState:UIControlStateNormal];
+        [_loginButton setBackgroundImage:[[UIImage createImageWithColor:UIColorFromRGB(0x56d4eb)] stretchableImageWithLeftCapWidth:20 topCapHeight:20] forState:UIControlStateNormal];
         
         
         [self.view addSubview:_loginButton];
@@ -290,7 +298,7 @@
         _modifyPasswordButton = [[UIButton alloc] init];
         [_modifyPasswordButton setTitle:@"忘记密码?"
                                forState:UIControlStateNormal];
-        [_modifyPasswordButton setTitleColor:[UIColor whiteColor]
+        [_modifyPasswordButton setTitleColor:UIColorFromRGB(0x56d4eb)
                                     forState:UIControlStateNormal];
         _modifyPasswordButton.font = [UIFont systemFontOfSize:14.0f];
         [_modifyPasswordButton addTarget:self
@@ -311,7 +319,7 @@
         _getUserAccountButton = [[UIButton alloc] init];
         [_getUserAccountButton setTitle:@"获取用户名"
                                forState:UIControlStateNormal];
-        [_getUserAccountButton setTitleColor:[UIColor whiteColor]
+        [_getUserAccountButton setTitleColor:UIColorFromRGB(0x56d4eb)
                                     forState:UIControlStateNormal];
         _getUserAccountButton.font = [UIFont systemFontOfSize:14.0f];
         [_getUserAccountButton addTarget:self

@@ -10,6 +10,8 @@
 #import "WXFSegmentView.h"
 #import "MJRefresh.h"
 #import "WXFHomeTableViewCell.h"
+#import "WXFZhiKuScrollView.h"
+
 
 @interface WXFZhiKuViewController ()
 
@@ -23,6 +25,8 @@
 @property (nonatomic, assign) NSInteger currentPage1;
 
 @property (nonatomic, assign) NSInteger totalPage1;
+
+@property (nonatomic, strong) WXFZhiKuScrollView* zhiKuScrollView1;
 
 
 
@@ -48,8 +52,8 @@
     self.listArray2 = [NSMutableArray array];
     
     self.segmentView = [[WXFSegmentView alloc] init];
-    [self.segmentView.button1 setTitle:@"海外智库" forState:UIControlStateNormal];
-    [self.segmentView.button2 setTitle:@"国内智库" forState:UIControlStateNormal];
+    [self.segmentView.button1 setTitle:@"智库观点" forState:UIControlStateNormal];
+    [self.segmentView.button2 setTitle:@"智库产品" forState:UIControlStateNormal];
     self.segmentView.frame = CGRectMake(0, 0, self.view.width, 35);
     [self.view addSubview:self.segmentView];
     __weak typeof(self)weakSelf = self;
@@ -149,6 +153,37 @@
         
         
     }];
+    
+    [self reloadScrollViewData1];
+    
+    
+}
+
+- (void)reloadScrollViewData1
+{
+
+    
+    [[WXFHttpClient shareInstance] postData:@"app/comm/mechanism/scroll/list.jspx" parameters:nil callBack:^(WXFParser *parser) {
+        
+        
+        NSInteger code = [parser.responseDictionary intSafeForKey:@"success"];
+   
+        if(code == 1){
+            NSArray* list = [parser.responseDictionary arraySafeForKey:@"list"];
+            if(list.count > 0){
+                [self.zhiKuScrollView1 reloadData:list];
+                self.tableView1.tableHeaderView = self.zhiKuScrollView1;
+            }else{
+                self.tableView1.tableHeaderView = nil;
+            }
+
+            
+        }
+        
+        
+        
+    }];
+    
     
 }
 
@@ -390,6 +425,27 @@
     
     
     
+}
+
+- (WXFZhiKuScrollView*)zhiKuScrollView1
+{
+    if(_zhiKuScrollView1 == nil){
+    
+        NSInteger heigth = self.view.width / (CGFloat)1.875 + 36;
+        _zhiKuScrollView1 = [[WXFZhiKuScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, heigth)];
+        
+        __weak typeof(self)weakSelf = self;
+        
+        _zhiKuScrollView1.didSelectBlock = ^(NSInteger index, NSDictionary* pageDataDic){
+            NSString* imageUrl = [pageDataDic stringSafeForKey:@"url"];
+            WXFBaseWebViewController* vc = [[WXFBaseWebViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            vc.webviewUrl = imageUrl;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        };
+    }
+    return _zhiKuScrollView1;
+
 }
 
 

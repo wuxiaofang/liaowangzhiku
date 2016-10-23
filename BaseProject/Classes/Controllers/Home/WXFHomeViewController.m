@@ -21,7 +21,6 @@
 #import "WXFZhiKuViewController.h"
 #import "WXFQuanZiViewController.h"
 
-
 @interface WXFHomeViewController ()
 
 @property (nonatomic, strong) WXFHomeHeaderView* tableHeaderView;
@@ -31,6 +30,7 @@
 @property (nonatomic, assign) NSInteger currentPage;
 
 @property (nonatomic, assign) NSInteger totalPage;
+
 
 
 

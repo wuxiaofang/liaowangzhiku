@@ -81,7 +81,10 @@
 #define IOS8                [[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0
 
 
-#define  kBaseUrl   @"http://lwinst.zkdxa.com"
+//#define  kBaseUrl   @"http://lwinst.zkdxa.com"
+
+#define  kBaseUrl   @"http://app.lwinst.com"
+//#define  kBaseUrl   @"http://10.10.1.212:8080"
 
 //#define kBaseUrl  @"http://123.56.98.143"
 
