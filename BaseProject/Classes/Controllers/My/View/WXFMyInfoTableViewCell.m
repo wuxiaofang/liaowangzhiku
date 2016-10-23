@@ -40,7 +40,9 @@
         self.subSubLabel.font = [UIFont systemFontOfSize:12.0f];
         self.subSubLabel.textAlignment = NSTextAlignmentLeft;
         self.subSubLabel.textColor = UIColorFromRGB(0x828282);
+        self.subSubLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         [self addSubview:self.subSubLabel];
+//        self.subSubLabel.backgroundColor = [UIColor yellowColor];
         
         self.arrowImageView = [[UIImageView alloc] init];
         self.arrowImageView.width = 5;
@@ -76,15 +78,19 @@
     if([WXFUser instance].isLogin){
     
         CGFloat starty = (self.height - self.titleLabel.height - 2 - self.subLabel.height - self.subSubLabel.height) / 2;
+        CGFloat width = (self.width - 10 -self.userImageView.width - 5 - self.arrowImageView.width - 9 -5);
         
         self.titleLabel.left = self.userImageView.right + 5;
         self.titleLabel.top = starty;
+        self.titleLabel.width = width;
         
         self.subLabel.left = self.userImageView.right + 5;
         self.subLabel.top = self.titleLabel.bottom + 2;
+        self.subLabel.width = width;
         
         self.subSubLabel.left = self.userImageView.right + 5;
         self.subSubLabel.top = self.subLabel.bottom;
+        self.subSubLabel.width = width;
         
     }else{
         self.titleLabel.left = self.userImageView.right + 5;
