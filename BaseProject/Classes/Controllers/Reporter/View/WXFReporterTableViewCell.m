@@ -74,15 +74,19 @@
     self.seperateLine.height = 0.5;
     
     CGFloat starty = (self.height - self.titleLabel.height - 2 - self.subLabel.height - self.subSubLabel.height) / 2;
+    CGFloat width = self.width - self.userImageView.right - self.arrowImageView.width - 9 - 10;
     
     self.titleLabel.left = self.userImageView.right + 5;
     self.titleLabel.top = starty;
+    self.titleLabel.width = width;
     
     self.subLabel.left = self.userImageView.right + 5;
     self.subLabel.top = self.titleLabel.bottom + 2;
+    self.subLabel.width = width;
     
     self.subSubLabel.left = self.userImageView.right + 5;
     self.subSubLabel.top = self.subLabel.bottom;
+    self.subSubLabel.width = width;
     
 }
 

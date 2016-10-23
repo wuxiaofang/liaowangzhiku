@@ -93,7 +93,7 @@
     self = [super initWithFrame:frame];
     if(self){
         self.titleLabel = [[UILabel alloc] init];
-        self.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+        self.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.titleLabel];
         self.arrowImageView = [[UIImageView alloc] init];

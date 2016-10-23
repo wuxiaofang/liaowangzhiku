@@ -54,7 +54,7 @@
     self.segmentView = [[WXFSegmentView alloc] init];
     [self.segmentView.button1 setTitle:@"智库观点" forState:UIControlStateNormal];
     [self.segmentView.button2 setTitle:@"智库产品" forState:UIControlStateNormal];
-    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 35);
+    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 40);
     [self.view addSubview:self.segmentView];
     __weak typeof(self)weakSelf = self;
     self.segmentView.segmentSelectBlock = ^(NSInteger index){

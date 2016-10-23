@@ -50,7 +50,7 @@
     [self setCustomLabelForNavTitle:@"瞭望会议"];
     
     self.segmentView = [[WXFSegmentView alloc] init];
-    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 35);
+    self.segmentView.frame = CGRectMake(0, 0, self.view.width, 40);
     [self.view addSubview:self.segmentView];
     __weak typeof(self)weakSelf = self;
     self.segmentView.segmentSelectBlock = ^(NSInteger index){

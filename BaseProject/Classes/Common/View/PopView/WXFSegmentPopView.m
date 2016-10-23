@@ -29,7 +29,7 @@
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = 40;
+        _tableView.rowHeight = 45;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self addSubview:_tableView];
         
@@ -85,11 +85,11 @@ didSelectBlock:(DidSegmentPopBlock)didSelectBlock
 //    self.headerView.myLabel.text = title;
 //    self.tableView.tableHeaderView = self.headerView;
     
-    CGFloat heigth = self.dataArray.count * 40 ;
-    if(heigth > frame.size.height - 40){
-        heigth = frame.size.height - 40;
+    CGFloat heigth = self.dataArray.count * 45 ;
+    if(heigth > frame.size.height - 45){
+        heigth = frame.size.height - 45;
     }
-    self.tableView.frame = CGRectMake(0, 35, superView.width, heigth);
+    self.tableView.frame = CGRectMake(0, 40, superView.width, heigth);
     
 }
 
@@ -113,7 +113,7 @@ didSelectBlock:(DidSegmentPopBlock)didSelectBlock
     if(self){
         self.myLabel = [[UILabel alloc] init];
         self.myLabel.textColor = UIColorFromRGB(0x000000);
-        self.myLabel.font = [UIFont systemFontOfSize:12];
+        self.myLabel.font = [UIFont systemFontOfSize:13];
         self.myLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.myLabel];
         
@@ -142,7 +142,7 @@ didSelectBlock:(DidSegmentPopBlock)didSelectBlock
     if(self){
         self.myLabel = [[UILabel alloc] init];
         self.myLabel.textColor = UIColorFromRGB(0x1dbbe6);
-        self.myLabel.font = [UIFont systemFontOfSize:12];
+        self.myLabel.font = [UIFont systemFontOfSize:14];
         self.myLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.myLabel];
         

@@ -156,7 +156,7 @@
 		2F53C8CD1D06B92B00CEEA2C /* WXFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFLoginViewController.m; sourceTree = "<group>"; };
 		2F53C8D61D06F7F100CEEA2C /* WXFWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFWelcomeView.h; sourceTree = "<group>"; };
 		2F53C8D71D06F7F100CEEA2C /* WXFWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFWelcomeView.m; sourceTree = "<group>"; };
-		2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXFSpecialistViewController.h; path = ../../Specialist/Controller/WXFSpecialistViewController.h; sourceTree = "<group>"; };
+		2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFSpecialistViewController.h; sourceTree = "<group>"; };
 		2F54EA7E1D41EBDA00CE04F0 /* WXFSpecialistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFSpecialistViewController.m; sourceTree = "<group>"; };
 		2F54EA801D41EBEE00CE04F0 /* WXFReporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFReporterViewController.h; sourceTree = "<group>"; };
 		2F54EA811D41EBEE00CE04F0 /* WXFReporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFReporterViewController.m; sourceTree = "<group>"; };
@@ -586,6 +586,7 @@
 		2F54EA781D41EBA000CE04F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */,
 				2F54EA7E1D41EBDA00CE04F0 /* WXFSpecialistViewController.m */,
 			);
 			path = Controller;
@@ -596,7 +597,6 @@
 			children = (
 				2F54EA801D41EBEE00CE04F0 /* WXFReporterViewController.h */,
 				2F54EA811D41EBEE00CE04F0 /* WXFReporterViewController.m */,
-				2F54EA7D1D41EBDA00CE04F0 /* WXFSpecialistViewController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1343,6 +1343,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KMD6QAZ84K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/BaseProject/Classes/Vender/QQ",
@@ -1400,7 +1401,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b2584a6b-5500-41f9-8a5f-f0a8996642e5";
+				PROVISIONING_PROFILE = "d87067cd-0b35-4602-9317-c2bfe5eefe99";
+				PROVISIONING_PROFILE_SPECIFIER = liaowangzhiku_dev;
 			};
 			name = Debug;
 		};

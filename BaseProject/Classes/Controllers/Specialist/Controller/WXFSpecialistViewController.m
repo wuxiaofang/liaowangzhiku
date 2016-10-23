@@ -64,7 +64,7 @@
                 }
             }
             WXFSegmentPopView* popview = [[WXFSegmentPopView alloc] init];
-            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:muArray title:@"按领域排序" didSelectBlock:^(NSInteger index) {
+            [popview showIn:weakSelf.view frame:CGRectMake(0, 40, weakSelf.view.width, self.view.height - 40) dataArray:muArray title:@"按领域排序" didSelectBlock:^(NSInteger index) {
                 NSDictionary* filterDic = [self.fieldList objectAtIndexSafe:index];
                 self.fieldById = [filterDic stringSafeForKey:@"key"];
                 [self.listTableView.mj_header beginRefreshing];
@@ -80,7 +80,7 @@
             }
             
             WXFSegmentPopView* popview = [[WXFSegmentPopView alloc] init];
-            [popview showIn:weakSelf.view frame:CGRectMake(0, 35, weakSelf.view.width, self.view.height - 35) dataArray:muArray title:@"智能排序" didSelectBlock:^(NSInteger index) {
+            [popview showIn:weakSelf.view frame:CGRectMake(0, 40, weakSelf.view.width, self.view.height - 40) dataArray:muArray title:@"智能排序" didSelectBlock:^(NSInteger index) {
                 NSDictionary* filterDic = [self.orderList objectAtIndexSafe:index];
                 self.orderById = [filterDic stringSafeForKey:@"key"];
                 [self.listTableView.mj_header beginRefreshing];
@@ -105,8 +105,8 @@
 {
     [super viewDidLayoutSubviews];
     
-    self.zhutiSegment.frame = CGRectMake(0, 0, self.view.width, 35);
-    self.listTableView.frame = CGRectMake(0, 35, self.view.width, self.view.height - 35);
+    self.zhutiSegment.frame = CGRectMake(0, 0, self.view.width, 40);
+    self.listTableView.frame = CGRectMake(0, 40, self.view.width, self.view.height - 40);
     
 }
 
