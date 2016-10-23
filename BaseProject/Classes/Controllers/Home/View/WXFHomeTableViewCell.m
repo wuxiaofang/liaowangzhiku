@@ -55,12 +55,15 @@
     
     CGSize size = [self.subTitle.text sizeForFont:self.subTitle.font size:CGSizeMake(self.width - self.iconImageView.right - 10 - 10, 9999) mode:self.subTitle.lineBreakMode];
     
-    if(size.height > 40){
-        size.height = 40;
+    NSString* teststring = @"你好\r\n智库";
+    CGSize testsize = [teststring sizeForFont:self.subTitle.font size:CGSizeMake(self.width - self.iconImageView.right - 10 - 10, 9999) mode:self.subTitle.lineBreakMode];
+    
+    if(size.height > testsize.height + 3){
+        size.height = testsize.height;
     }
     
     self.subTitle.left = self.iconImageView.right + 10;
-    self.subTitle.top = self.titlelabel.bottom + 2;
+    self.subTitle.top = self.titlelabel.bottom + 3;
     self.subTitle.height = size.height;
     self.subTitle.width = size.width;
     

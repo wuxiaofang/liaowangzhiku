@@ -58,13 +58,13 @@
     self.iconImageView.width = self.myContentView.width;
     
     self.titlelabel.left = 9;
-    self.titlelabel.top = self.iconImageView.bottom + 8;
+    self.titlelabel.top = self.iconImageView.bottom + 9;
     self.titlelabel.height = 20;
     self.titlelabel.width = self.width - 16;
     
     self.subTitle.left = 9;
-    self.subTitle.top = self.titlelabel.bottom + 8;
-    self.subTitle.height = 34;
+    self.subTitle.top = self.titlelabel.bottom + 3;
+    self.subTitle.height = [self getSubtitleHeigth];
     self.subTitle.width = self.width - 20;
     
     self.seperateLine.left = 0;
@@ -81,6 +81,19 @@
         [self addSubview:_seperateLine];
     }
     return _seperateLine;
+}
+
+- (CGFloat)getSubtitleHeigth
+{
+    CGSize size = [self.subTitle.text sizeForFont:self.subTitle.font size:CGSizeMake(self.width - 20, 9999) mode:self.subTitle.lineBreakMode];
+    
+    NSString* teststring = @"你好\r\n智库";
+    CGSize testsize = [teststring sizeForFont:self.subTitle.font size:CGSizeMake(self.width - 20, 9999) mode:self.subTitle.lineBreakMode];
+    
+    if(size.height > testsize.height + 3){
+        size.height = testsize.height;
+    }
+    return size.height;
 }
 
 @end

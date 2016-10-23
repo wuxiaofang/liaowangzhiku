@@ -20,4 +20,7 @@
 
 @property (nonatomic, strong) UIView* myContentView;
 
+
+- (CGFloat)getSubtitleHeigth;
+
 @end
