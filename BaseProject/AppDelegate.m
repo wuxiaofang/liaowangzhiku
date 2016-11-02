@@ -96,18 +96,18 @@ static BOOL isProduction = TRUE;
     UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
     UITabBarItem *item3 = [tabBar.items objectAtIndex:3];
     // 对item设置相应地图片
-    item0.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
+//    item0.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
     item0.selectedImage = [[UIImage imageNamed:@"foot_1act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item0.image = [[UIImage imageNamed:@"foot_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item1.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
+//    item1.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
     item1.selectedImage = [[UIImage imageNamed:@"foot_2act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
     item1.image = [[UIImage imageNamed:@"foot_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    item2.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
+//    item2.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
     item2.selectedImage = [[UIImage imageNamed:@"foot_3act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
     item2.image = [[UIImage imageNamed:@"foot_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item3.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
+//    item3.imageInsets = UIEdgeInsetsMake(-1, -1, -1, -1);
     item3.selectedImage = [[UIImage imageNamed:@"foot_4act"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
     item3.image = [[UIImage imageNamed:@"foot_4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     

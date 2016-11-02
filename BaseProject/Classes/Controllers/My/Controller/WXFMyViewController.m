@@ -62,7 +62,7 @@
     }else if(section == 1){
         row = 1;
     }else if(section == 2){
-        row = 5;
+        row = 4;
     }else if(section == 3){
         row = 1;
     }else if(section == 4){
@@ -199,13 +199,15 @@
         }else if(indexPath.row == 1){
             commonCell.titleLabel.text = @"我的课题";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me02"];
-        }else if(indexPath.row == 2){
-            commonCell.titleLabel.text = @"我的报名";
-            commonCell.iconImageView.image = [UIImage imageNamed:@"me08"];
-        }else if(indexPath.row == 3){
+        }
+//        else if(indexPath.row == 2){
+//            commonCell.titleLabel.text = @"我的报名";
+//            commonCell.iconImageView.image = [UIImage imageNamed:@"me08"];
+//        }
+        else if(indexPath.row == 2){
             commonCell.titleLabel.text = @"我的收藏";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me03"];
-        }else if(indexPath.row == 4){
+        }else if(indexPath.row == 3){
             commonCell.titleLabel.text = @"推送消息";
             commonCell.iconImageView.image = [UIImage imageNamed:@"me04"];
         }
@@ -257,16 +259,18 @@
         }else if(indexPath.row == 1){
             
             [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/topic.jspx",kBaseUrl]];
-        }else if(indexPath.row == 2){
-            
-            
-            
-            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/meeting.jspx",kBaseUrl]];
-            
-        }else if(indexPath.row == 3){
+        }
+//        else if(indexPath.row == 2){
+//            
+//            
+//            
+//            [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/meeting.jspx",kBaseUrl]];
+//            
+//        }
+        else if(indexPath.row == 2){
             
             [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/collection.jspx",kBaseUrl]];
-        }else if(indexPath.row == 4){
+        }else if(indexPath.row == 3){
             
             [self pushWebviewWithUrl:[NSString stringWithFormat:@"%@/app/user/center/message.jspx",kBaseUrl]];
         }

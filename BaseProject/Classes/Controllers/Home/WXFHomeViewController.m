@@ -174,13 +174,17 @@
             }else{
                 [self showToastWithText:@"暂无数据请稍后重试"];
             }
-            
+            [self.listTableView reloadData];
             if(self.totalPage > self.currentPage){
                 self.listTableView.mj_footer.hidden = NO;
+                [self.listTableView.mj_footer endRefreshing];
             }else{
-                self.listTableView.mj_footer.hidden = YES;
+                self.listTableView.mj_footer.hidden = NO;
+                [self.listTableView.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.listTableView reloadData];
+
+            
+            
             
         }else{
             [self showToastWithText:desc];
@@ -214,13 +218,19 @@
             if(list.count > 0){
                 [self.listArray addObjectsFromArray:list];
             }
-            
+            [self.listTableView reloadData];
             if(self.totalPage > self.currentPage){
                 self.listTableView.mj_footer.hidden = NO;
+                [self.listTableView.mj_footer endRefreshing];
             }else{
-                self.listTableView.mj_footer.hidden = YES;
+                self.listTableView.mj_footer.hidden = NO;
+                [self.listTableView.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.listTableView reloadData];
+            
+            
+            
+            
+           
             
         }else{
             [self showToastWithText:desc];

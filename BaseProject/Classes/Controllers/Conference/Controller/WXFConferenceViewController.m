@@ -134,13 +134,15 @@
             }else{
                 [self showToastWithText:@"暂无数据请稍后重试"];
             }
-            
+            [self.tableView1 reloadData];
             if(self.totalPage1 > self.currentPage1){
                 self.tableView1.mj_footer.hidden = NO;
+                [self.tableView1.mj_footer endRefreshing];
             }else{
-                self.tableView1.mj_footer.hidden = YES;
+                self.tableView1.mj_footer.hidden = NO;
+                [self.tableView1.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.tableView1 reloadData];
+            
             
         }else{
             [self showToastWithText:desc];
@@ -174,13 +176,15 @@
             if(list.count > 0){
                 [self.listArray1 addObjectsFromArray:list];
             }
-            
+            [self.tableView1 reloadData];
             if(self.totalPage1 > self.currentPage1){
                 self.tableView1.mj_footer.hidden = NO;
+                [self.tableView1.mj_footer endRefreshing];
             }else{
-                self.tableView1.mj_footer.hidden = YES;
+                self.tableView1.mj_footer.hidden = NO;
+                [self.tableView1.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.tableView1 reloadData];
+            
             
         }else{
             [self showToastWithText:desc];
@@ -220,13 +224,15 @@
             }else{
                 [self showToastWithText:@"暂无数据请稍后重试"];
             }
-            
+            [self.tableView2 reloadData];
             if(self.totalPage2 > self.currentPage2){
                 self.tableView2.mj_footer.hidden = NO;
+                [self.tableView2.mj_footer endRefreshing];
             }else{
-                self.tableView2.mj_footer.hidden = YES;
+                self.tableView2.mj_footer.hidden = NO;
+                [self.tableView2.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.tableView2 reloadData];
+            
             
         }else{
             [self showToastWithText:desc];
@@ -260,12 +266,19 @@
                 [self.listArray2 addObjectsFromArray:list];
             }
             
+            [self.tableView2 reloadData];
             if(self.totalPage2 > self.currentPage2){
                 self.tableView2.mj_footer.hidden = NO;
+                [self.tableView2.mj_footer endRefreshing];
             }else{
-                self.tableView2.mj_footer.hidden = YES;
+                self.tableView2.mj_footer.hidden = NO;
+                [self.tableView2.mj_footer endRefreshingWithNoMoreData];
             }
-            [self.tableView2 reloadData];
+            
+            
+            
+   
+
             
         }else{
             [self showToastWithText:desc];

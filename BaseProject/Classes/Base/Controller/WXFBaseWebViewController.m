@@ -79,6 +79,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSString* scheme = [[request URL] scheme];
     NSString*  absoluteString = [[request URL] absoluteString];
     NSLog(@"%@",absoluteString);
+    NSRange rrr = [absoluteString rangeOfString:@"/login.jspx"];
     if([scheme isEqualToString:@"share"]){
         NSDictionary *query = [request.URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
         if([absoluteString rangeOfString:@"pengyouquan"].location != NSNotFound){
@@ -110,7 +111,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self setImagePickerSelecteImage];
         return NO;
         
-    }else if([absoluteString rangeOfString:@"/login.jspx"].location != NSNotFound){
+    }else if(absoluteString.length > 0 && ([absoluteString rangeOfString:@"/login.jspx"].location != NSNotFound)){
         [self pushLoginViewController];
         return NO;
     }

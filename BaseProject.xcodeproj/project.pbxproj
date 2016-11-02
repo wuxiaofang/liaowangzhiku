@@ -1342,7 +1342,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = KMD6QAZ84K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1401,8 +1401,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d87067cd-0b35-4602-9317-c2bfe5eefe99";
-				PROVISIONING_PROFILE_SPECIFIER = liaowangzhiku_dev;
+				PROVISIONING_PROFILE = "5ce11c6c-1c50-4062-80d2-eb89e6d86e40";
+				PROVISIONING_PROFILE_SPECIFIER = lwzk_adhoc;
 			};
 			name = Debug;
 		};
@@ -1414,8 +1414,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: feng gao (F968YM6YG5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Outlook Media Co. Ltd. (KMD6QAZ84K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Outlook Media Co. Ltd. (KMD6QAZ84K)";
+				DEVELOPMENT_TEAM = KMD6QAZ84K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/BaseProject/Classes/Vender/QQ",
@@ -1473,7 +1474,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwinst.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b2584a6b-5500-41f9-8a5f-f0a8996642e5";
+				PROVISIONING_PROFILE = "5ce11c6c-1c50-4062-80d2-eb89e6d86e40";
+				PROVISIONING_PROFILE_SPECIFIER = lwzk_adhoc;
 			};
 			name = Release;
 		};

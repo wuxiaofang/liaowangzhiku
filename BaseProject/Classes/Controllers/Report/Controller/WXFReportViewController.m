@@ -9,7 +9,7 @@
 #import "WXFReportViewController.h"
 #import "WXFLoginViewController.h"
 
-@interface WXFReportViewController ()
+@interface WXFReportViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) UIView* bgView;
 
@@ -71,7 +71,7 @@
     
     self.textField1 = [[UITextField alloc] init];
     [self.bgView addSubview:self.textField1];
-    
+    self.textField1.delegate = self;
     self.textField1.font = [UIFont systemFontOfSize:16];
     self.textField1.textColor = UIColorFromRGB(0x000000);
     [self.bgView addSubview:self.textField1];
@@ -80,6 +80,8 @@
     
     self.textField2 = [[UITextField alloc] init];
     [self.bgView addSubview:self.textField2];
+    self.textField2.delegate = self;
+    
     
     self.textField2.font = [UIFont systemFontOfSize:16];
     self.textField2.textColor = UIColorFromRGB(0x000000);
@@ -116,6 +118,9 @@
     [self.commitButton setBackgroundImage:[UIImage createImageWithColor:UIColorFromRGB(0x1dbbe6)] forState:UIControlStateNormal];
     [self.view addSubview:self.commitButton];
     [self.commitButton addTarget:self action:@selector(commitButtonPress) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.textField1.returnKeyType = UIReturnKeyDone;
+    self.textField2.returnKeyType = UIReturnKeyDone;
     
 }
 
@@ -207,6 +212,14 @@
     self.labele3.top = self.bgView.bottom + 10;
     
     self.commitButton.frame = CGRectMake(10, self.labele3.bottom + 10, self.view.width - 20, 35);
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+
+    [textField resignFirstResponder];
+    return YES;
     
 }
 
